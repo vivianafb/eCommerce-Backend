@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"nombre": "Lapiz",
+		"precio": 1300,
+		"descripcion": "Lapiz rojo",
+		"codigo": 123,
+		"foto": "https://img.freepik.com/vector-gratis/diseno-lapiz-escribiendo_1095-187.jpg?size=338&ext=jpg",
+		"stock": 112
+	},
+	{
+		"id": 2,
+		"nombre": "Goma",
+		"precio": 500,
+		"descripcion": "Goma de borrar",
+		"codigo": 456,
+		"foto": "https://www.libreriaservicom.cl/wp-content/uploads/2019/03/goma-de-borrar-factis-s20.jpg",
+		"stock": 300
+	}
+]
