@@ -4,6 +4,7 @@ import carritoRouter from './carrito';
 import userRouter from './user';
 import { isLoggedIn } from '../middleware/auth';
 import passport from 'passport';
+
 const router = Router();
 
 router.use('/productos',productoRouter);
