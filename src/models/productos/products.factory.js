@@ -3,7 +3,6 @@ import { ProductosFSDAO } from './DAOs/fs';
 import { ProductosAtlasDAO } from './DAOs/mongo';
 import { ProductosSQLDAO } from './DAOs/mysql';
 import { ProductosSQLITEDAO } from './DAOs/sqlite';
-import { ProductosFBDAO } from './DAOs/firebase';
 
 import path from 'path';
 export const TipoPersistencia = {
@@ -13,7 +12,6 @@ export const TipoPersistencia = {
   SQLITE3 : "SQLITE3",
   LocalMongo : "LOCAL-MONGO",
   MongoAtlas : "MONGO-ATLAS",
-  Firebase : "FIREBASE",
 }
 const tipo = TipoPersistencia;
 export class NoticiasFactoryDAO {
@@ -39,10 +37,6 @@ export class NoticiasFactoryDAO {
       case TipoPersistencia.SQLITE3:
         console.log('RETORNANDO INSTANCIA CLASE SQLITE');
         return new ProductosSQLITEDAO();
-
-      case TipoPersistencia.Firebase:
-        console.log('RETORNANDO INSTANCIA CLASE FIREBASE');
-        return new ProductosFBDAO();
     
       default:
         console.log('RETORNANDO INSTANCIA CLASE MEMORIA');

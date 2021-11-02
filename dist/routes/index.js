@@ -23,6 +23,13 @@ const router = (0, _express.Router)();
 router.use('/productos', _productos.default);
 router.use('/carrito', _carrito.default);
 router.use('/users', _auth.isLoggedIn, _user.default);
+app.get('/', (req, res) => {
+  console.log('Resolving / endpoint');
+  res.json({
+    pid: process.pid,
+    msg: `HOLA desde puerto ${PORT} y process id ${process.pid}`
+  });
+});
 router.post('/login', _passport.default.authenticate('login'), function (req, res) {
   res.json(req.user);
 });

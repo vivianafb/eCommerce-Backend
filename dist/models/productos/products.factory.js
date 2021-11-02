@@ -15,8 +15,6 @@ var _mysql = require("./DAOs/mysql");
 
 var _sqlite = require("./DAOs/sqlite");
 
-var _firebase = require("./DAOs/firebase");
-
 var _path = _interopRequireDefault(require("path"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -27,8 +25,7 @@ const TipoPersistencia = {
   MYSQL: "MYSQL",
   SQLITE3: "SQLITE3",
   LocalMongo: "LOCAL-MONGO",
-  MongoAtlas: "MONGO-ATLAS",
-  Firebase: "FIREBASE"
+  MongoAtlas: "MONGO-ATLAS"
 };
 exports.TipoPersistencia = TipoPersistencia;
 const tipo = TipoPersistencia;
@@ -58,10 +55,6 @@ class NoticiasFactoryDAO {
       case TipoPersistencia.SQLITE3:
         console.log('RETORNANDO INSTANCIA CLASE SQLITE');
         return new _sqlite.ProductosSQLITEDAO();
-
-      case TipoPersistencia.Firebase:
-        console.log('RETORNANDO INSTANCIA CLASE FIREBASE');
-        return new _firebase.ProductosFBDAO();
 
       default:
         console.log('RETORNANDO INSTANCIA CLASE MEMORIA');

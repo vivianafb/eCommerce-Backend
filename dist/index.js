@@ -13,7 +13,7 @@ var _os = _interopRequireDefault(require("os"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const clusterMode = _args.Argumentos;
-const puerto = process.env.PORT || 8080;
+const puerto = process.env.PORT;
 (0, _dbMongo.connectToDB)(); // connectToDB().then(() =>{
 //     console.log('DB MONGO CONECTADA');
 //     server.listen(puerto, ()=> console.log(`Server up puerto ${puerto}`));

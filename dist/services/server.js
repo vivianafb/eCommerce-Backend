@@ -60,5 +60,12 @@ app.use(function (err, req, res, next) {
 app.use(_auth.default.initialize());
 app.use(_auth.default.session());
 app.use('/api', _index.default);
+app.get('/', (req, res) => {
+  console.log('Resolving / endpoint');
+  res.json({
+    pid: process.pid,
+    msg: `HOLAaaaa`
+  });
+});
 var _default = server;
 exports.default = _default;
