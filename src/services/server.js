@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   console.log('Resolving / endpoint');
   res.json({
     pid: process.pid,
-    msg: `HOLA desde puerto ${PORT} y process id ${process.pid}`,
+    msg: `HOLA`,
   });
 });
 export default server;
