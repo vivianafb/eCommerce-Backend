@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
   console.log('Resolving / endpoint');
   res.json({
     pid: process.pid,
-    msg: `HOLA`,
+    msg: `HOLAaaaa`,
   });
 });
 export default server;
