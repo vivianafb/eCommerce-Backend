@@ -34,7 +34,15 @@ app.use(function(err,req,res,next){
         error: err.message,
     })
 });
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/api',apiRouter);
+app.get('/', (req, res) => {
+  console.log('Resolving / endpoint');
+  res.json({
+    pid: process.pid,
+    msg: `HOLA desde puerto ${PORT} y process id ${process.pid}`,
+  });
+});
 export default server;

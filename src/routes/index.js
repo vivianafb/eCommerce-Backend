@@ -10,6 +10,13 @@ router.use('/productos',productoRouter);
 router.use('/carrito',carritoRouter);
 router.use('/users',isLoggedIn, userRouter);
 
+app.get('/', (req, res) => {
+  console.log('Resolving / endpoint');
+  res.json({
+    pid: process.pid,
+    msg: `HOLA desde puerto ${PORT} y process id ${process.pid}`,
+  });
+});
 router.post('/login',passport.authenticate('login'), function (req,res) {
      res.json(req.user);
 });
