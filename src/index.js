@@ -4,7 +4,7 @@ import cluster from 'cluster';
 import { Argumentos } from './middleware/args';
 import os from 'os';
 const clusterMode = Argumentos;
-const puerto = process.env.PORT || 8080;
+const puerto = process.env.PORT;
 connectToDB();
 // connectToDB().then(() =>{
 //     console.log('DB MONGO CONECTADA');
