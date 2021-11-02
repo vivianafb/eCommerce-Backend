@@ -40,6 +40,7 @@
     "firebase-admin": "^9.11.1",
     "handlebars": "^4.7.7",
     "knex": "^0.95.10",
+    "minimist": "^1.2.5",
     "moment": "^2.29.1",
     "mongoose": "^6.0.5",
     "mysql": "^2.18.1",
