@@ -1,23 +1,21 @@
 import  {Router} from 'express';
 import { productoController } from '../controllers/productoController';
-import { checkAdmin, checkUsuario } from '../middleware/admin';
+import { checkAdmin } from '../middleware/auth';
 import expressAsyncHandler from 'express-async-handler';
 const router = Router();
 
-router.get('/',
-checkAdmin,checkUsuario, 
+router.get('/', 
 productoController.checkProductExists,
 expressAsyncHandler(productoController.getProducto)
 );
 
 router.get('/:id',
-checkAdmin,checkUsuario, 
 productoController.checkProductExists,
 expressAsyncHandler(productoController.getProducto)
 );
 
 router.post('/agregar',
-checkAdmin,productoController.validacion, 
+checkAdmin,
 productoController.checkProductExists,
 expressAsyncHandler(productoController.addProducto)
 );

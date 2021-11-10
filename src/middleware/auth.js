@@ -1,7 +1,21 @@
 import passport from 'passport';
 import passportLocal from 'passport-local';
-import { UserModel } from '../models/user';
+import {UserAPI} from '../apis/user'
+import { logger} from'../utils/logs';
 
+const admin = true;
+//Validar que el usuario es admin
+export const checkAdmin = (req,res,next) => {
+  logger.info('EJECUTANDO MIDDLEWARE');
+  if(admin) next();
+  else{
+      res.status(401).json({
+          error: -1,
+          descripcion: `Ruta: ${req.url}`,
+          metodo: `${req.method} no autorizada`
+      })
+  }
+}
 const LocalStrategy = passportLocal.Strategy;
 
 const strategyOptions = {
@@ -11,55 +25,41 @@ const strategyOptions = {
 };
 
 const loginFunc = async (req, username, password, done) => {
-  const user = await UserModel.findOne({ username });
+  const user = await UserAPI.query(username);
 
   if (!user) {
+    logger.warn(`Login Fail for username ${username}: User does not exist`);
     return done(null, false, { message: 'User does not exist' });
   }
-  if (!(await user.isValidPassword(password))) {
+
+  if (!(await UserAPI.ValidatePassword(username, password))) {
+    logger.warn(`Login Fail for username ${username}: Password is not valid`);
     return done(null, false, { message: 'Password is not valid.' });
   }
-  console.log('SALIO TODO BIEN');
+  logger.info(`User ${username} logged in at ${new Date()}`);
   return done(null, user);
 };
 
 const signUpFunc = async (req, username, password, done) => {
   try {
     const { username, password, email, firstName, lastName, adress,age,phone,photo } = req.body;
-    // console.log(req.body);
+    
+    const user = await UserAPI.query(username,email);
     if (!username || !password || !email || !firstName || !lastName || !adress || !age || !phone || !photo) {
       console.log('Invalid body fields');
       return done(null, false);
     }
 
-    const query = {
-      $or: [{ username: username }, { email: email }],
-    };
-    const user = await UserModel.findOne(query);
-
     if (user) {
-      console.log('User already exists');
-      return done(null, false, 'User already exists');
+      logger.warn('User already exists');
+      return done(null, false);
     } else {
-      const userData = {
-        username,
-        password,
-        email,
-        firstName,
-        lastName,
-        adress,
-        age,
-        phone,
-        photo
-      };
-
-      const newUser = new UserModel(userData);
-
-      await newUser.save();
-
+     
+      const newUser = await UserAPI.addUser(req.body);
       return done(null, newUser);
     }
   } catch (error) {
+    logger.error(error.message);
     done(error);
   }
 };
@@ -68,14 +68,16 @@ passport.use('login', new LocalStrategy(strategyOptions, loginFunc));
 passport.use('signup', new LocalStrategy(strategyOptions, signUpFunc));
 
 passport.serializeUser((user, done) => {
-  // console.log(user);
   done(null, user._id);
 });
 
 passport.deserializeUser((userId, done) => {
-  UserModel.findById(userId, function (err, user) {
-    done(err, user);
-  });
+  try {
+    const result = UserAPI.getUsers(userId);
+    done(null, result);
+  } catch (err) {
+    done(err);
+  }
 });
 
 export const isLoggedIn = (req, res, done) => {
@@ -84,4 +86,9 @@ export const isLoggedIn = (req, res, done) => {
   done();
 };
 
+export const isAdmin = (req, res, done) => {
+  if (!req.user) return res.status(401).json({ msg: 'Unathorized' });
+
+  done();
+};
 export default passport;

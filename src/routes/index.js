@@ -2,21 +2,16 @@ import { Router } from "express";
 import productoRouter from './productos';
 import carritoRouter from './carrito';
 import userRouter from './user';
+import AuthRouter from './auth'
 import { isLoggedIn } from '../middleware/auth';
-import passport from 'passport';
+
 
 const router = Router();
 
+router.use('/auth', AuthRouter);
 router.use('/productos',productoRouter);
-router.use('/carrito',carritoRouter);
+router.use('/carrito',isLoggedIn,carritoRouter);
 router.use('/users',isLoggedIn, userRouter);
 
-router.post('/login',passport.authenticate('login'), function (req,res) {
-     res.json(req.user);
-});
-
-router.post('/signup',passport.authenticate('login'), function (req,res) {
-    res.json(req.user);
-});
 
 export default router;

@@ -1,0 +1,18 @@
+[33mwarn[39m |  Nov-09-2021 15:06:50 | User already exists
+[31merror[39m |  Nov-09-2021 15:14:11 | HUBO UN ERROR Failed to deserialize user out of session
+[31merror[39m |  Nov-09-2021 15:15:45 | HUBO UN ERROR Failed to deserialize user out of session
+[31merror[39m |  Nov-09-2021 15:22:18 | HUBO UN ERROR Failed to deserialize user out of session
+[31merror[39m |  Nov-09-2021 15:22:24 | HUBO UN ERROR Failed to deserialize user out of session
+[31merror[39m |  Nov-09-2021 15:22:31 | HUBO UN ERROR Failed to deserialize user out of session
+[31merror[39m |  Nov-09-2021 15:46:05 | HUBO UN ERROR Cannot read property 'id' of undefined
+[33mwarn[39m |  Nov-09-2021 15:53:41 | User already exists
+[33mwarn[39m |  Nov-09-2021 16:04:27 | Login Fail for username tomy: Password is not valid
+[33mwarn[39m |  Nov-09-2021 16:04:31 | Login Fail for username tomy: Password is not valid
+[33mwarn[39m |  Nov-09-2021 19:03:06 | Worker 37920 died at Tue Nov 09 2021 19:03:06 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-09-2021 19:03:06 | Worker 40392 died at Tue Nov 09 2021 19:03:06 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-09-2021 19:03:06 | Worker 1660 died at Tue Nov 09 2021 19:03:06 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-09-2021 19:03:06 | Worker 2880 died at Tue Nov 09 2021 19:03:06 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-09-2021 19:28:20 | Login Fail for username edu: User does not exist
+[33mwarn[39m |  Nov-09-2021 19:34:43 | id not found
+[33mwarn[39m |  Nov-09-2021 19:36:07 | id not found
+[31merror[39m |  Nov-09-2021 19:37:54 | HUBO UN ERROR Unexpected string in JSON at position 209

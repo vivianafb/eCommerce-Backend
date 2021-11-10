@@ -2,12 +2,12 @@ import mongoose from 'mongoose';
 import Config from '../../../config/index'
 
 const productsSchema = new mongoose.Schema({
-  nombre: String,
-  precio: Number,
-  descripcion: String,
-  codigo: Number,
-  foto: String,
-  stock:Number
+  nombre: {type: String, required: true},
+  precio: {type: Number, required:true},
+  descripcion:{type: String, required:true, unique: true},
+  codigo: {type: Number, required:true},
+  foto: {type: String, required:true},
+  stock: {type: Number, required:true}
 });
 export class ProductosAtlasDAO  {
    srv;
@@ -17,9 +17,9 @@ export class ProductosAtlasDAO  {
     if (local)
       this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
     else
-      this.srv = `mongodb+srv://${Config.MONGO_ATLAS_USER}:${Config.MONGO_ATLAS_PASSWORD}@${Config.MONGO_ATLAS_CLUSTER}/${Config.MONGO_ATLAS_DBNAME}?retryWrites=true&w=majority`;
-    mongoose.connect(this.srv,{useNewUrlParser: true},);
-    this.productos = mongoose.model('producto', productsSchema);
+      this.srv = Config.MONGO_ATLAS_URL;
+    mongoose.connect(this.srv);
+    this.productos = mongoose.model('productos', productsSchema);
   }
   async get(id) {
     let output = [];
@@ -37,8 +37,9 @@ export class ProductosAtlasDAO  {
     }
   }
 
-  async add(data) {
-
+   async add(data) {
+    if (!data.nombre || !data.precio || !data.descripcion
+      || !data.codigo || !! data.foto || !data.stock) throw new Error('invalid data');
     const newProduct = new this.productos(data);
     await newProduct.save();
 

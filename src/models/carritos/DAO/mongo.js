@@ -1,11 +1,21 @@
-import mongoose from 'mongoose';
+import mongoose, {Schema} from 'mongoose';
 import Config from '../../../config/index'
+import { logger } from '../../../utils/logs';
 
 const carritoSchema = new mongoose.Schema({
-  id: String,
-  createdAt: Number,
-  producto_id: Number
-})
+  userId: {
+    type: Schema.Types.ObjectId,
+    required: true,
+    unique: true,
+  },
+  productos: [
+    {
+      _id: Schema.Types.ObjectId,
+      amount: Number,
+    },
+  ],
+});
+
 export class CarritoAtlasDAO{
     srv;
     carrito;
@@ -14,50 +24,70 @@ export class CarritoAtlasDAO{
      if (local)
        this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
      else
-       this.srv = `mongodb+srv://${Config.MONGO_ATLAS_USER}:${Config.MONGO_ATLAS_PASSWORD}@${Config.MONGO_ATLAS_CLUSTER}/${Config.MONGO_ATLAS_DBNAME}?retryWrites=true&w=majority`;
+       this.srv = Config.MONGO_ATLAS_URL;
      mongoose.connect(this.srv,{useNewUrlParser: true},);
      this.carrito = mongoose.model('carrito', carritoSchema);
    }
    async get(id) {
-     let output = [];
-     try {
-       if (id) {
-         const document = await this.carrito.findById(id);
-         console.log(document);
-         if (document) output.push(document);
-       } else {
-         output = await this.carrito.find();
-       }
-       return output;
-     } catch (err) {
-       return output;
-     }
+    const result = await this.carrito.findOne({id});
+
+    if (!result) logger.warn('id not found');
+
+    return result;
    }
  
-   async add(data) {
-    //  if (!data.nombre || !data.precio) throw new Error('invalid data');
+   async createCart(userId) {
+    const newCarrito = new this.carrito({
+      userId,
+      productos: [],
+    });
+
+    await newCarrito.save();
+
+    return newCarrito;
+  }
+
+  productExist(cart, productId)  {
+    const index = cart.productos.findIndex(
+      (aProduct) => aProduct._id == productId
+    );
+
+    if (index < 0) return false;
+
+    return true;
+  }
+
+  async addProduct(carritoID, product) {
+    const cart = await this.carrito.findById(carritoID);
+    if (!cart) throw new Error('Cart not found');
+
+    const index = cart.productos.findIndex(
+      (aProduct) => aProduct._id == product._id
+    );
+
+    if (index < 0) cart.productos.push(product);
+    else cart.productos[index].amount += productos.amount;
+
+    await cart.save();
+
+    return cart;
+  }
  
-     const newCarrito = new this.carrito(data);
-     await newCarrito.save();
- 
-     return newCarrito;
-   }
-//  async update(id, newCarritoData) {
-//      return this.carrito.findByIdAndUpdate(id, newCarritoData);
-//    }
-   
- 
-   async delete(id) {
-     await this.carrito.findByIdAndDelete(id);
-   }
- 
-   async query(options){
-     let query = {};
- 
-     if (options.nombre) query.nombre = options.nombre;
- 
-     if (options.precio) query.precio = options.precio;
-  
-     return this.productos.find(query);
-   }
+  async deleteProduct(carritoID, product) {
+    const cart = await this.carrito.findById(carritoID);
+    if (!cart) throw new Error('Cart not found');
+
+    const index = cart.productos.findIndex(
+      (aProduct) => aProduct._id == product._id
+    );
+
+    if (index < 0) throw new Error('Product not found');
+
+    if (cart.productos[index].amount <= product.amount)
+      cart.productos.splice(index, 1);
+    else cart.productos[index].amount -= product.amount;
+
+    await cart.save();
+    return cart;
+  }
 }

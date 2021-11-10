@@ -1,5 +1,5 @@
-
- import { productsAPI } from '../apis/productos';
+import { productsAPI } from '../apis/productos';
+import { logger } from '../utils/logs';
 let productos =[
     {id:1, 
         nombre:"lapiz", 
@@ -78,9 +78,9 @@ class Producto{
     }
     async addProducto(req, res){      
         const newItem = await productsAPI.addProduct(req.body)
+        console.log(newItem)
         res.json({
-            msg: "Productos agregado con exito",
-            data: newItem
+            msg: "Productos agregado con exito"
         })
     }
     async updateProducto(req, res){

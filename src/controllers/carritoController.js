@@ -1,4 +1,5 @@
-import {carritoAPI} from '../apis/carrito'
+import {carritoAPI} from '../apis/carrito';
+import {productsAPI} from '../apis/productos'
 let carrito =[
     {
         id:1, 
@@ -31,8 +32,6 @@ let carrito =[
 ]
 const tableName ='carrito'
 class Carrito{
-    
-
     async validacion(req, res, next){
         const {createdAt,producto_id} = req.body;
         if(!createdAt || !producto_id )
@@ -45,7 +44,7 @@ class Carrito{
 
     async checkCarritoExists(req, res , next) {
         const id = req.params.id;
-        const carrito = await carritoAPI.getCarrito(tableName,id);
+        const carrito = await carritoAPI.getCarrito(id);
     
         if (!carrito) {
           return res.status(404).json({
@@ -59,7 +58,7 @@ class Carrito{
         const id = req.params.id;
         if (id) {
             const result = await carritoAPI.getCarrito(id);
-            console.log(result)
+          
             if (!result)
                 return res.status(404).json({
                 data: 'Objeto no encontrado',
@@ -74,22 +73,60 @@ class Carrito{
             });
     }
 
-    async addCarrito(req, res){      
-        const newItem = await carritoAPI.addCarrito(req.body)
-        res.json({
-            msg: "Carrito agregado con exito",
-            data: newItem
-        })
+    async getCartByUser(req, res) {
+        const user = req.user;
+        const cart = await carritoAPI.getCarrito(user._id);
+        res.json(cart);
     }
+
+    async addProduct(req, res) {
+        const user = req.user;
+        const cart = await carritoAPI.getCarrito(user._id);
     
-    async deleteCarrito(req, res){
-        const id = req.params.id;
-        
-            await carritoAPI.deleteCarrito(id);
-            res.json({
-            msg: 'carrito borrado',
-            });
-        
-    }
+        const { productId, productAmount } = req.body;
+    
+        if (!productId || !productAmount)
+          return res.status(400).json({ msg: 'Invalid body parameters' });
+    
+        const product = await productsAPI.getProducts(productId);
+    
+        if (!product.length)
+          return res.status(400).json({ msg: 'product not found' });
+    
+        if (parseInt(productAmount) < 0)
+          return res.status(400).json({ msg: 'Invalid amount' });
+    
+        const updatedCart = await carritoAPI.addProduct(
+          cart._id,
+          productId,
+          parseInt(productAmount)
+        );
+        res.json({ msg: 'Product added', cart: updatedCart });
+      }
+    
+      async deleteProduct(req, res) {
+        const user = req.user;
+        const cart = await carritoAPI.getCarrito(user._id);
+    
+        const { productId, productAmount } = req.body;
+    
+        if (!productId || !productAmount)
+          return res.status(400).json({ msg: 'Invalid body parameters' });
+    
+        const product = await productsAPI.getProducts(productId);
+    
+        if (!product.length)
+          return res.status(400).json({ msg: 'product not found' });
+    
+        if (parseInt(productAmount) < 0)
+          return res.status(400).json({ msg: 'Invalid amount' });
+    
+        const updatedCart = await carritoAPI.deleteProudct(
+          cart._id,
+          productId,
+          parseInt(productAmount)
+        );
+        res.json({ msg: 'Product deleted', cart: updatedCart });
+      }
 }
 export const carritoController = new Carrito();

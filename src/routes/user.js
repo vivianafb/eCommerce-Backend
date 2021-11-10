@@ -1,38 +1,17 @@
 import { Router } from 'express';
-import { UserModel } from '../models/user';
-
+import { UserController} from '../controllers/userController';
+import expressAsyncHandler from 'express-async-handler';
 const router = Router();
 
-router.get('/', async (req, res) => {
-  const data = await UserModel.find();
-  res.json({ data });
-});
+router.get('/',expressAsyncHandler(UserController.getUsers));
 
-router.post('/', async (req, res) => {
-  const { username, password, email, firstName, lastName, adress,age,phone,photo } = req.body;
+router.post('/agregar',
+expressAsyncHandler(UserController.addUser));
 
-  if (!username || !password || !email || !firstName || !lastName || !adress || !age || !phone || !photo) {
-    console.log('Invalid body fields');
-    return res.status(400).json({ msg: 'Invalid fields' });
-  }
+router.post('/actualizar/:id',
+expressAsyncHandler(UserController.updateUser));
 
-  const userData = {
-    username,
-    password,
-    email,
-    firstName,
-    lastName,
-    adress,
-    age,
-    phone,
-    photo
-  };
-
-  const newUser = new UserModel(userData);
-
-  await newUser.save();
-
-  res.json({ data: newUser });
-});
+router.delete('/borrar/:id',
+expressAsyncHandler(UserController.deleteUser) );
 
 export default router;

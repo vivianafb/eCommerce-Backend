@@ -1,25 +1,26 @@
 import  {Router} from 'express';
 import { carritoController } from '../controllers/carritoController';
-import { checkAdmin,checkUsuario } from '../middleware/admin';
+import { checkAdmin } from '../middleware/auth';
+import expressAsyncHandler from 'express-async-handler';
 const router = Router();
 
 router.get('/',
-checkAdmin,checkUsuario, 
+checkAdmin, 
 carritoController.checkCarritoExists,
-carritoController.getCarrito);
+expressAsyncHandler(carritoController.getCartByUser));
 
 router.get('/:id',
-checkAdmin,checkUsuario, 
-carritoController.checkCarritoExists,
-carritoController.getCarrito);
+checkAdmin,carritoController.checkCarritoExists,
+expressAsyncHandler(carritoController.getCartByUser));
 
 router.post('/agregar',
-checkAdmin,checkUsuario,
-carritoController.validacion, carritoController.addCarrito);
+checkAdmin,
+carritoController.validacion, 
+expressAsyncHandler(carritoController.addProduct));
 
 router.delete('/borrar/:id',
-checkAdmin,checkUsuario, 
+checkAdmin, 
 carritoController.checkCarritoExists,
-carritoController.deleteCarrito);
+expressAsyncHandler(carritoController.deleteProduct));
 
 export default router;
