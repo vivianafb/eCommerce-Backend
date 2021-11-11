@@ -11,14 +11,14 @@ export const checkAdmin = (req,res,next) => {
         })
     }
 }
-export const checkUsuario = (req,res,next) => {
-    if(user)
-    next();
-    else{
-        res.status(401).json({
-            error: -1,
-            descripcion: `Ruta: ${req.url}`,
-            metodo: `${req.method} no autorizada`
-        })
-    }
-}
+// export const checkUsuario = (req,res,next) => {
+//     if(user)
+//     next();
+//     else{
+//         res.status(401).json({
+//             error: -1,
+//             descripcion: `Ruta: ${req.url}`,
+//             metodo: `${req.method} no autorizada`
+//         })
+//     }
+// }

@@ -16,3 +16,78 @@
 [33mwarn[39m |  Nov-09-2021 19:34:43 | id not found
 [33mwarn[39m |  Nov-09-2021 19:36:07 | id not found
 [31merror[39m |  Nov-09-2021 19:37:54 | HUBO UN ERROR Unexpected string in JSON at position 209
+[31merror[39m |  Nov-10-2021 15:25:24 | _gmail.GmailService is not a constructor
+[31merror[39m |  Nov-10-2021 16:11:14 | HUBO UN ERROR Unexpected string in JSON at position 49
+[33mwarn[39m |  Nov-10-2021 18:31:44 | Worker 24028 died at Wed Nov 10 2021 18:31:44 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-10-2021 18:33:11 | Product not found
+[33mwarn[39m |  Nov-10-2021 18:33:43 | Product not found
+[33mwarn[39m |  Nov-10-2021 18:33:46 | Product not found
+[33mwarn[39m |  Nov-10-2021 19:29:14 | Login Fail for username sole: User does not exist
+[33mwarn[39m |  Nov-10-2021 19:30:48 | User already exists
+[33mwarn[39m |  Nov-10-2021 19:31:28 | User already exists
+[33mwarn[39m |  Nov-10-2021 19:40:50 | User already exists
+[33mwarn[39m |  Nov-10-2021 19:40:55 | Login Fail for username aaa: User does not exist
+[33mwarn[39m |  Nov-10-2021 19:41:01 | Login Fail for username aaa: User does not exist
+[33mwarn[39m |  Nov-10-2021 19:41:07 | User already exists
+[33mwarn[39m |  Nov-10-2021 19:41:09 | Login Fail for username aaa: User does not exist
+[33mwarn[39m |  Nov-10-2021 19:41:17 | Login Fail for username aaa: User does not exist
+[33mwarn[39m |  Nov-11-2021 11:58:50 | User already exists
+[33mwarn[39m |  Nov-11-2021 11:58:52 | User already exists
+[33mwarn[39m |  Nov-11-2021 11:58:55 | User already exists
+[31merror[39m |  Nov-11-2021 12:00:57 | Cannot destructure property 'username' of 'req.body' as it is undefined.
+[33mwarn[39m |  Nov-11-2021 12:04:25 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:08:28 | Login Fail for username sole: Password is not valid
+[33mwarn[39m |  Nov-11-2021 12:09:01 | Login Fail for username sle: User does not exist
+[33mwarn[39m |  Nov-11-2021 12:09:16 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:15:33 | Invalid body fields
+[33mwarn[39m |  Nov-11-2021 12:15:39 | Invalid body fields
+[33mwarn[39m |  Nov-11-2021 12:16:30 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:16:45 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:16:51 | Invalid body fields
+[33mwarn[39m |  Nov-11-2021 12:17:26 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:17:28 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:17:37 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:17:38 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:17:40 | Informacion invalida
+[33mwarn[39m |  Nov-11-2021 12:17:49 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:17:53 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:18:16 | Informacion invalida
+[33mwarn[39m |  Nov-11-2021 12:18:44 | Informacion invalida
+[33mwarn[39m |  Nov-11-2021 12:18:46 | Informacion invalida
+[33mwarn[39m |  Nov-11-2021 12:18:47 | Informacion invalida
+[33mwarn[39m |  Nov-11-2021 12:18:48 | Informacion invalida
+[33mwarn[39m |  Nov-11-2021 12:19:14 | Informacion invalida
+[33mwarn[39m |  Nov-11-2021 12:19:16 | Informacion invalida
+[33mwarn[39m |  Nov-11-2021 12:19:23 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:23:44 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:23:53 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:24:01 | Signup Fail for username ole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:24:06 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:24:22 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:24:40 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:24:42 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:24:53 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:29:38 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:29:46 | Signup Fail for username ole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:30:15 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:30:34 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:31:20 | Signup Fail for username sole: Username or email already exists
+[33mwarn[39m |  Nov-11-2021 12:31:55 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:33:55 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:35:06 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:35:22 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:51:46 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:51:48 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:54:57 | User already exists
+[33mwarn[39m |  Nov-11-2021 12:59:08 | User already exists
+[33mwarn[39m |  Nov-11-2021 13:06:04 | User already exists
+[33mwarn[39m |  Nov-11-2021 13:06:25 | User already exists
+[33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 45576 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 49772 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 32716 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 48740 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 46200 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 40104 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 47984 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 47524 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
+[31merror[39m |  Nov-11-2021 13:07:57 | _gmail.GmailService is not a constructor

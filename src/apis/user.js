@@ -33,6 +33,7 @@ class User {
   
     async deleteUser(id) {
       await this.users.delete(id);
+      await carritoAPI.carrito.deleteCarrito()
       //Borrar carrito tambien
     }
   
@@ -42,8 +43,8 @@ class User {
       };
   
       if (username) query.$or.push({ username });
-  
       if (email) query.$or.push({ email });
+
   
       return this.users.query(query);
     }

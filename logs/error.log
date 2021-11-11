@@ -5,3 +5,7 @@
 [31merror[39m |  Nov-09-2021 15:22:31 | HUBO UN ERROR Failed to deserialize user out of session
 [31merror[39m |  Nov-09-2021 15:46:05 | HUBO UN ERROR Cannot read property 'id' of undefined
 [31merror[39m |  Nov-09-2021 19:37:54 | HUBO UN ERROR Unexpected string in JSON at position 209
+[31merror[39m |  Nov-10-2021 15:25:24 | _gmail.GmailService is not a constructor
+[31merror[39m |  Nov-10-2021 16:11:14 | HUBO UN ERROR Unexpected string in JSON at position 49
+[31merror[39m |  Nov-11-2021 12:00:57 | Cannot destructure property 'username' of 'req.body' as it is undefined.
+[31merror[39m |  Nov-11-2021 13:07:57 | _gmail.GmailService is not a constructor

@@ -1,3 +1,4 @@
+import { carritoAPI } from '../apis/carrito';
 import { UserAPI } from '../apis/user';
 
 class User {
@@ -34,17 +35,17 @@ class User {
       const id = req.params.id;
 
       const user = UserAPI.getUsers(id);
+      const cart = carritoAPI.getCarrito(id)
       if(!user){
           return res.status(400).json({
               msg: "Usuario no encontrado"
           })
       }
 
-      const userEliminado = await UserAPI.deleteUser(id);
-
+      // await UserAPI.deleteUser(id);
+      //  console.log(cart)
       res.json({
-          msg: "Usuario eliminado",
-          user: userEliminado
+          msg: cart
       })
     }
   }

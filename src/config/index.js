@@ -13,6 +13,12 @@ const venv = {
   SESSION_COOKIE_TIMEOUT_MIN: parseInt(
     process.env.SESSION_COOKIE_TIMEOUT_MIN || '10'
   ),
+  GMAIL_EMAIL: process.env.GMAIL_EMAIL || 'email@gmail.com',
+  GMAIL_PASSWORD: process.env.GMAIL_PASSWORD || 'password',
+  GMAIL_NAME: process.env.GMAIL_NAME || 'GMAIL owner name',
+  TWILIO_ACCOUNT_ID: process.env.TWILIO_ACCOUNT_ID || 'twilioId',
+  TWILIO_TOKEN: process.env.TWILIO_TOKEN || 'twilioToken',
+  TWILIO_CELLPHONE: process.env.TWILIO_CELLPHONE || '+123456789',
 };
 
 export default venv;

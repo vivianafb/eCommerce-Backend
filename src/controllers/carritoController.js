@@ -1,3 +1,4 @@
+import { logger } from 'handlebars';
 import {carritoAPI} from '../apis/carrito';
 import {productsAPI} from '../apis/productos'
 let carrito =[
@@ -45,7 +46,7 @@ class Carrito{
     async checkCarritoExists(req, res , next) {
         const id = req.params.id;
         const carrito = await carritoAPI.getCarrito(id);
-    
+         console.log(id)
         if (!carrito) {
           return res.status(404).json({
             msg: 'carrito not found',
@@ -128,5 +129,21 @@ class Carrito{
         );
         res.json({ msg: 'Product deleted', cart: updatedCart });
       }
+
+      async comprarProduct(req, res) {
+         const user = req.user;
+         const cart = await carritoAPI.getCarrito(user._id);
+         const productosCarrito = cart.productos;
+        const updatedCart = await carritoAPI.deleteAll(cart._id,productosCarrito);
+        res.json({ msg: 'Compra exitosa', cart: productosCarrito });
+    }
+
+    async deleteCarrito(req,res){
+      const user = req.user;
+      const cart = await carritoAPI.getCarrito(user._id);
+      const updatedCart = await carritoAPI.deleteCarrito(cart._id);
+    
+      res.json({ msg: 'Carrito eliminado ya que el user se elimino',data:updatedCart });
+    }
 }
 export const carritoController = new Carrito();

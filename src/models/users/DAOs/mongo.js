@@ -42,7 +42,7 @@ export class UsuarioAtlasDAO  {
             const document = await this.user.findById(id);
             if (document) output.push(document);
           } else {
-            output = await this.user.find();
+            output = await this.users.find();
           }
           return output;
         } catch (err) {

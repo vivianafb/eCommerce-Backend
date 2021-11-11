@@ -14,9 +14,13 @@ checkAdmin,carritoController.checkCarritoExists,
 expressAsyncHandler(carritoController.getCartByUser));
 
 router.post('/agregar',
-checkAdmin,
-carritoController.validacion, 
+checkAdmin, 
 expressAsyncHandler(carritoController.addProduct));
+
+router.post('/comprar',
+checkAdmin, 
+expressAsyncHandler(carritoController.comprarProduct));
+
 
 router.delete('/borrar/:id',
 checkAdmin, 

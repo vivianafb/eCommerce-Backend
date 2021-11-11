@@ -26,7 +26,7 @@ export class CarritoAtlasDAO{
      else
        this.srv = Config.MONGO_ATLAS_URL;
      mongoose.connect(this.srv,{useNewUrlParser: true},);
-     this.carrito = mongoose.model('carrito', carritoSchema);
+     this.carrito = mongoose.model('carritos', carritoSchema);
    }
    async get(id) {
     const result = await this.carrito.findOne({id});
@@ -66,7 +66,7 @@ export class CarritoAtlasDAO{
     );
 
     if (index < 0) cart.productos.push(product);
-    else cart.productos[index].amount += productos.amount;
+    else cart.productos[index].amount += product.amount;
 
     await cart.save();
 
@@ -75,13 +75,13 @@ export class CarritoAtlasDAO{
  
   async deleteProduct(carritoID, product) {
     const cart = await this.carrito.findById(carritoID);
-    if (!cart) throw new Error('Cart not found');
+    if (!cart) logger.error('Cart not found');
 
     const index = cart.productos.findIndex(
       (aProduct) => aProduct._id == product._id
     );
 
-    if (index < 0) throw new Error('Product not found');
+    if (index < 0) logger.warn('Product not found');
 
     if (cart.productos[index].amount <= product.amount)
       cart.productos.splice(index, 1);
@@ -89,5 +89,22 @@ export class CarritoAtlasDAO{
 
     await cart.save();
     return cart;
+  }
+  
+
+  async deleteProductCarrito(cartId,productosCarrito){
+    const cart = await this.carrito.findById(cartId);
+    if (!cart) logger.error('Cart not found');
+
+   if(cart.productos){
+     cart.productos = []
+   }
+   await cart.save();
+    return cart;
+  }
+
+  async deleteCarrito(cartId){
+    await this.carrito.findByIdAndDelete(cartId);
+
   }
 }

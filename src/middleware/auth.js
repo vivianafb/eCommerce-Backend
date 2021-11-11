@@ -2,7 +2,8 @@ import passport from 'passport';
 import passportLocal from 'passport-local';
 import {UserAPI} from '../apis/user'
 import { logger} from'../utils/logs';
-
+import { carritoAPI } from '../apis/carrito';
+import { Gmail, GmailService } from '../services/gmail';
 const admin = true;
 //Validar que el usuario es admin
 export const checkAdmin = (req,res,next) => {
@@ -25,6 +26,7 @@ const strategyOptions = {
 };
 
 const loginFunc = async (req, username, password, done) => {
+  
   const user = await UserAPI.query(username);
 
   if (!user) {
@@ -37,8 +39,11 @@ const loginFunc = async (req, username, password, done) => {
     return done(null, false, { message: 'Password is not valid.' });
   }
   logger.info(`User ${username} logged in at ${new Date()}`);
+  
   return done(null, user);
 };
+
+52
 
 const signUpFunc = async (req, username, password, done) => {
   try {
@@ -54,8 +59,23 @@ const signUpFunc = async (req, username, password, done) => {
       logger.warn('User already exists');
       return done(null, false);
     } else {
-     
+
+        const gmailService = new Gmail('gmail');
+        const content= `
+        Nombre: ${username},
+        Email:${email},
+        FirstName:${firstName},
+        LastName:${lastName},
+        Adress:${adress},
+        Age:${age}
+        Phone:${phone},
+        Foto:${photo} `;
+
+        gmailService.sendEmail(email, 'Nuevo Registro ',content);
+      
       const newUser = await UserAPI.addUser(req.body);
+
+      logger.info('Usuario registrado');
       return done(null, newUser);
     }
   } catch (error) {

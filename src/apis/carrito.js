@@ -36,10 +36,14 @@ class carAPI {
       _id: productId,
       nombre: product.nombre,
       precio: product.precio,
+      descripcion: product.descripcion,
+      codigo: product.codigo,
+      foto: product.foto,
+      stock: product.stock,
       amount,
     };
 
-    const updatedCart = await this.carts.addProduct(cartId, addProduct);
+    const updatedCart = await this.carrito.addProduct(cartId, addProduct);
     return updatedCart;
   }
 
@@ -50,11 +54,28 @@ class carAPI {
       _id: productId,
       nombre: product.nombre,
       precio: product.precio,
+      descripcion: product.descripcion,
+      codigo: product.codigo,
+      foto: product.foto,
+      stock: product.stock,
       amount,
     };
 
-    const updatedCart = await this.carts.deleteProduct(cartId, deleteProduct);
+    const updatedCart = await this.carrito.deleteProduct(cartId, deleteProduct);
     return updatedCart;
+  }
+
+  async deleteAll(cartId,productosCarrito) {
+    const updatedCart = await this.carrito.deleteProductCarrito(cartId,productosCarrito);
+    return updatedCart;
+
+  }
+
+  async deleteCarrito(cartId) {
+        console.log(cartId)
+
+    await this.carrito.deleteCarrito(cartId);
+
   }
 }
 
