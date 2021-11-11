@@ -6,7 +6,6 @@ const router = Router();
 
 router.get('/',
 checkAdmin, 
-carritoController.checkCarritoExists,
 expressAsyncHandler(carritoController.getCartByUser));
 
 router.get('/:id',

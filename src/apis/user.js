@@ -44,9 +44,10 @@ class User {
   
       if (username) query.$or.push({ username });
       if (email) query.$or.push({ email });
-
-  
-      return this.users.query(query);
+      
+      const user = await this.users.query(query)
+      // console.log(user);
+      return user;
     }
   
     async ValidatePassword(username, password) {

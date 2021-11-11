@@ -25,12 +25,12 @@ export class CarritoAtlasDAO{
        this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
      else
        this.srv = Config.MONGO_ATLAS_URL;
-     mongoose.connect(this.srv,{useNewUrlParser: true},);
+     mongoose.connect(this.srv);
      this.carrito = mongoose.model('carritos', carritoSchema);
    }
-   async get(id) {
-    const result = await this.carrito.findOne({id});
-
+   async get(userId) {
+    const result = await this.carrito.findOne({userId});
+    // console.log(result)
     if (!result) logger.warn('id not found');
 
     return result;

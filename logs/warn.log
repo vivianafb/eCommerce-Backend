@@ -91,3 +91,67 @@
 [33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 47984 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
 [33mwarn[39m |  Nov-11-2021 13:07:20 | Worker 47524 died at Thu Nov 11 2021 13:07:20 GMT-0300 (hora de verano de Chile)
 [31merror[39m |  Nov-11-2021 13:07:57 | _gmail.GmailService is not a constructor
+[33mwarn[39m |  Nov-11-2021 16:52:29 | id not found
+[33mwarn[39m |  Nov-11-2021 16:52:45 | id not found
+[33mwarn[39m |  Nov-11-2021 16:52:50 | id not found
+[33mwarn[39m |  Nov-11-2021 16:52:58 | id not found
+[33mwarn[39m |  Nov-11-2021 16:54:19 | id not found
+[33mwarn[39m |  Nov-11-2021 16:55:08 | id not found
+[33mwarn[39m |  Nov-11-2021 16:56:49 | id not found
+[33mwarn[39m |  Nov-11-2021 16:57:00 | id not found
+[33mwarn[39m |  Nov-11-2021 16:57:08 | id not found
+[33mwarn[39m |  Nov-11-2021 16:58:02 | id not found
+[33mwarn[39m |  Nov-11-2021 16:58:35 | id not found
+[33mwarn[39m |  Nov-11-2021 16:59:21 | id not found
+[33mwarn[39m |  Nov-11-2021 16:59:52 | id not found
+[33mwarn[39m |  Nov-11-2021 17:00:34 | id not found
+[33mwarn[39m |  Nov-11-2021 17:02:43 | id not found
+[33mwarn[39m |  Nov-11-2021 17:04:06 | id not found
+[33mwarn[39m |  Nov-11-2021 17:04:42 | id not found
+[33mwarn[39m |  Nov-11-2021 17:05:29 | id not found
+[33mwarn[39m |  Nov-11-2021 17:06:28 | id not found
+[33mwarn[39m |  Nov-11-2021 17:06:30 | id not found
+[33mwarn[39m |  Nov-11-2021 17:07:07 | id not found
+[33mwarn[39m |  Nov-11-2021 17:09:37 | id not found
+[33mwarn[39m |  Nov-11-2021 17:10:04 | id not found
+[33mwarn[39m |  Nov-11-2021 17:10:20 | id not found
+[33mwarn[39m |  Nov-11-2021 17:11:34 | Login Fail for username VIVIANA: Password is not valid
+[33mwarn[39m |  Nov-11-2021 17:11:49 | id not found
+[33mwarn[39m |  Nov-11-2021 17:12:27 | id not found
+[33mwarn[39m |  Nov-11-2021 17:13:42 | id not found
+[33mwarn[39m |  Nov-11-2021 17:18:50 | id not found
+[33mwarn[39m |  Nov-11-2021 17:59:27 | id not found
+[33mwarn[39m |  Nov-11-2021 17:59:38 | id not found
+[33mwarn[39m |  Nov-11-2021 18:00:10 | id not found
+[33mwarn[39m |  Nov-11-2021 18:01:02 | id not found
+[33mwarn[39m |  Nov-11-2021 18:01:27 | id not found
+[33mwarn[39m |  Nov-11-2021 18:02:01 | id not found
+[33mwarn[39m |  Nov-11-2021 18:02:21 | id not found
+[33mwarn[39m |  Nov-11-2021 18:33:51 | id not found
+[33mwarn[39m |  Nov-11-2021 18:36:59 | Worker 19112 died at Thu Nov 11 2021 18:36:59 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 18:36:59 | Worker 9928 died at Thu Nov 11 2021 18:36:59 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 18:36:59 | Worker 19836 died at Thu Nov 11 2021 18:36:59 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 18:37:00 | Worker 12920 died at Thu Nov 11 2021 18:37:00 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 18:37:00 | Worker 14872 died at Thu Nov 11 2021 18:37:00 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 18:37:00 | Worker 18392 died at Thu Nov 11 2021 18:37:00 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 18:37:00 | Worker 10348 died at Thu Nov 11 2021 18:37:00 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:14:53 | Worker 16248 died at Thu Nov 11 2021 19:14:53 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:14:53 | Worker 13448 died at Thu Nov 11 2021 19:14:53 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:14:54 | Worker 3932 died at Thu Nov 11 2021 19:14:54 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:14:54 | Worker 20244 died at Thu Nov 11 2021 19:14:54 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:14:54 | Worker 15852 died at Thu Nov 11 2021 19:14:54 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:14:54 | Worker 16916 died at Thu Nov 11 2021 19:14:54 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:14:54 | Worker 2244 died at Thu Nov 11 2021 19:14:54 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:14:54 | Worker 16364 died at Thu Nov 11 2021 19:14:54 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:20:14 | Worker 3384 died at Thu Nov 11 2021 19:20:14 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:22:30 | Worker 21512 died at Thu Nov 11 2021 19:22:30 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:22:49 | Worker 2280 died at Thu Nov 11 2021 19:22:49 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:24:14 | Worker 10064 died at Thu Nov 11 2021 19:24:14 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:24:50 | Worker 22436 died at Thu Nov 11 2021 19:24:50 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:25:49 | Worker 15072 died at Thu Nov 11 2021 19:25:49 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:26:10 | Worker 22108 died at Thu Nov 11 2021 19:26:10 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:28:27 | Worker 14916 died at Thu Nov 11 2021 19:28:27 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:49:47 | Worker 10628 died at Thu Nov 11 2021 19:49:47 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:49:47 | Worker 21044 died at Thu Nov 11 2021 19:49:47 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:49:47 | Worker 20568 died at Thu Nov 11 2021 19:49:47 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-11-2021 19:49:47 | Worker 16244 died at Thu Nov 11 2021 19:49:47 GMT-0300 (hora de verano de Chile)

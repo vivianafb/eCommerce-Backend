@@ -1,6 +1,8 @@
-import { logger } from 'handlebars';
+import Config from '../config/index';
 import {carritoAPI} from '../apis/carrito';
-import {productsAPI} from '../apis/productos'
+import {productsAPI} from '../apis/productos';
+
+import { Gmail } from '../services/gmail';
 let carrito =[
     {
         id:1, 
@@ -46,7 +48,7 @@ class Carrito{
     async checkCarritoExists(req, res , next) {
         const id = req.params.id;
         const carrito = await carritoAPI.getCarrito(id);
-         console.log(id)
+        //  console.log(id)
         if (!carrito) {
           return res.status(404).json({
             msg: 'carrito not found',
@@ -54,35 +56,17 @@ class Carrito{
         }
         next();
       }
-      
-      async getCarrito(req, res){
-        const id = req.params.id;
-        if (id) {
-            const result = await carritoAPI.getCarrito(id);
-          
-            if (!result)
-                return res.status(404).json({
-                data: 'Objeto no encontrado',
-                });
-
-            return res.json({
-                data: result
-            });
-        }
-        res.json({
-            data: await carritoAPI.getCarrito(),
-            });
-    }
+    
 
     async getCartByUser(req, res) {
         const user = req.user;
-        const cart = await carritoAPI.getCarrito(user._id);
+        const cart = await carritoAPI.getCarrito(user[0]._id);
         res.json(cart);
     }
 
     async addProduct(req, res) {
         const user = req.user;
-        const cart = await carritoAPI.getCarrito(user._id);
+        const cart = await carritoAPI.getCarrito(user[0]._id);
     
         const { productId, productAmount } = req.body;
     
@@ -131,11 +115,29 @@ class Carrito{
       }
 
       async comprarProduct(req, res) {
-         const user = req.user;
-         const cart = await carritoAPI.getCarrito(user._id);
-         const productosCarrito = cart.productos;
-        const updatedCart = await carritoAPI.deleteAll(cart._id,productosCarrito);
-        res.json({ msg: 'Compra exitosa', cart: productosCarrito });
+        const user = req.user;
+        const cart = await carritoAPI.getCarrito(user[0]._id);
+        const productosCarrito = cart.productos;
+
+        let content = '';
+        for(let i = 0; i < productosCarrito.length; i++ ){
+           const productId =cart.productos[i]._id;
+
+           const productAmount =cart.productos[i].amount;
+           const dato = await productsAPI.getProducts(productId)
+          content += `<p>${dato}</p>`;
+
+        }
+
+        const gmailService = new Gmail('gmail');
+        gmailService.sendEmail(Config.GMAIL_EMAIL, 
+          `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}`,
+        content);
+        
+        
+
+        // const updatedCart = await carritoAPI.deleteAll(cart._id,productosCarrito);
+        res.json({ msg: 'Compra exitosa' });
     }
 
     async deleteCarrito(req,res){
