@@ -1,8 +1,8 @@
 import Config from '../config/index';
 import {carritoAPI} from '../apis/carrito';
 import {productsAPI} from '../apis/productos';
-
 import { Gmail } from '../services/gmail';
+import {SmsService} from '../services/twilio'
 let carrito =[
     {
         id:1, 
@@ -120,12 +120,14 @@ class Carrito{
         const productosCarrito = cart.productos;
 
         let content = '';
+        let contentWhatsApp= '';
         for(let i = 0; i < productosCarrito.length; i++ ){
            const productId =cart.productos[i]._id;
 
            const productAmount =cart.productos[i].amount;
            const dato = await productsAPI.getProducts(productId)
           content += `<p>${dato}</p>`;
+          contentWhatsApp += `${dato}`;
 
         }
 
@@ -134,8 +136,13 @@ class Carrito{
           `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}`,
         content);
         
-        
-
+        SmsService.sendMessage(
+          Config.TWILIO_WHATSAPP,
+          `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}
+          Productos: ${contentWhatsApp}`,
+          'whatsapp',
+          
+        );
         // const updatedCart = await carritoAPI.deleteAll(cart._id,productosCarrito);
         res.json({ msg: 'Compra exitosa' });
     }

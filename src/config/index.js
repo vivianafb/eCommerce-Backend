@@ -19,6 +19,7 @@ const venv = {
   TWILIO_ACCOUNT_ID: process.env.TWILIO_ACCOUNT_ID || 'twilioId',
   TWILIO_TOKEN: process.env.TWILIO_TOKEN || 'twilioToken',
   TWILIO_CELLPHONE: process.env.TWILIO_CELLPHONE || '+123456789',
+  TWILIO_WHATSAPP:  process.env.TWILIO_WHATSAPP ||'+123456789'
 };
 
 export default venv;
