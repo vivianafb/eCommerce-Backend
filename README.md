@@ -5,11 +5,13 @@ Proyecto Final del curso "Programacion Backend" en Coderhouse
 
 Rutas:
 
-## Registro: http://localhost:8080/api/auth/signup
+## Usuario: 
 
-## Inicio De Sesion: http://localhost:8080/api/auth/login
+- http://localhost:8080/api/auth/signup
 
-##  Sesion: http://localhost:8080/api/auth/logout
+- http://localhost:8080/api/auth/login
+
+- http://localhost:8080/api/auth/logout
 
 Body Postman: {
     "username":"",
@@ -23,11 +25,13 @@ Body Postman: {
     "photo":""
 }
 
-## Productos: http://localhost:8080/api/productos/
+## Productos: 
 
-## Agregar Productos: http://localhost:8080/api/productos/agregar/:id
+- http://localhost:8080/api/productos/
 
-## Actualizar Productos: http://localhost:8080/api/productos/actualizar/:id
+- http://localhost:8080/api/productos/agregar/:id 
+
+- http://localhost:8080/api/productos/actualizar/:id
 
 Body Postman: {
     "id":, 
@@ -39,11 +43,13 @@ Body Postman: {
     "stock":
    }
 
-## Carrito Personal: http://localhost:8080/api/carrito/
+## Carrito: 
 
-## Carrito Agregar Productos: http://localhost:8080/api/carrito/agregar
+- http://localhost:8080/api/carrito/
 
-## Comprar: http://localhost:8080/api/carrito/comprar
+- http://localhost:8080/api/carrito/agregar
+
+- http://localhost:8080/api/carrito/comprar
 
 
 Body Postman: {
