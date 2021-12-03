@@ -7,7 +7,7 @@ import { logger } from './utils/logs';
 
 const clusterMode = Argumentos;
 const puerto = process.env.PORT;
-// connectToDB();
+
 
 
 const numCPUs = os.cpus().length;

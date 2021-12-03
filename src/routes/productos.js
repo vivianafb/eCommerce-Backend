@@ -2,33 +2,35 @@ import  {Router} from 'express';
 import { productoController } from '../controllers/productoController';
 import { checkAdmin } from '../middleware/auth';
 import expressAsyncHandler from 'express-async-handler';
+import {validateAddProducto} from '../validators/producto' 
 const router = Router();
 
 router.get('/', 
-productoController.checkProductExists,
 expressAsyncHandler(productoController.getProducto)
 );
 
 router.get('/:id',
-productoController.checkProductExists,
+expressAsyncHandler(productoController.getProducto)
+);
+
+router.get('/:categoria', 
 expressAsyncHandler(productoController.getProducto)
 );
 
 router.post('/agregar',
 checkAdmin,
-productoController.checkProductExists,
+validateAddProducto,
 expressAsyncHandler(productoController.addProducto)
 );
 
 router.put('/actualizar/:id', 
 checkAdmin,
-productoController.checkProductExists,
+validateAddProducto,
 expressAsyncHandler(productoController.updateProducto)
 );
 
 router.delete('/borrar/:id',
 checkAdmin,
-productoController.checkProductExists,
 expressAsyncHandler(productoController.deleteProducto)
 );
 

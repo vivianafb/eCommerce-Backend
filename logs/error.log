@@ -9,3 +9,4 @@
 [31merror[39m |  Nov-10-2021 16:11:14 | HUBO UN ERROR Unexpected string in JSON at position 49
 [31merror[39m |  Nov-11-2021 12:00:57 | Cannot destructure property 'username' of 'req.body' as it is undefined.
 [31merror[39m |  Nov-11-2021 13:07:57 | _gmail.GmailService is not a constructor
+[31merror[39m |  Dec-02-2021 19:25:58 | HUBO UN ERROR Unexpected token ' in JSON at position 40

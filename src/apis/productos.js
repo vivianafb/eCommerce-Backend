@@ -22,7 +22,6 @@ class prodAPI {
 
   async addProduct(productData) {
     const newProduct = await this.productos.add(productData);
-    logger.info(newProduct)
     return newProduct;
   }
 

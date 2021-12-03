@@ -1,14 +1,30 @@
 import mongoose from 'mongoose';
 import Config from '../../../config/index'
+import { logger } from '../../../utils/logs';
 
 const productsSchema = new mongoose.Schema({
   nombre: {type: String, required: true},
   precio: {type: Number, required:true},
-  descripcion:{type: String, required:true, unique: true},
+  descripcion:{type: String, required:true},
   codigo: {type: Number, required:true},
   foto: {type: String, required:true},
-  stock: {type: Number, required:true}
+  stock: {type: Number, required:true},
+  categoria: {type:String, required:true}
 });
+
+productsSchema.pre('save', function (next) {
+  var data = this;
+  var pro = mongoose.model('productos')
+  pro.find({nombre: data.nombre,codigo: data.codigo}, function (err, docs) {
+      if (!docs.length){
+          next();
+      }else{                
+          logger.warn('El Producto existe ',data.nombre, data.codigo);
+          next(new Error(`El producto ya existe!  Nombre producto: ${data.nombre}`));
+      }
+  });
+}) ;
+
 export class ProductosAtlasDAO  {
    srv;
    productos;
@@ -24,14 +40,14 @@ export class ProductosAtlasDAO  {
   async get(id) {
     let output = [];
     try {
-      if (id) {
-        const document = await this.productos.findById(id);
-        console.log(document);
-        if (document) output.push(document);
-      } else {
-        output = await this.productos.find();
-      }
-      return output;
+        if (id) {
+          const document = await this.productos.findById(id);
+          if (document) output.push(document);
+        } else {
+          output = await this.productos.find();
+        }
+        return output;
+
     } catch (err) {
       return output;
     }
@@ -60,6 +76,8 @@ export class ProductosAtlasDAO  {
     if (options.nombre) query.nombre = options.nombre;
 
     if (options.precio) query.precio = options.precio;
+
+    if (options.categoria) query.categoria = options.categoria;
  
     return this.productos.find(query);
   }

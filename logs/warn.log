@@ -155,3 +155,34 @@
 [33mwarn[39m |  Nov-11-2021 19:49:47 | Worker 21044 died at Thu Nov 11 2021 19:49:47 GMT-0300 (hora de verano de Chile)
 [33mwarn[39m |  Nov-11-2021 19:49:47 | Worker 20568 died at Thu Nov 11 2021 19:49:47 GMT-0300 (hora de verano de Chile)
 [33mwarn[39m |  Nov-11-2021 19:49:47 | Worker 16244 died at Thu Nov 11 2021 19:49:47 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:03:47 | Worker 17664 died at Mon Nov 29 2021 19:03:47 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:03:47 | Worker 15660 died at Mon Nov 29 2021 19:03:47 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:03:47 | Worker 15808 died at Mon Nov 29 2021 19:03:47 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:03:47 | Worker 21068 died at Mon Nov 29 2021 19:03:47 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:17 | Worker 17720 died at Mon Nov 29 2021 19:28:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:17 | Worker 18516 died at Mon Nov 29 2021 19:28:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:17 | Worker 3096 died at Mon Nov 29 2021 19:28:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:17 | Worker 1996 died at Mon Nov 29 2021 19:28:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:17 | Worker 11244 died at Mon Nov 29 2021 19:28:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:17 | Worker 8080 died at Mon Nov 29 2021 19:28:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:17 | Worker 19356 died at Mon Nov 29 2021 19:28:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:17 | Worker 17044 died at Mon Nov 29 2021 19:28:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:20 | Worker 16224 died at Mon Nov 29 2021 19:28:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:20 | Worker 19292 died at Mon Nov 29 2021 19:28:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:20 | Worker 10532 died at Mon Nov 29 2021 19:28:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:20 | Worker 18692 died at Mon Nov 29 2021 19:28:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:20 | Worker 19856 died at Mon Nov 29 2021 19:28:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:20 | Worker 5552 died at Mon Nov 29 2021 19:28:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:20 | Worker 4968 died at Mon Nov 29 2021 19:28:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 19:28:20 | Worker 20492 died at Mon Nov 29 2021 19:28:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Nov-29-2021 21:51:09 | Worker 19008 died at Mon Nov 29 2021 21:51:09 GMT-0300 (hora de verano de Chile)
+[31merror[39m |  Dec-02-2021 19:25:58 | HUBO UN ERROR Unexpected token ' in JSON at position 40
+[33mwarn[39m |  Dec-02-2021 19:47:28 | YA EXISTE
+[33mwarn[39m |  Dec-02-2021 19:49:36 | YA EXISTE
+[33mwarn[39m |  Dec-02-2021 19:49:43 | YA EXISTE
+[33mwarn[39m |  Dec-02-2021 19:50:51 | YA EXISTE
+[33mwarn[39m |  Dec-02-2021 20:59:01 | E11000 duplicate key error collection: miprimerDB.productos index: descripcion_1 dup key: { descripcion: "asax" }
+[33mwarn[39m |  Dec-02-2021 21:30:18 | El Producto existe 
+[33mwarn[39m |  Dec-02-2021 21:30:56 | El Producto existe 
+[33mwarn[39m |  Dec-02-2021 21:30:57 | El Producto existe 
+[33mwarn[39m |  Dec-02-2021 21:51:26 | Worker 27380 died at Thu Dec 02 2021 21:51:26 GMT-0300 (hora de verano de Chile)
