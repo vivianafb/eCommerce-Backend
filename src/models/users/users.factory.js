@@ -14,11 +14,11 @@ export class userFactoryDAO {
   static get(tipo) {
     switch (tipo) {
       case TipoPersistencia.MongoAtlas:
-        console.log('RETORNANDO INSTANCIA CLASE MONGO ATLAS');
+        logger.info('RETORNANDO INSTANCIA CLASE MONGO ATLAS');
         return new UsuarioAtlasDAO();
 
       case TipoPersistencia.LocalMongo:
-        console.log('RETORNANDO INSTANCIA CLASE MONGO LOCAL');
+        logger.info('RETORNANDO INSTANCIA CLASE MONGO LOCAL');
         return new UsuarioAtlasDAO(true);
         
     default:

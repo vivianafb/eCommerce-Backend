@@ -3,6 +3,7 @@ import {carritoAPI} from '../apis/carrito';
 import {productsAPI} from '../apis/productos';
 import { Gmail } from '../services/gmail';
 import {SmsService} from '../services/twilio'
+import { logger } from '../utils/logs';
 let carrito =[
     {
         id:1, 
@@ -46,22 +47,33 @@ class Carrito{
     }
 
     async checkCarritoExists(req, res , next) {
-        const id = req.params.id;
+      try{
+        const {id}= req.params;
         const carrito = await carritoAPI.getCarrito(id);
-        //  console.log(id)
+        // console.log(carrito.userId)
         if (!carrito) {
           return res.status(404).json({
-            msg: 'carrito not found',
+            msg: `Carrito no encontrado, el id: ${id} no existe`,
           });
+        }else{
+          return res.json({
+            data: carrito
+          }) 
         }
-        next();
+        
+      }catch(err){
+        logger.warn(err.message)
+        return res.status(404).json({
+          msg: err
+        })
       }
+    }
     
 
     async getCartByUser(req, res) {
         const user = req.user;
         const cart = await carritoAPI.getCarrito(user[0]._id);
-        res.json(cart);
+        return res.json(cart); 
     }
 
     async addProduct(req, res) {
@@ -71,22 +83,36 @@ class Carrito{
         const { productId, productAmount } = req.body;
     
         if (!productId || !productAmount)
-          return res.status(400).json({ msg: 'Invalid body parameters' });
+          return res.status(400).json({ msg: 'Parametros del body invalidos' });
     
         const product = await productsAPI.getProducts(productId);
     
         if (!product.length)
-          return res.status(400).json({ msg: 'product not found' });
+          return res.status(400).json({ msg: `Producto no encontrado, id: ${productId} no existe`});
     
         if (parseInt(productAmount) < 0)
-          return res.status(400).json({ msg: 'Invalid amount' });
-    
+          return res.status(400).json({ msg: 'Cantidad de productos invalida' });
+
+        if(parseInt(productAmount) > product[0].stock)
+        return res.status(400).json({ msg: `La cantidad de producto supera el stock, el stock actual es: ${product[0].stock}` });
+
+        if(product[0].stock === 0)
+        return res.status(400).json({ msg: `No queda stock, el stock actual es: ${product[0].stock}` });
+
         const updatedCart = await carritoAPI.addProduct(
           cart._id,
           productId,
           parseInt(productAmount)
         );
-        res.json({ msg: 'Product added', cart: updatedCart });
+        let totalstock = product[0].stock - productAmount
+        console.log(totalstock)
+        let stock =product[0].stock
+        let updatedProduct = await productsAPI.updateProduct(
+          productId,
+          {stock:totalstock} 
+        );
+        console.log(updatedProduct)
+        res.json({ msg: 'Producto agregado con exito', cart: updatedCart });
       }
     
       async deleteProduct(req, res) {

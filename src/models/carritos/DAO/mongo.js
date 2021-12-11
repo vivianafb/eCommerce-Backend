@@ -1,7 +1,7 @@
+import { string } from 'joi';
 import mongoose, {Schema} from 'mongoose';
 import Config from '../../../config/index'
 import { logger } from '../../../utils/logs';
-
 const carritoSchema = new mongoose.Schema({
   userId: {
     type: Schema.Types.ObjectId,
@@ -14,6 +14,13 @@ const carritoSchema = new mongoose.Schema({
       amount: Number,
     },
   ],
+  direccion: [{
+    calle:{ type: String,required: true },
+    altura:{ type: String,required: true },
+    postal:{ type: String,required: true },
+    piso:{ type: String },
+    departamento:{ type: String },
+  }]
 });
 
 export class CarritoAtlasDAO{
@@ -29,11 +36,14 @@ export class CarritoAtlasDAO{
      this.carrito = mongoose.model('carritos', carritoSchema);
    }
    async get(userId) {
-    const result = await this.carrito.findOne({userId});
-    // console.log(result)
-    if (!result) logger.warn('id not found');
-
-    return result;
+     try{
+      const result = await this.carrito.findOne({userId});
+    
+      if (result) return result;
+     }catch(err){
+      logger.warn('id not found');
+     }
+   
    }
  
    async createCart(userId) {

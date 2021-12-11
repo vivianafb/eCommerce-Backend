@@ -2,7 +2,7 @@ import  {Router} from 'express';
 import { productoController } from '../controllers/productoController';
 import { checkAdmin } from '../middleware/auth';
 import expressAsyncHandler from 'express-async-handler';
-import {validateAddProducto} from '../validators/producto' 
+import {validateProducto} from '../validators/producto' 
 const router = Router();
 
 router.get('/', 
@@ -19,13 +19,13 @@ expressAsyncHandler(productoController.getProducto)
 
 router.post('/agregar',
 checkAdmin,
-validateAddProducto,
+validateProducto,
 expressAsyncHandler(productoController.addProducto)
 );
 
 router.put('/actualizar/:id', 
 checkAdmin,
-validateAddProducto,
+validateProducto,
 expressAsyncHandler(productoController.updateProducto)
 );
 

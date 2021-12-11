@@ -53,6 +53,10 @@ class User {
     async ValidatePassword(username, password) {
       return this.users.validateUserPassword(username, password);
     }
+
+    async ValidateSecondPassword(password, confirmPassword) {
+      return this.users.validateConfirmPassword(password, confirmPassword);
+    }
   }
   
   export const UserAPI = new User();

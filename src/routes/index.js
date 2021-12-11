@@ -11,7 +11,7 @@ const router = Router();
 router.use('/auth', AuthRouter);
 router.use('/productos',productoRouter);
 router.use('/carrito',isLoggedIn,carritoRouter);
-router.use('/users',isLoggedIn, userRouter);
+router.use('/users', userRouter);
 
 
 export default router;

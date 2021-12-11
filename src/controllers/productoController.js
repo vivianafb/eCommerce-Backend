@@ -61,11 +61,11 @@ class Producto{
                 return res.status(404).json({
                 data: 'Objeto no encontrado',
             })
-        }else{
-            return res.json({
-                data: result
-            });
-        }
+            }else{
+                return res.json({
+                    data: result
+                });
+            }
 
     
         }
@@ -93,7 +93,8 @@ class Producto{
             
             const newItem = await productsAPI.addProduct(req.body)
             res.json({
-                msg: "Productos agregado con exito"
+                msg: "Productos agregado con exito",
+                data: newItem
             })
         }catch(err){
         return res.status(404).json({

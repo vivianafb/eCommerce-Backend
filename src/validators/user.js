@@ -1,7 +1,7 @@
 import {check} from 'express-validator'
 import {validationResult} from 'express-validator';
 
-const validateResult = (req,res,next)=>{
+const validateResultUser = (req,res,next)=>{
     try{
         validationResult(req).throw()
         return next()
@@ -11,38 +11,30 @@ const validateResult = (req,res,next)=>{
         })
     }
 }
-export const validateProducto =[
+export const validateUser =[
     
-    check('nombre')
+    check('firstName')
         .exists()
         .not()
         .isEmpty(),
-    check('precio')
+    check('lastName')
         .exists()
         .not()
         .isEmpty(),
-    check('descripcion')
+    check('phone')
         .exists()
         .not()
         .isEmpty(),
-    check('codigo')
+    check('email')
         .exists()
         .not()
         .isEmpty(),
-    check('foto')
+    check('password')
         .exists()
         .not()
         .isEmpty(),
-    check('stock')
-        .exists()
-        .not()
-        .isEmpty(),    
-    check('categoria')
-        .exists()
-        .not()
-        .isEmpty(),    
     (req,res,next) => {
-         validateResult(req,res,next)
+        validateResultUser(req,res,next)
 
     }
 ]

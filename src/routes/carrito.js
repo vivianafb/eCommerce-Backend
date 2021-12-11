@@ -23,7 +23,6 @@ expressAsyncHandler(carritoController.comprarProduct));
 
 router.delete('/borrar/:id',
 checkAdmin, 
-carritoController.checkCarritoExists,
 expressAsyncHandler(carritoController.deleteProduct));
 
 export default router;

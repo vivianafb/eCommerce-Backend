@@ -13,10 +13,9 @@ router.post('/signup', (req, res, next) => {
       if (err) {
         return next(err);
       }
+      if (!data) return res.status(401).json({ msg:  'El usuario ya existe' });
   
-      if (data.error) return res.status(401).json({ msg: data.error });
-  
-      res.json({ msg: 'signup OK' });
+      res.json({ msg: 'signup OK',data:data });
     })(req, res, next);
   });
 

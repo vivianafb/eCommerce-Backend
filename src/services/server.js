@@ -24,14 +24,13 @@ const StoreOptions = {
   };
 const app = express();
 app.use(session(StoreOptions));
-
+const server = new http.Server(app);
 const publicPath = path.resolve(__dirname, '../../public');
 app.use(express.static(publicPath));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.urlencoded({ extended: true }));
-
 
 app.use(function(err,req,res,next){
   logger.error(`HUBO UN ERROR ${err.message}`);
@@ -42,7 +41,7 @@ app.use(function(err,req,res,next){
 
 app.use('/api',apiRouter);
 
-const server = new http.Server(app);
+
 
 
 

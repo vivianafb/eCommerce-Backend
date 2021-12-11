@@ -26,7 +26,7 @@ const strategyOptions = {
 };
 
 const loginFunc = async (req, username, password, done) => {
-  
+  const {confirmPassword}= req.body
   const user = await UserAPI.query(username);
 
   if (!user) {
@@ -38,6 +38,7 @@ const loginFunc = async (req, username, password, done) => {
     logger.warn(`Login Fail for username ${username}: Password is not valid`);
     return done(null, false, { message: 'Password is not valid.' });
   }
+  
   logger.info(`User ${username} logged in at ${new Date()}`);
   
   return done(null, user);
@@ -45,16 +46,19 @@ const loginFunc = async (req, username, password, done) => {
 
 52
 
-const signUpFunc = async (req, username, password, done) => {
+const signUpFunc = async (req, username , password, done) => {
   try {
-    const { username, password, email, firstName, lastName, adress,age,phone,photo } = req.body;
+    const { username, password, email, firstName, lastName,phone,confirmPassword } = req.body;
     
     const user = await UserAPI.query(username,email);
-    if (!username || !password || !email || !firstName || !lastName || !adress || !age || !phone || !photo) {
+    if (!username || !password || !email || !firstName || !lastName  || !phone ) {
       console.log('Invalid body fields');
       return done(null, false);
     }
-
+    if (!(await UserAPI.ValidateSecondPassword(password, confirmPassword))) {
+      logger.warn(`Login Fail for username ${username}: Confirm Password is not valid`);
+      return done(null, false, { message: 'Confirm Password is not valid.' });
+    }
     if (user) {
       logger.warn('User already exists');
       return done(null, false);
@@ -65,11 +69,8 @@ const signUpFunc = async (req, username, password, done) => {
         Nombre: ${username},
         Email:${email},
         FirstName:${firstName},
-        LastName:${lastName},
-        Adress:${adress},
-        Age:${age}
-        Phone:${phone},
-        Foto:${photo} `;
+        LastName:${lastName}
+        Phone:${phone} `;
 
         gmailService.sendEmail(email, 'Nuevo Registro ',content);
       

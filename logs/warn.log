@@ -186,3 +186,199 @@
 [33mwarn[39m |  Dec-02-2021 21:30:56 | El Producto existe 
 [33mwarn[39m |  Dec-02-2021 21:30:57 | El Producto existe 
 [33mwarn[39m |  Dec-02-2021 21:51:26 | Worker 27380 died at Thu Dec 02 2021 21:51:26 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-03-2021 15:42:13 | Worker 9356 died at Fri Dec 03 2021 15:42:13 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-03-2021 15:44:16 | El usuario ya existe 
+[33mwarn[39m |  Dec-03-2021 15:46:34 | El usuario ya existe 
+[33mwarn[39m |  Dec-03-2021 15:48:43 | El usuario ya existe 
+[33mwarn[39m |  Dec-03-2021 15:49:30 | El usuario ya existe 
+[33mwarn[39m |  Dec-03-2021 15:49:59 | El Producto existe 
+[33mwarn[39m |  Dec-03-2021 15:52:05 | El usuario ya existe 
+[33mwarn[39m |  Dec-03-2021 15:53:32 | El usuario ya existe 
+[33mwarn[39m |  Dec-03-2021 15:54:57 | El usuario existe 
+[33mwarn[39m |  Dec-03-2021 15:55:07 | El Producto existe 
+[33mwarn[39m |  Dec-03-2021 15:57:00 | El Producto existe 
+[33mwarn[39m |  Dec-03-2021 15:57:04 | El usuario ya existe 
+[33mwarn[39m |  Dec-03-2021 16:07:45 | Login Fail for username sole: User does not exist
+[33mwarn[39m |  Dec-03-2021 16:07:48 | Login Fail for username sole: User does not exist
+[33mwarn[39m |  Dec-03-2021 16:08:38 | Worker 7684 died at Fri Dec 03 2021 16:08:38 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-03-2021 16:09:02 | Worker 24968 died at Fri Dec 03 2021 16:09:02 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-03-2021 16:09:40 | Worker 22848 died at Fri Dec 03 2021 16:09:40 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-03-2021 16:13:09 | El usuario ya existe 
+[33mwarn[39m |  Dec-03-2021 16:13:17 | Worker 28788 died at Fri Dec 03 2021 16:13:17 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-03-2021 16:14:12 | El usuario ya existe 
+[31merror[39m |  Dec-03-2021 16:48:40 | adress is not defined
+[31merror[39m |  Dec-03-2021 17:15:50 | HUBO UN ERROR Unexpected end of JSON input
+[33mwarn[39m |  Dec-03-2021 17:17:22 | Login Fail for username vivi: Password is not valid
+[33mwarn[39m |  Dec-03-2021 17:17:28 | User already exists
+[33mwarn[39m |  Dec-03-2021 17:17:30 | Login Fail for username vivi: Password is not valid
+[33mwarn[39m |  Dec-03-2021 17:18:16 | Login Fail for username vivi: Password is not valid
+[33mwarn[39m |  Dec-03-2021 17:21:38 | Worker 6636 died at Fri Dec 03 2021 17:21:38 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-03-2021 17:22:46 | User already exists
+[33mwarn[39m |  Dec-03-2021 17:23:11 | Login Fail for username visvi: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:23:56 | Login Fail for username vivi: Password is not valid
+[33mwarn[39m |  Dec-03-2021 17:26:15 | El usuario ya existe 
+[31merror[39m |  Dec-03-2021 17:26:15 | Esta cuenta de email ya ha sido registrada: aaa@gmail.com
+[31merror[39m |  Dec-03-2021 17:26:47 | done is not a function
+[33mwarn[39m |  Dec-03-2021 17:27:29 | User already exists
+[31merror[39m |  Dec-03-2021 17:27:29 | done is not a function
+[33mwarn[39m |  Dec-03-2021 17:28:02 | User already exists
+[31merror[39m |  Dec-03-2021 17:28:02 | done is not a function
+[33mwarn[39m |  Dec-03-2021 17:28:38 | User already exists
+[33mwarn[39m |  Dec-03-2021 17:28:54 | User already exists
+[33mwarn[39m |  Dec-03-2021 17:30:42 | User already exists
+[33mwarn[39m |  Dec-03-2021 17:31:09 | User already exists
+[33mwarn[39m |  Dec-03-2021 17:31:19 | User already exists
+[33mwarn[39m |  Dec-03-2021 17:32:28 | Login Fail for username vivi: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:33:17 | User already exists
+[33mwarn[39m |  Dec-03-2021 17:33:20 | Login Fail for username vivi: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:33:27 | Login Fail for username adad: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:34:27 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:41:29 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:41:40 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:47:21 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:49:13 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:50:29 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:53:32 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: User does not exist
+[33mwarn[39m |  Dec-03-2021 17:55:40 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: Password is not valid
+[33mwarn[39m |  Dec-03-2021 17:56:52 | Login Fail for user function verified(err, user, info) {
+    if (err) { return self.error(err); }
+    if (!user) { return self.fail(info); }
+    self.success(user, info);
+  }: Password is not valid
+[33mwarn[39m |  Dec-03-2021 18:00:22 | Login Fail for username aad: User does not exist
+[33mwarn[39m |  Dec-03-2021 18:04:59 | Login Fail for username vivi: Passwords are not valid
+[33mwarn[39m |  Dec-03-2021 18:07:39 | Login Fail for username vivi: Passwords are not valid
+[33mwarn[39m |  Dec-03-2021 18:08:10 | Login Fail for username vivi: Passwords are not valid
+[33mwarn[39m |  Dec-03-2021 18:08:52 | Login Fail for username vivi: Passwords are not valid
+[33mwarn[39m |  Dec-03-2021 18:13:19 | Login Fail for username vivi: Passwords are not valid
+[33mwarn[39m |  Dec-03-2021 18:14:33 | Login Fail for username vivi: Confirm Password is not valid
+[33mwarn[39m |  Dec-03-2021 18:14:55 | Login Fail for username vivi: Confirm Password is not valid
+[33mwarn[39m |  Dec-03-2021 18:16:06 | User already exists
+[33mwarn[39m |  Dec-03-2021 18:17:08 | User already exists
+[33mwarn[39m |  Dec-03-2021 18:17:13 | User already exists
+[33mwarn[39m |  Dec-03-2021 18:17:49 | Login Fail for username vivi: Confirm Password is not valid
+[33mwarn[39m |  Dec-03-2021 18:18:09 | Login Fail for username vivi: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 09:24:23 | Worker 7688 died at Sun Dec 05 2021 09:24:23 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 19:51:59 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-05-2021 19:51:59 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-05-2021 19:51:59 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-05-2021 19:52:00 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-05-2021 19:52:00 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-05-2021 19:52:00 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-05-2021 19:52:02 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-05-2021 19:52:02 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[31merror[39m |  Dec-05-2021 19:56:13 | HUBO UN ERROR Unexpected token } in JSON at position 89
+[31merror[39m |  Dec-05-2021 20:01:16 | data and hash arguments required
+[33mwarn[39m |  Dec-05-2021 20:01:39 | User already exists
+[33mwarn[39m |  Dec-05-2021 20:01:44 | Login Fail for username aa: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 20:01:50 | Login Fail for username aartd: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 20:01:55 | Login Fail for username aartd: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 20:02:17 | Login Fail for username aartd: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 20:03:12 | Login Fail for username aartd: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 20:05:22 | Worker 37240 died at Sun Dec 05 2021 20:05:22 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:05:22 | Worker 26860 died at Sun Dec 05 2021 20:05:22 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:05:22 | Worker 33144 died at Sun Dec 05 2021 20:05:22 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:05:22 | Worker 35084 died at Sun Dec 05 2021 20:05:22 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:05:22 | Worker 21436 died at Sun Dec 05 2021 20:05:22 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:05:22 | Worker 34208 died at Sun Dec 05 2021 20:05:22 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:05:22 | Worker 32840 died at Sun Dec 05 2021 20:05:22 GMT-0300 (hora de verano de Chile)
+[31merror[39m |  Dec-05-2021 20:06:39 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:07:26 | User already exists
+[31merror[39m |  Dec-05-2021 20:07:26 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:08:06 | User already exists
+[31merror[39m |  Dec-05-2021 20:08:06 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:12:16 | User already exists
+[31merror[39m |  Dec-05-2021 20:12:16 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:13:31 | User already exists
+[31merror[39m |  Dec-05-2021 20:13:31 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:15:59 | User already exists
+[31merror[39m |  Dec-05-2021 20:15:59 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:16:56 | Worker 35488 died at Sun Dec 05 2021 20:16:56 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:16:56 | Worker 33200 died at Sun Dec 05 2021 20:16:56 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:16:56 | Worker 37192 died at Sun Dec 05 2021 20:16:56 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:16:56 | Worker 36852 died at Sun Dec 05 2021 20:16:56 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:16:56 | Worker 37076 died at Sun Dec 05 2021 20:16:56 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:16:56 | Worker 9968 died at Sun Dec 05 2021 20:16:56 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-05-2021 20:18:15 | User already exists
+[31merror[39m |  Dec-05-2021 20:18:15 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:21:33 | User already exists
+[31merror[39m |  Dec-05-2021 20:21:33 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:23:01 | User already exists
+[31merror[39m |  Dec-05-2021 20:23:01 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:25:18 | User already exists
+[31merror[39m |  Dec-05-2021 20:25:18 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:27:59 | User already exists
+[31merror[39m |  Dec-05-2021 20:27:59 | done is not a function
+[33mwarn[39m |  Dec-05-2021 20:29:47 | User already exists
+[33mwarn[39m |  Dec-05-2021 20:30:37 | User already exists
+[33mwarn[39m |  Dec-05-2021 20:31:39 | User already exists
+[33mwarn[39m |  Dec-05-2021 20:31:55 | Login Fail for username dd: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 20:31:59 | Login Fail for username dhhhd: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 20:32:03 | Login Fail for username dhfghhd: Confirm Password is not valid
+[33mwarn[39m |  Dec-05-2021 20:34:36 | Login Fail for username dhfghhd: Confirm Password is not valid
+[31merror[39m |  Dec-05-2021 20:36:16 | HUBO UN ERROR Unexpected token } in JSON at position 88
+[33mwarn[39m |  Dec-06-2021 20:44:52 | Cast to ObjectId failed for value "61ae2664d9b4bbb9814649" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 20:45:02 | Cast to ObjectId failed for value "61ae2664d9b4bbb9814649" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 20:45:29 | Cast to ObjectId failed for value "61ae2664d9b4bbb9814649" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 20:46:14 | Cast to ObjectId failed for value "61ae2664d9b4bbb98146492" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 20:55:45 | Cast to ObjectId failed for value "61ae2664d9b4bbb98146492" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 20:55:55 | Cast to ObjectId failed for value "61ae2664d9b4bbb98146492" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 20:58:52 | Cast to ObjectId failed for value "61ae2664d9b4bbb98146492" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 20:59:21 | Cast to ObjectId failed for value "61ae2664d9b4bbb98146492" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:01:15 | User already exists
+[33mwarn[39m |  Dec-06-2021 21:01:32 | Cast to ObjectId failed for value "61aea44789c7df041a1289e" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:04:25 | Cast to ObjectId failed for value "61aea4f95fe8618ab129aa3" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:05:32 | Cast to ObjectId failed for value "61aea4f95fe8618ab129aa3" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:05:48 | Cast to ObjectId failed for value "61aea546972993932d87d0d" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:07:36 | Cast to ObjectId failed for value "61aea546972993932d87d0d" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:09:45 | Cast to ObjectId failed for value "61aea546972993932d87d0d" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:10:38 | Cast to ObjectId failed for value "61aea546972993932d87d0d" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:11:34 | Cast to ObjectId failed for value "61aea546972993932d87d0d" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:13:02 | Cast to ObjectId failed for value "{ userId: '61aea546972993932d87d0dd' }" (type Object) at path "_id" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:13:10 | Cast to ObjectId failed for value "{ userId: '61aea546972993932d87d0dd' }" (type Object) at path "_id" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:13:37 | Cannot read property 'userId' of null
+[33mwarn[39m |  Dec-06-2021 21:15:17 | Cast to ObjectId failed for value "61aea546972993932d87d0d" (type string) at path "userId" for model "carritos"
+[33mwarn[39m |  Dec-06-2021 21:15:49 | id not found
+[33mwarn[39m |  Dec-06-2021 21:17:35 | id not found
+[33mwarn[39m |  Dec-06-2021 21:17:35 | Cannot read property 'toString' of undefined
+[33mwarn[39m |  Dec-06-2021 21:18:04 | id not found
+[33mwarn[39m |  Dec-06-2021 21:18:04 | Cannot read property 'toString' of undefined
+[33mwarn[39m |  Dec-06-2021 21:18:48 | id not found
+[33mwarn[39m |  Dec-06-2021 21:20:13 | id not found
+[33mwarn[39m |  Dec-06-2021 21:20:59 | id not found
+[33mwarn[39m |  Dec-06-2021 21:21:47 | id not found
+[33mwarn[39m |  Dec-06-2021 21:22:49 | id not found
+[33mwarn[39m |  Dec-06-2021 21:24:19 | id not found
+[31merror[39m |  Dec-06-2021 21:25:36 | HUBO UN ERROR Unexpected token a in JSON at position 21
