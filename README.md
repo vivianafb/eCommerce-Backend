@@ -15,14 +15,14 @@ Rutas:
 
 Body Postman: {
     "username":"",
-    "email":"",
-    "password":"",
     "firstName":"",
     "lastName":"",
-    "adress":" ",
-    "age":,
-    "phone":,
-    "photo":""
+    "phone":"",
+    "email":"",
+    "password":"",
+    "admin":""
+    
+   
 }
 
 ## Productos: 

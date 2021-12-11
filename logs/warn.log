@@ -382,3 +382,7 @@
 [33mwarn[39m |  Dec-06-2021 21:22:49 | id not found
 [33mwarn[39m |  Dec-06-2021 21:24:19 | id not found
 [31merror[39m |  Dec-06-2021 21:25:36 | HUBO UN ERROR Unexpected token a in JSON at position 21
+[33mwarn[39m |  Dec-11-2021 11:40:08 | Worker 18892 died at Sat Dec 11 2021 11:40:08 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-11-2021 11:40:08 | Worker 16280 died at Sat Dec 11 2021 11:40:08 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-11-2021 11:40:08 | Worker 18056 died at Sat Dec 11 2021 11:40:08 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-11-2021 11:40:08 | Worker 15664 died at Sat Dec 11 2021 11:40:08 GMT-0300 (hora de verano de Chile)
