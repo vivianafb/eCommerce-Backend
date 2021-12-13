@@ -102,7 +102,7 @@ export class CarritoAtlasDAO{
   }
   
 
-  async deleteProductCarrito(cartId,productosCarrito){
+  async deleteProductCarrito(cartId){
     const cart = await this.carrito.findById(cartId);
     if (!cart) logger.error('Cart not found');
 

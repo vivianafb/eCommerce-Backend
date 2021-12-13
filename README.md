@@ -40,7 +40,8 @@ Body Postman: {
     "descripcion":"",
     "codigo":,
     "foto":"",
-    "stock":
+    "stock":,
+    "categoria:
    }
 
 ## Carrito: 

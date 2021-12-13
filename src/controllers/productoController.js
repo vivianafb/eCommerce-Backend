@@ -1,6 +1,5 @@
-import e from 'cors';
 import { productsAPI } from '../apis/productos';
-import { logger } from '../utils/logs';
+
 let productos =[
     {id:1, 
         nombre:"lapiz", 

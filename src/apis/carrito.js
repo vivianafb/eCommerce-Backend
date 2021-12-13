@@ -52,12 +52,6 @@ class carAPI {
 
     const deleteProduct = {
       _id: productId,
-      nombre: product.nombre,
-      precio: product.precio,
-      descripcion: product.descripcion,
-      codigo: product.codigo,
-      foto: product.foto,
-      stock: product.stock,
       amount,
     };
 
@@ -65,8 +59,8 @@ class carAPI {
     return updatedCart;
   }
 
-  async deleteAll(cartId,productosCarrito) {
-    const updatedCart = await this.carrito.deleteProductCarrito(cartId,productosCarrito);
+  async deleteAll(cartId) {
+    const updatedCart = await this.carrito.deleteProductCarrito(cartId);
     return updatedCart;
 
   }

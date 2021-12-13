@@ -1,10 +1,12 @@
 import Config from '../config/index';
 import {carritoAPI} from '../apis/carrito';
 import {productsAPI} from '../apis/productos';
+import { orderApi } from '../apis/ordenes';
 import { Gmail } from '../services/gmail';
 import {SmsService} from '../services/twilio'
 import { logger } from '../utils/logs';
 import { UserAPI } from '../apis/user';
+import { localeData } from 'moment';
 let carrito =[
     {
         id:1, 
@@ -156,35 +158,50 @@ class Carrito{
 
       async comprarProduct(req, res) {
         const user = req.user;
-        const cart = await carritoAPI.getCarrito(user[0]._id);
+        const userId = user[0]._id;
+        const cart = await carritoAPI.getCarrito(userId);
+
         const productosCarrito = cart.productos;
+        if(!productosCarrito.length) return res.status(400).json({msg:"El carrito esta vacio"})
 
-        let content = '';
-        let contentWhatsApp= '';
-        for(let i = 0; i < productosCarrito.length; i++ ){
-           const productId =cart.productos[i]._id;
-
-           const productAmount =cart.productos[i].amount;
-           const dato = await productsAPI.getProducts(productId)
-          content += `<p>${dato}</p>`;
-          contentWhatsApp += `${dato}`;
-
-        }
-
-        const gmailService = new Gmail('gmail');
-        gmailService.sendEmail(Config.GMAIL_EMAIL, 
-          `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}`,
-        content);
+        //  console.log(productosCarrito)
         
-        SmsService.sendMessage(
-          Config.TWILIO_WHATSAPP,
-          `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}
-          Productos: ${contentWhatsApp}`,
-          'whatsapp',
-          
-        );
-        // const updatedCart = await carritoAPI.deleteAll(cart._id,productosCarrito);
-        res.json({ msg: 'Compra exitosa' });
+        let content = '';
+        
+        let precios = 0;
+        let items = {}
+        for(let i = 0; i < productosCarrito.length; i++){
+            const productId = cart.productos[i]._id;
+            const productAmount =cart.productos[i].amount;
+            let datito = await productsAPI.getProducts(productId);
+            // dato.push(datito)
+           
+            for(let i = 0; i < datito.length; i++){
+              precios +=datito[i].precio
+            }
+            content += `<p>${dato}</p>`; 
+            const items = {
+              productId,
+              productAmount,
+              precios
+            }
+            console.log(`Items: ${items.productId}`)  
+        }
+         console.log(precios)
+        
+        
+        // const updatedCart = await carritoAPI.deleteAll(cart._id)
+        //  const GenerateOrder = await orderApi.createOrden(userId,items);
+
+        // const gmailService = new Gmail('gmail');
+        // gmailService.sendEmail(Config.GMAIL_EMAIL, 
+        //   `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}`,
+        // content);
+        
+      
+        res.json({ 
+          msg: 'Compra exitosa' 
+        });
     }
 
     async deleteCarrito(req,res){

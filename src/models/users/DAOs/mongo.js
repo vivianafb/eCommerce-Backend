@@ -2,7 +2,6 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
 import Config from '../../../config'
 import { logger } from '../../../utils/logs';
-import { boolean } from 'joi';
 
 const UserSchema = new mongoose.Schema({
     username: {type: String, required: true},
