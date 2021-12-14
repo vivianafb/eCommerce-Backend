@@ -48,7 +48,8 @@ class Producto{
           });
         }
         next();
-      }
+    }
+
     async getProducto(req, res){
         const { id } = req.params;
         const { nombre, precio,categoria } = req.query;

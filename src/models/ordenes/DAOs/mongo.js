@@ -10,12 +10,12 @@ const ordenesSchema = new mongoose.Schema({
         unique: true,
     },
     items: [{
-        _id:{ type:Schema.Types.ObjectId,required: true,unique: true },
+        producto:{ type:String,required: true,unique: true },
         cantidad:{ type: String,required: true },
         precio:{ type: String,required: true },
     }],
     estado: {type:String, required:false,default:"Generado"},
-    total:{type:String, required:false}
+    total:{type:String, required:true}
 });
 
 
@@ -42,12 +42,16 @@ export class ordersAtlasDAO  {
         }
       
       }
-    //   async add(data) {
-    //     const newUser = new this.user(data);
-    //     await newUser.save();
+      async add(userId,dato,total) {
+        const order = await new this.orders({userId,items:[],total});
+        for(let i = 0; i < dato.length; i++){
+          order.items.push(dato[i]);
+        }
+        
+        await order.save();
     
-    //     return newUser;
-    //   }
+        return order;
+      }
 
     //   async update(id, data) {
     //     return this.user.findByIdAndUpdate(id, data);

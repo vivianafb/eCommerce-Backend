@@ -71,8 +71,7 @@ class Carrito{
         })
       }
     }
-    
-
+  
     async getCartByUser(req, res) {
         const user = req.user;
         const cart = await carritoAPI.getCarrito(user[0]._id);
@@ -108,16 +107,16 @@ class Carrito{
           parseInt(productAmount)
         );
         let totalstock = product[0].stock - productAmount
-        console.log(totalstock)
+        // console.log(cart._id)
         let stock =product[0].stock
         let updatedProduct = await productsAPI.updateProduct(
           productId,
           {stock:totalstock} 
         );
         res.json({ msg: 'Producto agregado con exito', cart: updatedCart });
-      }
+    }
     
-      async deleteProduct(req, res) {
+    async deleteProduct(req, res) {
         const user = req.user;
         const {id} =req.params
         const cart = await carritoAPI.getCarrito(user[0]._id);
@@ -154,9 +153,9 @@ class Carrito{
           {stock:totalstock} 
         );
         res.json({ msg: 'Product deleted' ,cart:updatedCart});
-      }
+    }
 
-      async comprarProduct(req, res) {
+    async comprarProduct(req, res) {
         const user = req.user;
         const userId = user[0]._id;
         const cart = await carritoAPI.getCarrito(userId);
@@ -168,35 +167,32 @@ class Carrito{
         
         let content = '';
         
-        let precios = 0;
-        let items = {}
+        let total = 0;
+        let items = []
+        let productPrice = []
+        let productName = []
         for(let i = 0; i < productosCarrito.length; i++){
             const productId = cart.productos[i]._id;
             const productAmount =cart.productos[i].amount;
-            let datito = await productsAPI.getProducts(productId);
-            // dato.push(datito)
-           
-            for(let i = 0; i < datito.length; i++){
-              precios +=datito[i].precio
+            let dato = await productsAPI.getProducts(productId);
+
+            for(let i = 0; i < dato.length; i++){
+              productName = dato[i].nombre;
+              productPrice = dato[i].precio;
+              total += (dato[i].precio)*productAmount
             }
             content += `<p>${dato}</p>`; 
-            const items = {
-              productId,
-              productAmount,
-              precios
-            }
-            console.log(`Items: ${items.productId}`)  
+            items.push({productName,productAmount,productPrice}) 
         }
-         console.log(precios)
         
         
         // const updatedCart = await carritoAPI.deleteAll(cart._id)
-        //  const GenerateOrder = await orderApi.createOrden(userId,items);
+         const GenerateOrder = await orderApi.createOrder(userId,items,total);
 
-        // const gmailService = new Gmail('gmail');
-        // gmailService.sendEmail(Config.GMAIL_EMAIL, 
-        //   `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}`,
-        // content);
+        const gmailService = new Gmail('gmail');
+        gmailService.sendEmail(Config.GMAIL_EMAIL, 
+          `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}`,
+        content);
         
       
         res.json({ 
