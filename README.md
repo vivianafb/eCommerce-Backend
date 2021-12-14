@@ -41,7 +41,7 @@ Body Postman: {
     "codigo":,
     "foto":"",
     "stock":,
-    "categoria:
+    "categoria":""
    }
 
 ## Carrito: 
