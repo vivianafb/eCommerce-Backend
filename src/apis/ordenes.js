@@ -12,9 +12,13 @@ class orderAPI{
         this.order = ordersFactoryDAO.get(tipo);
     }
 
-    async getOrder(userId) {
-        return this.order.get(userId);
-       }
+    async getOrder(userId,id) {
+        if(userId){
+            return this.order.get(userId);
+        } else{
+            return this.order.get(id);
+        }
+    }
 
     async createOrder(userId,items,total){
         // console.log(items)
@@ -30,6 +34,11 @@ class orderAPI{
         // console.log(dato)
         const newOrder = await this.order.add(userId,dato,total);
         return newOrder;
+    }
+
+    async updateState(id, estado){
+        const updateOrder = await this.order.update(id, estado);
+        return updateOrder;
     }
       
 }

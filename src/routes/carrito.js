@@ -2,6 +2,7 @@ import  {Router} from 'express';
 import { carritoController } from '../controllers/carritoController';
 import { checkAdmin } from '../middleware/auth';
 import expressAsyncHandler from 'express-async-handler';
+
 const router = Router();
 
 router.get('/',

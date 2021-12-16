@@ -73,13 +73,21 @@ class Carrito{
     }
   
     async getCartByUser(req, res) {
+      try{
         const user = req.user;
         const cart = await carritoAPI.getCarrito(user[0]._id);
         return res.json(cart); 
+      }catch(err){
+        res.status(400).json({
+          msg:"No se pudo obtener el carrito"
+        })
+      }
+        
     }
 
     async addProduct(req, res) {
-        const user = req.user;
+        try {
+          const user = req.user;
         const cart = await carritoAPI.getCarrito(user[0]._id);
     
         const { productId, productAmount } = req.body;
@@ -114,6 +122,11 @@ class Carrito{
           {stock:totalstock} 
         );
         res.json({ msg: 'Producto agregado con exito', cart: updatedCart });
+        } catch (error) {
+          res.status(403).json({
+            msg:"No se pudo agregar el producto"
+          })
+        }
     }
     
     async deleteProduct(req, res) {
@@ -155,7 +168,7 @@ class Carrito{
         res.json({ msg: 'Product deleted' ,cart:updatedCart});
     }
 
-    async comprarProduct(req, res) {
+     async comprarProduct(req, res) {
         const user = req.user;
         const userId = user[0]._id;
         const cart = await carritoAPI.getCarrito(userId);
@@ -163,41 +176,53 @@ class Carrito{
         const productosCarrito = cart.productos;
         if(!productosCarrito.length) return res.status(400).json({msg:"El carrito esta vacio"})
 
-        //  console.log(productosCarrito)
-        
-        let content = '';
-        
-        let total = 0;
-        let items = []
-        let productPrice = []
-        let productName = []
-        for(let i = 0; i < productosCarrito.length; i++){
-            const productId = cart.productos[i]._id;
-            const productAmount =cart.productos[i].amount;
-            let dato = await productsAPI.getProducts(productId);
+        try{
+          const GenerateOrder = await orderApi.getOrder(userId);
+          if(GenerateOrder){
+            return res.status(404).json({
+              err: 'Ya existe la orden',
+              order: GenerateOrder._id
+            })
+          }else{
+            let content = '';
+            let total = 0;
+            let items = []
+            let productPrice = []
+            let productName = []
+            for(let i = 0; i < productosCarrito.length; i++){
+                const productId = cart.productos[i]._id;
+                const productAmount =cart.productos[i].amount;
+                let dato = await productsAPI.getProducts(productId);
 
-            for(let i = 0; i < dato.length; i++){
-              productName = dato[i].nombre;
-              productPrice = dato[i].precio;
-              total += (dato[i].precio)*productAmount
+                for(let i = 0; i < dato.length; i++){
+                  productName = dato[i].nombre;
+                  productPrice = dato[i].precio;
+                  total += (dato[i].precio)*productAmount
+                }
+                content += `<p>${dato}</p>`; 
+                items.push({productName,productAmount,productPrice}) 
             }
-            content += `<p>${dato}</p>`; 
-            items.push({productName,productAmount,productPrice}) 
-        }
-        
-        
-        // const updatedCart = await carritoAPI.deleteAll(cart._id)
-         const GenerateOrder = await orderApi.createOrder(userId,items,total);
 
-        const gmailService = new Gmail('gmail');
-        gmailService.sendEmail(Config.GMAIL_EMAIL, 
-          `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}`,
-        content);
-        
+            const gmailService = new Gmail('gmail');
+            gmailService.sendEmail(Config.GMAIL_EMAIL, 
+              `Nuevo pedido del usuario: ${user[0].username}, email: ${user[0].email}`,
+            content);
+
+            const GenerateOrder = await orderApi.createOrder(userId,items,total);
+              const updatedCart = await carritoAPI.deleteAll(cart._id)
+              res.json({
+                  msg: "Orden creada con exito",
+                  data: GenerateOrder
+              })
+            }
+          
+        }catch(err){
+          return res.status(404).json({
+            err: err.message
+        })
+        }
+
       
-        res.json({ 
-          msg: 'Compra exitosa' 
-        });
     }
 
     async deleteCarrito(req,res){

@@ -390,3 +390,91 @@
 [33mwarn[39m |  Dec-12-2021 10:33:56 | Product not found
 [33mwarn[39m |  Dec-12-2021 10:35:31 | Product not found
 [33mwarn[39m |  Dec-12-2021 14:20:16 | Worker 21044 died at Sun Dec 12 2021 14:20:16 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-14-2021 14:22:54 | El Producto existe 
+[33mwarn[39m |  Dec-14-2021 14:25:08 | La orden ya existe 
+[33mwarn[39m |  Dec-14-2021 14:26:02 | La orden ya existe 
+[33mwarn[39m |  Dec-14-2021 14:28:38 | La orden ya existe 
+[33mwarn[39m |  Dec-14-2021 14:29:35 | La orden ya existe 
+[33mwarn[39m |  Dec-14-2021 14:32:54 | La orden ya existe 
+[33mwarn[39m |  Dec-14-2021 14:34:17 | La orden ya existe 61b8d5990db07443ed79f42e
+[33mwarn[39m |  Dec-14-2021 14:35:08 | La orden ya existe {
+  userId: new ObjectId("61b4b161cbb2ca59333b714b"),
+  items: [
+    {
+      producto: 'aaa',
+      cantidad: '2',
+      precio: '12200',
+      _id: new ObjectId("61b8d5cbc355acfebe303c48")
+    },
+    {
+      producto: 'PRODUCTO1',
+      cantidad: '30',
+      precio: '5000',
+      _id: new ObjectId("61b8d5cbc355acfebe303c49")
+    },
+    {
+      producto: 'soe',
+      cantidad: '2',
+      precio: '12200',
+      _id: new ObjectId("61b8d5cbc355acfebe303c4a")
+    }
+  ],
+  estado: 'Generado',
+  total: '198800',
+  _id: new ObjectId("61b8d5cbc355acfebe303c47")
+}
+[33mwarn[39m |  Dec-14-2021 14:36:55 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 14:46:35 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 14:46:43 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 14:47:05 | La orden ya existe
+[31merror[39m |  Dec-14-2021 14:51:30 | HUBO UN ERROR Unexpected end of JSON input
+[33mwarn[39m |  Dec-14-2021 15:01:51 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:02:51 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:02:57 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:03:00 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:03:02 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:04:09 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:04:16 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:04:49 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:05:02 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:05:11 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:05:39 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:06:03 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:06:05 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:06:10 | La orden ya existe
+[33mwarn[39m |  Dec-14-2021 15:07:35 | Worker 19124 died at Tue Dec 14 2021 15:07:35 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-14-2021 15:09:54 | La orden ya existe 61b8ddf1e5aaf4f7afefbd23
+[33mwarn[39m |  Dec-14-2021 15:10:12 | La orden ya existe 61b8de04e5aaf4f7afefbd2d
+[33mwarn[39m |  Dec-14-2021 15:10:15 | La orden ya existe 61b8de07e5aaf4f7afefbd37
+[33mwarn[39m |  Dec-14-2021 15:11:50 | La orden ya existe 61b8de65e5aaf4f7afefbd4b
+[33mwarn[39m |  Dec-14-2021 15:12:48 | La orden ya existe 61b8dea0e5aaf4f7afefbd5a
+[33mwarn[39m |  Dec-14-2021 15:15:47 | La orden ya existe 61b8df53d526a8d3fa630700
+[33mwarn[39m |  Dec-14-2021 15:16:23 | La orden ya existe 61b8df778a3a2585d5e2e9d5
+[33mwarn[39m |  Dec-14-2021 15:16:25 | La orden ya existe 61b8df798a3a2585d5e2e9df
+[33mwarn[39m |  Dec-14-2021 15:16:31 | La orden ya existe 61b8df7f8a3a2585d5e2e9e9
+[33mwarn[39m |  Dec-14-2021 15:17:19 | La orden ya existe 61b8dfaf8a3a2585d5e2ea02
+[33mwarn[39m |  Dec-14-2021 15:19:12 | La orden ya existe 61b8e02048efd0b9ce411863
+[33mwarn[39m |  Dec-14-2021 15:19:21 | La orden ya existe 61b8e02948efd0b9ce411872
+[33mwarn[39m |  Dec-14-2021 15:19:47 | La orden ya existe 61b8e04348efd0b9ce411881
+[33mwarn[39m |  Dec-14-2021 15:20:58 | La orden ya existe 61b8e08a0ca231357f4113df
+[33mwarn[39m |  Dec-14-2021 15:21:32 | La orden ya existe 61b8e0aca3ad97deabf5aca0
+[33mwarn[39m |  Dec-14-2021 15:22:42 | La orden ya existe {
+  userId: new ObjectId("61b4b161cbb2ca59333b714b"),
+  items: [],
+  estado: 'Generado',
+  total: '198800',
+  _id: new ObjectId("61b8e0f2028f3d4bace08140")
+}
+[33mwarn[39m |  Dec-14-2021 15:23:17 | La orden ya existe {
+  userId: new ObjectId("61b4b161cbb2ca59333b714b"),
+  items: [],
+  estado: 'Generado',
+  total: '198800',
+  _id: new ObjectId("61b8e115028f3d4bace0814a")
+}
+[33mwarn[39m |  Dec-14-2021 15:48:00 | Product not found
+[33mwarn[39m |  Dec-14-2021 16:18:17 | Order not found
+[33mwarn[39m |  Dec-14-2021 16:19:21 | Order not found
+[33mwarn[39m |  Dec-14-2021 16:27:57 | Order not found
+[33mwarn[39m |  Dec-14-2021 16:28:24 | Order not found
+[33mwarn[39m |  Dec-15-2021 19:59:16 | Worker 30036 died at Wed Dec 15 2021 19:59:16 GMT-0300 (hora de verano de Chile)

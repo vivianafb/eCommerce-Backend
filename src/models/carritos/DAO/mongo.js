@@ -38,7 +38,7 @@ export class CarritoAtlasDAO{
    async get(userId) {
      try{
       const result = await this.carrito.findOne({userId});
-    
+      console.log(result)
       if (result) return result;
      }catch(err){
       logger.warn('id not found');
@@ -51,7 +51,7 @@ export class CarritoAtlasDAO{
       userId,
       productos: [],
     });
-
+    console.log(newCarrito)
     await newCarrito.save();
 
     return newCarrito;

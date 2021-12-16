@@ -1,10 +1,15 @@
 import { Router } from "express";
 import passport from 'passport';
+import jwt from 'jsonwebtoken';
 import { GmailService } from "../services/gmail";
+import config from '../config/index'
+import { ensureToken } from "../middleware/auth";
 const router = Router();
 
 router.post('/login',passport.authenticate('login'), function (req,res) {
-    res.json(req.user);
+  const user = req.user;
+  const token = jwt.sign({user},config.JWT_SECRET_KEY)
+  res.json(token);
 });
 
 router.post('/signup', (req, res, next) => {

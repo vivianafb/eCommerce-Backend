@@ -6,11 +6,10 @@ import { logger } from '../../../utils/logs';
 const ordenesSchema = new mongoose.Schema({
     userId: {
         type: Schema.Types.ObjectId,
-        required: true,
-        unique: true,
+        required: true
     },
     items: [{
-        producto:{ type:String,required: true,unique: true },
+        producto:{ type:String,required: true },
         cantidad:{ type: String,required: true },
         precio:{ type: String,required: true },
     }],
@@ -18,7 +17,18 @@ const ordenesSchema = new mongoose.Schema({
     total:{type:String, required:true}
 });
 
-
+ordenesSchema.pre('save', function (next) {
+  var data = this;
+  var order = mongoose.model('orders')
+  order.find({id: data._id}, function (err, docs) {
+      if (!docs.length){
+          next();
+      }else{                
+          logger.warn(`La orden ya existe ${data}`);
+          next(new Error(`La orden ya existe! Orden: ${data._id}`));
+      }
+  });
+}) ;
 export class ordersAtlasDAO  {
     srv;
     orders;
@@ -32,30 +42,35 @@ export class ordersAtlasDAO  {
         this.orders = mongoose.model('orders', ordenesSchema);
       }
 
-      async get(userId) {
+      async get(userId,id) {
         try{
-         const result = await this.orders.findOne({userId});
-       
+          if(userId){
+            const result = await this.orders.findOne({userId});
+           if (result) return result;
+          }else{
+            const result = await this.orders.findOne(id);
          if (result) return result;
+          }
+         
         }catch(err){
          logger.warn('Order not found');
-        }
+      }
       
       }
       async add(userId,dato,total) {
-        const order = await new this.orders({userId,items:[],total});
+        const order = new this.orders({userId,items:[],total});
         for(let i = 0; i < dato.length; i++){
           order.items.push(dato[i]);
         }
-        
+        //  console.log(`Order id: ${order._id}`)
         await order.save();
     
         return order;
       }
 
-    //   async update(id, data) {
-    //     return this.user.findByIdAndUpdate(id, data);
-    //   }
+      async update(id, estado) {
+        return this.orders.findByIdAndUpdate(id, estado);
+      }
 
     //   async delete(id) {
     //     await this.user.findByIdAndDelete(id);

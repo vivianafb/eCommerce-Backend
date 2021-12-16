@@ -9,7 +9,7 @@ checkAdmin,
 expressAsyncHandler(ordersController.getOrders));
 
 router.get('/:orderId',
-expressAsyncHandler(ordersController.getOrderById));
+expressAsyncHandler(ordersController.getOrdersById));
 
 router.post('/complete',
 checkAdmin, 

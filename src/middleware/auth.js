@@ -4,6 +4,7 @@ import {UserAPI} from '../apis/user'
 import { logger} from'../utils/logs';
 import { carritoAPI } from '../apis/carrito';
 import { Gmail, GmailService } from '../services/gmail';
+import jwt from 'jsonwebtoken';
 const admin = true;
 //Validar que el usuario es admin
 export const checkAdmin = (req,res,next) => {
@@ -26,7 +27,6 @@ const strategyOptions = {
 };
 
 const loginFunc = async (req, username, password, done) => {
-  const {confirmPassword}= req.body
   const user = await UserAPI.query(username);
 
   if (!user) {
@@ -44,7 +44,6 @@ const loginFunc = async (req, username, password, done) => {
   return done(null, user);
 };
 
-52
 
 const signUpFunc = async (req, username , password, done) => {
   try {
@@ -112,4 +111,19 @@ export const isAdmin = (req, res, done) => {
 
   done();
 };
+
+export const ensureToken = (req,res,next) =>{
+const BearerToken = req.headers['authorization']
+
+  if(typeof BearerToken !== 'undefined'){
+    const bearer = BearerToken.split(" ");
+    const bearerTok = bearer[1]
+    console.log(`TOKEN : ${bearerTok}`);
+    req.token = bearerTok;
+    next();
+  }else{
+    res.status(403).json({msg:"No permitido"})
+  }
+}
+
 export default passport;
