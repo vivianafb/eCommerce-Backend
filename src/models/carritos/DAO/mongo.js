@@ -4,7 +4,7 @@ import Config from '../../../config/index'
 import { logger } from '../../../utils/logs';
 const carritoSchema = new mongoose.Schema({
   userId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     required: true,
     unique: true,
   },
@@ -35,9 +35,9 @@ export class CarritoAtlasDAO{
      mongoose.connect(this.srv);
      this.carrito = mongoose.model('carritos', carritoSchema);
    }
-   async get(userId) {
+   async get(id) {
      try{
-      const result = await this.carrito.findOne({userId});
+      const result = await this.carrito.findOne({id});
       console.log(result)
       if (result) return result;
      }catch(err){

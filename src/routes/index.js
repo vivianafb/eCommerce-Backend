@@ -6,7 +6,7 @@ import AuthRouter from './auth';
 import ordenesRouter from './ordenes'
 import { isLoggedIn } from '../middleware/auth';
 import { ensureToken } from '../middleware/auth';
-import jwt from 'jsonwebtoken';
+
 const router = Router();
 
 router.use('/auth', AuthRouter);
@@ -14,6 +14,5 @@ router.use('/productos',productoRouter);
 router.use('/carrito',ensureToken,carritoRouter);
 router.use('/orders',ensureToken,ordenesRouter);
 router.use('/users', userRouter);
-
 
 export default router;

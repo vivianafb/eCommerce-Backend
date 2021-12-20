@@ -3,7 +3,7 @@ import { productoController } from '../controllers/productoController';
 import { checkAdmin } from '../middleware/auth';
 import expressAsyncHandler from 'express-async-handler';
 import {validateProducto} from '../validators/producto' 
-
+import upload from '../utils/multer'
 const router = Router();
 
 router.get('/', 
@@ -19,14 +19,14 @@ expressAsyncHandler(productoController.getProducto)
 );
 
 router.post('/agregar',
-checkAdmin,
 validateProducto,
+upload.single("foto"),
 expressAsyncHandler(productoController.addProducto)
 );
 
 router.put('/actualizar/:id', 
+upload.single("foto"),
 checkAdmin,
-validateProducto,
 expressAsyncHandler(productoController.updateProducto)
 );
 

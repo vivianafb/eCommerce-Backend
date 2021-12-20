@@ -16,8 +16,8 @@ class carAPI {
     this.carrito = FactoryDAO.get(tipo);
   }
 
-  async getCarrito(userId) {
-   return this.carrito.get(userId);
+  async getCarrito(id) {
+   return this.carrito.get(id);
   }
 
   async createCarrito(userId) {

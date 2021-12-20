@@ -19,7 +19,7 @@ export class ordersFactoryDAO {
         return new ordersAtlasDAO(true);
         
     default:
-        logger.info('Retornando Instancia Users Default ORDENES');
+        logger.info('Retornando Instancia Orders Default ORDENES');
         return new ordersAtlasDAO();
     }
   }

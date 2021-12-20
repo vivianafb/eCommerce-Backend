@@ -7,9 +7,10 @@ const productsSchema = new mongoose.Schema({
   precio: {type: Number, required:true},
   descripcion:{type: String, required:true},
   codigo: {type: Number, required:true},
-  foto: {type: String, required:true},
   stock: {type: Number, required:true},
-  categoria: {type:String, required:true}
+  categoria: {type:String, required:true},
+  foto: {type:String, required:true},
+  cloudinary_id:{type:String, required:true},
 });
 
 productsSchema.pre('save', function (next) {
@@ -54,8 +55,6 @@ export class ProductosAtlasDAO  {
   }
 
    async add(data) {
-    // if (!data.nombre || !data.precio || !data.descripcion
-    //   || !data.codigo || !! data.foto || !data.stock) throw new Error('invalid data');
     const newProduct = new this.productos(data);
     await newProduct.save();
 

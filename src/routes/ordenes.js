@@ -2,6 +2,7 @@ import  {Router} from 'express';
 import { ordersController } from '../controllers/ordenesController';
 import { checkAdmin } from '../middleware/auth';
 import expressAsyncHandler from 'express-async-handler';
+import { validateOrder } from '../validators/ordenes';
 const router = Router();
 
 router.get('/',
@@ -13,6 +14,7 @@ expressAsyncHandler(ordersController.getOrdersById));
 
 router.post('/complete',
 checkAdmin, 
+validateOrder,
 expressAsyncHandler(ordersController.submit));
 
 

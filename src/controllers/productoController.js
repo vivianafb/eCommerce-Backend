@@ -1,5 +1,6 @@
 import { productsAPI } from '../apis/productos';
-
+const cloudinary = require("../config/cloudinary")
+const upload = require("../utils/multer")
 let productos =[
     {id:1, 
         nombre:"lapiz", 
@@ -88,10 +89,23 @@ class Producto{
         });
     }
 
-    async addProducto(req, res){      
+    async addProducto(req, res){ 
+        console.log(req.body)    
         try{
-            
-            const newItem = await productsAPI.addProduct(req.body)
+            console.log(req.body)
+            const result = await cloudinary.uploader.upload(req.file.path);
+            console.log(result)
+            let prod = {
+                nombre:req.body.nombre,
+                precio:req.body.precio,
+                descripcion:req.body.descripcion,
+                codigo:req.body.codigo,
+                foto:result.secure_url,
+                stock:req.body.stock,
+                categoria:req.body.stock,
+                cloudinary_id: result.public_id
+            }
+            const newItem = await productsAPI.addProduct(prod)
             res.json({
                 msg: "Productos agregado con exito",
                 data: newItem
@@ -114,8 +128,24 @@ class Producto{
             err: 'ID de producto no encontrado',
         })
         }else{
-        const newUpdate = await productsAPI.updateProduct(id,req.body);
-            console.log(newUpdate)
+
+            const pro = await productsAPI.getProducts(req.params.id);
+            await cloudinary.uploader.destroy(pro[0].cloudinary_id);
+            const result = await cloudinary.uploader.upload(req.file.path);
+            let prod = {
+                nombre:req.body.nombre || pro.nombre,
+                precio:req.body.precio || pro.precio,
+                descripcion:req.body.descripcion || pro.descripcion,
+                codigo:req.body.codigo || pro.codigo,
+                foto:result.secure_url || pro.foto,
+                stock:req.body.stock || pro.stock,
+                categoria:req.body.stock | pro.categoria,
+                cloudinary_id: result.public_id || pro.cloudinary_id
+            }
+          
+             const newUpdate = await productsAPI.updateProduct(id,prod);
+        
+            console.log(result)
             res.json({
                 msg: "Actualizando los productos",
                 data: newUpdate
@@ -137,8 +167,10 @@ class Producto{
                     err: 'ID de producto no encontrado',
                 })
             }else{
+                const id = req.params.id;
+                const result = await productsAPI.getProducts(id);
                 const productos = await productsAPI.deleteProduct(id) ;
-    
+                await cloudinary.uploader.destroy(result[0].cloudinary_id)
                 res.json({
                     msg: "Producto eliminado"
                 })

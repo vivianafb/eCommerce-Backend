@@ -2,7 +2,7 @@ import  {Router} from 'express';
 import { carritoController } from '../controllers/carritoController';
 import { checkAdmin } from '../middleware/auth';
 import expressAsyncHandler from 'express-async-handler';
-
+import { validateCarrito } from '../validators/carrito';
 const router = Router();
 
 router.get('/',
@@ -15,6 +15,7 @@ expressAsyncHandler(carritoController.getCartByUser));
 
 router.post('/agregar',
 checkAdmin, 
+validateCarrito,
 expressAsyncHandler(carritoController.addProduct));
 
 router.post('/comprar',

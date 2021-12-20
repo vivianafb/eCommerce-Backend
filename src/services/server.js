@@ -8,6 +8,8 @@ import Config from '../config';
 import passport from '../middleware/auth';
 import { logger } from '../utils/logs';
 
+
+
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 const StoreOptions = {
     store: MongoStore.create({
@@ -22,6 +24,8 @@ const StoreOptions = {
       maxAge: Config.SESSION_COOKIE_TIMEOUT_MIN * 60 * 1000,
     },
   };
+
+  
 const app = express();
 app.use(session(StoreOptions));
 const server = new http.Server(app);
@@ -31,6 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 app.use(function(err,req,res,next){
   logger.error(`HUBO UN ERROR ${err.message}`);

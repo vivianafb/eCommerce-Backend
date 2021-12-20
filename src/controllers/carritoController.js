@@ -53,7 +53,6 @@ class Carrito{
       try{
         const {id}= req.params;
         const carrito = await carritoAPI.getCarrito(id);
-        // console.log(carrito.userId)
         if (!carrito) {
           return res.status(404).json({
             msg: `Carrito no encontrado, el id: ${id} no existe`,
