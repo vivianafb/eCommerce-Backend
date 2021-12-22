@@ -14,13 +14,8 @@ const carritoSchema = new mongoose.Schema({
       amount: Number,
     },
   ],
-  direccion: [{
-    calle:{ type: String,required: true },
-    altura:{ type: String,required: true },
-    postal:{ type: String,required: true },
-    piso:{ type: String },
-    departamento:{ type: String },
-  }]
+  direccion: {type:String,required:false,default:''},
+  time : { type : Date, default: Date.now }
 });
 
 export class CarritoAtlasDAO{

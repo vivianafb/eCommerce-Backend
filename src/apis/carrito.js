@@ -1,8 +1,8 @@
-import { FactoryDAO } from '../models/carritos/carrito.factory';
-import { TipoPersistencia } from '../models/carritos/carrito.factory';
-import { logger } from '../utils/logs';
-import { productsAPI } from './productos';
-import { UserAPI } from './user';
+import { FactoryDAO } from "../models/carritos/carrito.factory";
+import { TipoPersistencia } from "../models/carritos/carrito.factory";
+import { logger } from "../utils/logs";
+import { productsAPI } from "./productos";
+import { UserAPI } from "./user";
 
 /**
  * Con esta variable elegimos el tipo de persistencia
@@ -10,26 +10,25 @@ import { UserAPI } from './user';
 const tipo = TipoPersistencia.MongoAtlas;
 
 class carAPI {
-    carrito;
+  carrito;
 
   constructor() {
     this.carrito = FactoryDAO.get(tipo);
   }
 
   async getCarrito(id) {
-   return this.carrito.get(id);
+    return this.carrito.get(id);
   }
 
   async createCarrito(userId) {
     const user = await UserAPI.getUsers(userId);
-    if (!user.length)
-      logger.warn('User does not exist. Error creating cart');
-      
+    if (!user.length) logger.warn("User does not exist. Error creating cart");
+
     const newCarrito = await this.carrito.createCart(userId);
     return newCarrito;
   }
 
-  async addProduct(cartId,productId,amount) {
+  async addProduct(cartId, productId, amount) {
     const product = (await productsAPI.getProducts(productId))[0];
 
     const addProduct = {
@@ -62,14 +61,12 @@ class carAPI {
   async deleteAll(cartId) {
     const updatedCart = await this.carrito.deleteProductCarrito(cartId);
     return updatedCart;
-
   }
 
   async deleteCarrito(cartId) {
-        console.log(cartId)
+    console.log(cartId);
 
     await this.carrito.deleteCarrito(cartId);
-
   }
 }
 

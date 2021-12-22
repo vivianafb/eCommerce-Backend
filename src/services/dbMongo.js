@@ -1,7 +1,6 @@
 // import mongoose from 'mongoose';
 // import Config from '../config';
 
-
 // export const connectToDB = async () => {
 //   try {
 //     const srv = Config.MONGO_ATLAS_URL

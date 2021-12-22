@@ -1,11 +1,7 @@
-import socketIo from 'socket.io';
-import { getAllMessages, addMessage } from '../models/messages';
-import { formatMessages } from '../utils/messages';
-import {
-  getCurrentUser,
-  removeUser,
-} from '../utils/users';
-
+import socketIo from "socket.io";
+import { getAllMessages, addMessage } from "../models/messages";
+import { formatMessages } from "../utils/messages";
+import { getCurrentUser, removeUser } from "../utils/users";
 
 const data = {
   email: undefined,
@@ -15,27 +11,25 @@ const data = {
 export const initWsServer = (server) => {
   const io = socketIo(server);
 
-  io.on('connection', async (socket) => {
-     let msges = await getAllMessages();
-     socket.emit('receiveMessages', msges);
-    socket.on('JoinRoom', (msg) => {
-   ocket.broadcast.emit('message', formatMessages(data));
-    
+  io.on("connection", async (socket) => {
+    let msges = await getAllMessages();
+    socket.emit("receiveMessages", msges);
+    socket.on("JoinRoom", (msg) => {
+      ocket.broadcast.emit("message", formatMessages(data));
     });
 
-    socket.on('disconnect', () => {
+    socket.on("disconnect", () => {
       const user = getCurrentUser(socket.client.id);
       if (user) {
         removeUser(socket.client.id);
-        data.username = 'CHATBOT';
+        data.username = "CHATBOT";
         data.text = `${user.username} a dejado el chat`;
-        io.to(user.room).emit('message', formatMessages(data));
-
+        io.to(user.room).emit("message", formatMessages(data));
       }
     });
-    socket.on('newMessage', (msge) => {
+    socket.on("newMessage", (msge) => {
       addMessage(msge);
-      io.emit('newMessage', msge);
+      io.emit("newMessage", msge);
     });
   });
 

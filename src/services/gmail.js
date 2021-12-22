@@ -1,10 +1,10 @@
-import Config from '../config';
-import nodemailer from 'nodemailer';
-import path from 'path';
+import Config from "../config";
+import nodemailer from "nodemailer";
+import path from "path";
 
 export class Gmail {
-   owner;
-   transporter;
+  owner;
+  transporter;
 
   constructor() {
     this.owner = {
@@ -13,7 +13,7 @@ export class Gmail {
     };
 
     this.transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+      host: "smtp.gmail.com",
       port: 465,
       secure: true,
       auth: {
@@ -25,18 +25,18 @@ export class Gmail {
     this.transporter.verify();
   }
 
-  async sendEmail(dest, subject, content,attachment) {
+  async sendEmail(dest, subject, content, attachment) {
     const mailOptions = {
       from: this.owner,
       to: dest,
       subject,
       html: content,
-        //   attachments: [
-        //     {
-        //         filename: 'profile.jpg',
-        //         path: attachment,
-        //     },
-        //   ],
+      //   attachments: [
+      //     {
+      //         filename: 'profile.jpg',
+      //         path: attachment,
+      //     },
+      //   ],
     };
 
     const response = await this.transporter.sendMail(mailOptions);

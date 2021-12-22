@@ -1,6 +1,6 @@
-import { NoticiasFactoryDAO } from '../models/productos/products.factory';
-import { TipoPersistencia } from '../models/productos/products.factory';
-import { logger } from '../utils/logs';
+import { NoticiasFactoryDAO } from "../models/productos/products.factory";
+import { TipoPersistencia } from "../models/productos/products.factory";
+import { logger } from "../utils/logs";
 
 /**
  * Con esta variable elegimos el tipo de persistencia
@@ -8,7 +8,7 @@ import { logger } from '../utils/logs';
 const tipo = TipoPersistencia.MongoAtlas;
 
 class prodAPI {
-    productos;
+  productos;
 
   constructor() {
     this.productos = NoticiasFactoryDAO.get(tipo);
@@ -16,6 +16,12 @@ class prodAPI {
 
   async getProducts(id) {
     if (id) return this.productos.get(id);
+
+    return this.productos.get();
+  }
+
+  async getCategoria(categoria) {
+    if (categoria) return this.productos.getCat(categoria);
 
     return this.productos.get();
   }

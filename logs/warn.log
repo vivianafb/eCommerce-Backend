@@ -510,3 +510,11 @@
 [33mwarn[39m |  Dec-18-2021 16:29:07 | Worker 32212 died at Sat Dec 18 2021 16:29:07 GMT-0300 (hora de verano de Chile)
 [33mwarn[39m |  Dec-20-2021 11:33:07 | El Producto existe 
 [33mwarn[39m |  Dec-20-2021 11:49:45 | El Producto existe 
+[33mwarn[39m |  Dec-22-2021 12:22:39 | El Producto existe 
+[31merror[39m |  Dec-22-2021 12:26:54 | carritos validation failed: direccion: Path `direccion` is required.
+[33mwarn[39m |  Dec-22-2021 13:13:06 | El Producto existe 
+[33mwarn[39m |  Dec-22-2021 14:33:20 | Worker 10276 died at Wed Dec 22 2021 14:33:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 14:33:20 | Worker 40392 died at Wed Dec 22 2021 14:33:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 14:33:20 | Worker 37500 died at Wed Dec 22 2021 14:33:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 14:33:20 | Worker 19964 died at Wed Dec 22 2021 14:33:20 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 14:33:20 | Worker 30312 died at Wed Dec 22 2021 14:33:20 GMT-0300 (hora de verano de Chile)

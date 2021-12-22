@@ -7,5 +7,3 @@ export const removeUser = (id) => {
 export const getCurrentUser = (id) => {
   return users.find((aUser) => aUser.id === id);
 };
-
-

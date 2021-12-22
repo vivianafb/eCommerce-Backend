@@ -1,17 +1,14 @@
-import Config from '../config';
-import twilio from 'twilio';
+import Config from "../config";
+import twilio from "twilio";
 
 class Twilio {
-   twilio;
+  twilio;
 
   constructor() {
     this.twilio = twilio(Config.TWILIO_ACCOUNT_ID, Config.TWILIO_TOKEN);
   }
 
-  async sendMessage(
-    cellphoneNumber,
-    message,
-  ) {
+  async sendMessage(cellphoneNumber, message) {
     const params = {
       body: message,
       from: `whatsapp:${Config.TWILIO_CELLPHONE}`,

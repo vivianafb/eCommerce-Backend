@@ -14,21 +14,23 @@ const ordenesSchema = new mongoose.Schema({
         precio:{ type: String,required: true },
     }],
     estado: {type:String, required:false,default:"Generado"},
-    total:{type:String, required:true}
+    total:{type:String, required:true},
+    numOrder:{type:String, required:true},
+    time : { type : Date, default: Date.now }
 });
 
-ordenesSchema.pre('save', function (next) {
-  var data = this;
-  var order = mongoose.model('orders')
-  order.find({id: data._id}, function (err, docs) {
-      if (!docs.length){
-          next();
-      }else{                
-          logger.warn(`La orden ya existe ${data}`);
-          next(new Error(`La orden ya existe! Orden: ${data._id}`));
-      }
-  });
-}) ;
+// ordenesSchema.pre('save', function (next) {
+//   var data = this;
+//   var order = mongoose.model('orders')
+//   order.find({id: data._id}, function (err, docs) {
+//       if (!docs.length){
+//           next();
+//       }else{                
+//           logger.warn(`La orden ya existe ${data}`);
+//           next(new Error(`La orden ya existe! Orden: ${data._id}`));
+//       }
+//   });
+// }) ;
 export class ordersAtlasDAO  {
     srv;
     orders;
@@ -42,13 +44,13 @@ export class ordersAtlasDAO  {
         this.orders = mongoose.model('orders', ordenesSchema);
       }
 
-      async get(userId,id) {
+      async get(userId) {
         try{
           if(userId){
-            const result = await this.orders.findOne({userId});
+            const result = await this.orders.find({userId: userId});
            if (result) return result;
           }else{
-            const result = await this.orders.findOne(id);
+            const result = await this.orders.find();
          if (result) return result;
           }
          
@@ -57,8 +59,8 @@ export class ordersAtlasDAO  {
       }
       
       }
-      async add(userId,dato,total) {
-        const order = new this.orders({userId,items:[],total});
+      async add(userId,dato,total,numOrder) {
+        const order = new this.orders({userId,items:[],total,numOrder});
         for(let i = 0; i < dato.length; i++){
           order.items.push(dato[i]);
         }
@@ -68,8 +70,8 @@ export class ordersAtlasDAO  {
         return order;
       }
 
-      async update(id, estado) {
-        return this.orders.findByIdAndUpdate(id, estado);
+      async update(id, data) {
+        return this.orders.findByIdAndUpdate(id, data);
       }
 
     //   async delete(id) {

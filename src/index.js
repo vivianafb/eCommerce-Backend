@@ -1,33 +1,31 @@
-import server from './services/server';
-import { connectToDB } from './services/dbMongo';
-import cluster from 'cluster';
-import { Argumentos } from './middleware/args';
-import os from 'os';
-import { logger } from './utils/logs';
+import server from "./services/server";
+import { connectToDB } from "./services/dbMongo";
+import cluster from "cluster";
+import { Argumentos } from "./middleware/args";
+import os from "os";
+import { logger } from "./utils/logs";
 
 const clusterMode = Argumentos;
 const puerto = process.env.PORT;
 
-
-
 const numCPUs = os.cpus().length;
 if (clusterMode && cluster.isMaster) {
-   logger.info(`NUMERO DE CPUS ===> ${numCPUs}`);
-   logger.info(`PID MASTER ${process.pid}`);
+  logger.info(`NUMERO DE CPUS ===> ${numCPUs}`);
+  logger.info(`PID MASTER ${process.pid}`);
 
   for (let i = 0; i < numCPUs; i++) {
     cluster.fork();
   }
 
-  cluster.on('exit', (worker) => {
+  cluster.on("exit", (worker) => {
     logger.warn(`Worker ${worker.process.pid} died at ${Date()}`);
     cluster.fork();
   });
 } else {
   server.listen(puerto, () =>
-  logger.info(
+    logger.info(
       `Servidor express escuchando en el puerto ${puerto} - PID WORKER ${process.pid}`
     )
   );
-  server.on('error', error => logger.warn(`Error en el servidor: ${error}`));
+  server.on("error", (error) => logger.warn(`Error en el servidor: ${error}`));
 }

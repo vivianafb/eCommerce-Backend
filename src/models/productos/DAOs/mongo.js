@@ -38,11 +38,29 @@ export class ProductosAtlasDAO  {
     mongoose.connect(this.srv);
     this.productos = mongoose.model('productos', productsSchema);
   }
+
+
   async get(id) {
     let output = [];
     try {
         if (id) {
           const document = await this.productos.findById(id);
+          if (document) output.push(document);
+        } else {
+          output = await this.productos.find();
+        }
+        return output;
+
+    } catch (err) {
+      return output;
+    }
+  }
+
+  async getCat(categoria) {
+    let output = [];
+    try {
+        if (categoria) {
+          const document = await this.productos.find({categoria: categoria});
           if (document) output.push(document);
         } else {
           output = await this.productos.find();
