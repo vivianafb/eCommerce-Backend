@@ -1,6 +1,5 @@
 import { orderApi } from "../apis/ordenes";
 import { Gmail } from "../services/gmail";
-import { logger } from "../utils/logs";
 import Config from "../config/index";
 class Orders {
   async getOrders(req, res) {
@@ -33,7 +32,7 @@ class Orders {
   async submit(req, res) {
     const { id } = req.params;
     const user = req.user;
-    const userId = user[0]._id;
+    // const userId = user[0]._id;
     const order = await orderApi.getOrder(null, id);
     if (!order || order.estado != "Generado") {
       return res.status(400).json({
@@ -44,7 +43,7 @@ class Orders {
       let data = {
         estado: "Completado",
       };
-      const orderUpdate = await orderApi.updateOrder(OrderId, data);
+      await orderApi.updateOrder(OrderId, data);
       const orderUpdate2 = await orderApi.getOrder(null, id);
 
       let content = "La orden fue completada";

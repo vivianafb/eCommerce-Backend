@@ -4,7 +4,6 @@ import carritoRouter from "./carrito";
 import userRouter from "./user";
 import AuthRouter from "./auth";
 import ordenesRouter from "./ordenes";
-import { isLoggedIn } from "../middleware/auth";
 import { ensureToken } from "../middleware/auth";
 
 const router = Router();

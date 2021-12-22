@@ -14,8 +14,8 @@ export const initWsServer = (server) => {
   io.on("connection", async (socket) => {
     let msges = await getAllMessages();
     socket.emit("receiveMessages", msges);
-    socket.on("JoinRoom", (msg) => {
-      ocket.broadcast.emit("message", formatMessages(data));
+    socket.on("JoinRoom", () => {
+      socket.broadcast.emit("message", formatMessages(data));
     });
 
     socket.on("disconnect", () => {

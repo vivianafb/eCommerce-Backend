@@ -1,6 +1,5 @@
 import { NoticiasFactoryDAO } from "../models/productos/products.factory";
 import { TipoPersistencia } from "../models/productos/products.factory";
-import { logger } from "../utils/logs";
 
 /**
  * Con esta variable elegimos el tipo de persistencia

@@ -1,30 +1,30 @@
 import { productsAPI } from "../apis/productos";
 const cloudinary = require("../config/cloudinary");
-const upload = require("../utils/multer");
-let productos = [
-  {
-    id: 1,
-    nombre: "lapiz",
-    precio: 100,
-    descripcion: "color rojo",
-    codigo: 123456,
-    foto: "https://img.freepik.com/vector-gratis/diseno-lapiz-escribiendo_1095-187.jpg?size=338&ext=jpg",
-    stock: 27,
-    timestamp: Date.now(),
-    categoria: "Utiles",
-  },
-  {
-    id: 2,
-    nombre: "goma",
-    precio: 200,
-    descripcion: "goma de borrar",
-    codigo: 789123,
-    foto: "https://www.libreriaservicom.cl/wp-content/uploads/2019/03/goma-de-borrar-factis-s20.jpg",
-    stock: 30,
-    timestamp: Date.now(),
-    categoria: "Utiles",
-  },
-];
+
+// let productos = [
+//   {
+//     id: 1,
+//     nombre: "lapiz",
+//     precio: 100,
+//     descripcion: "color rojo",
+//     codigo: 123456,
+//     foto: "https://img.freepik.com/vector-gratis/diseno-lapiz-escribiendo_1095-187.jpg?size=338&ext=jpg",
+//     stock: 27,
+//     timestamp: Date.now(),
+//     categoria: "Utiles",
+//   },
+//   {
+//     id: 2,
+//     nombre: "goma",
+//     precio: 200,
+//     descripcion: "goma de borrar",
+//     codigo: 789123,
+//     foto: "https://www.libreriaservicom.cl/wp-content/uploads/2019/03/goma-de-borrar-factis-s20.jpg",
+//     stock: 30,
+//     timestamp: Date.now(),
+//     categoria: "Utiles",
+//   },
+// ];
 
 class Producto {
   validacion(req, res, next) {
@@ -195,7 +195,7 @@ class Producto {
       } else {
         const id = req.params.id;
         const result = await productsAPI.getProducts(id);
-        const productos = await productsAPI.deleteProduct(id);
+        await productsAPI.deleteProduct(id);
         await cloudinary.uploader.destroy(result[0].cloudinary_id);
         res.json({
           msg: "Producto eliminado",

@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res) {
   logger.error(`HUBO UN ERROR ${err.message}`);
   return res.status("500").json({
     error: err.message,

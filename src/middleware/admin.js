@@ -1,5 +1,4 @@
 const admin = true;
-const user = true;
 
 export const checkAdmin = (req, res, next) => {
   if (admin) next();

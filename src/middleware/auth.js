@@ -2,9 +2,8 @@ import passport from "passport";
 import passportLocal from "passport-local";
 import { UserAPI } from "../apis/user";
 import { logger } from "../utils/logs";
-import { carritoAPI } from "../apis/carrito";
-import { Gmail, GmailService } from "../services/gmail";
-import jwt from "jsonwebtoken";
+import { Gmail } from "../services/gmail";
+
 const admin = true;
 //Validar que el usuario es admin
 export const checkAdmin = (req, res, next) => {

@@ -1,4 +1,3 @@
-import { string } from 'joi';
 import mongoose, {Schema} from 'mongoose';
 import Config from '../../../config/index'
 import { logger } from '../../../utils/logs';

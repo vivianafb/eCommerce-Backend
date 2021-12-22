@@ -1,56 +1,55 @@
-import mongoose from 'mongoose';
-import Config from '../../../config/index'
-import { logger } from '../../../utils/logs';
+import mongoose from "mongoose";
+import Config from "../../../config/index";
+import { logger } from "../../../utils/logs";
 
 const productsSchema = new mongoose.Schema({
-  nombre: {type: String, required: true},
-  precio: {type: Number, required:true},
-  descripcion:{type: String, required:true},
-  codigo: {type: Number, required:true},
-  stock: {type: Number, required:true},
-  categoria: {type:String, required:true},
-  foto: {type:String, required:true},
-  cloudinary_id:{type:String, required:true},
+  nombre: { type: String, required: true },
+  precio: { type: Number, required: true },
+  descripcion: { type: String, required: true },
+  codigo: { type: Number, required: true },
+  stock: { type: Number, required: true },
+  categoria: { type: String, required: true },
+  foto: { type: String, required: true },
+  cloudinary_id: { type: String, required: true },
 });
 
-productsSchema.pre('save', function (next) {
+productsSchema.pre("save", function (next) {
   var data = this;
-  var pro = mongoose.model('productos')
-  pro.find({nombre: data.nombre,codigo: data.codigo}, function (err, docs) {
-      if (!docs.length){
-          next();
-      }else{                
-          logger.warn('El Producto existe ',data.nombre, data.codigo);
-          next(new Error(`El producto ya existe!  Nombre producto: ${data.nombre}`));
-      }
+  var pro = mongoose.model("productos");
+  pro.find({ nombre: data.nombre, codigo: data.codigo }, function (err, docs) {
+    if (!docs.length) {
+      next();
+    } else {
+      logger.warn("El Producto existe ", data.nombre, data.codigo);
+      next(
+        new Error(`El producto ya existe!  Nombre producto: ${data.nombre}`)
+      );
+    }
   });
-}) ;
+});
 
-export class ProductosAtlasDAO  {
-   srv;
-   productos;
+export class ProductosAtlasDAO {
+  srv;
+  productos;
 
-   constructor(local) {
+  constructor(local) {
     if (local)
       this.srv = `mongodb://localhost:27017/${Config.MONGO_LOCAL_DBNAME}`;
-    else
-      this.srv = Config.MONGO_ATLAS_URL;
+    else this.srv = Config.MONGO_ATLAS_URL;
     mongoose.connect(this.srv);
-    this.productos = mongoose.model('productos', productsSchema);
+    this.productos = mongoose.model("productos", productsSchema);
   }
-
 
   async get(id) {
     let output = [];
     try {
-        if (id) {
-          const document = await this.productos.findById(id);
-          if (document) output.push(document);
-        } else {
-          output = await this.productos.find();
-        }
-        return output;
-
+      if (id) {
+        const document = await this.productos.findById(id);
+        if (document) output.push(document);
+      } else {
+        output = await this.productos.find();
+      }
+      return output;
     } catch (err) {
       return output;
     }
@@ -59,20 +58,19 @@ export class ProductosAtlasDAO  {
   async getCat(categoria) {
     let output = [];
     try {
-        if (categoria) {
-          const document = await this.productos.find({categoria: categoria});
-          if (document) output.push(document);
-        } else {
-          output = await this.productos.find();
-        }
-        return output;
-
+      if (categoria) {
+        const document = await this.productos.find({ categoria: categoria });
+        if (document) output.push(document);
+      } else {
+        output = await this.productos.find();
+      }
+      return output;
     } catch (err) {
       return output;
     }
   }
 
-   async add(data) {
+  async add(data) {
     const newProduct = new this.productos(data);
     await newProduct.save();
 
@@ -87,7 +85,7 @@ export class ProductosAtlasDAO  {
     await this.productos.findByIdAndDelete(id);
   }
 
-  async query(options){
+  async query(options) {
     let query = {};
 
     if (options.nombre) query.nombre = options.nombre;
@@ -95,8 +93,7 @@ export class ProductosAtlasDAO  {
     if (options.precio) query.precio = options.precio;
 
     if (options.categoria) query.categoria = options.categoria;
- 
+
     return this.productos.find(query);
   }
 }
-

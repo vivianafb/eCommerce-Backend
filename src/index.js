@@ -1,5 +1,5 @@
 import server from "./services/server";
-import { connectToDB } from "./services/dbMongo";
+
 import cluster from "cluster";
 import { Argumentos } from "./middleware/args";
 import os from "os";

@@ -3,43 +3,40 @@ import { carritoAPI } from "../apis/carrito";
 import { productsAPI } from "../apis/productos";
 import { orderApi } from "../apis/ordenes";
 import { Gmail } from "../services/gmail";
-import { SmsService } from "../services/twilio";
 import { logger } from "../utils/logs";
-import { UserAPI } from "../apis/user";
-import { localeData } from "moment";
 
-let carrito = [
-  {
-    id: 1,
-    timestamp: Date.now(),
-    producto: {
-      id: 1,
-      nombre: "lapiz",
-      precio: 100,
-      descripcion: "color rojo",
-      codigo: 123456,
-      foto: "https://img.freepik.com/vector-gratis/diseno-lapiz-escribiendo_1095-187.jpg?size=338&ext=jpg",
-      stock: 27,
-      timestamp: Date.now(),
-    },
-  },
-  {
-    id: 2,
-    timestamp: Date.now(),
-    producto: {
-      id: 2,
-      nombre: "goma",
-      precio: 200,
-      descripcion: "goma de borrar",
-      codigo: 789123,
-      foto: "https://www.libreriaservicom.cl/wp-content/uploads/2019/03/goma-de-borrar-factis-s20.jpg",
-      stock: 30,
-      timestamp: Date.now(),
-    },
-  },
-];
+// let carrito = [
+//   {
+//     id: 1,
+//     timestamp: Date.now(),
+//     producto: {
+//       id: 1,
+//       nombre: "lapiz",
+//       precio: 100,
+//       descripcion: "color rojo",
+//       codigo: 123456,
+//       foto: "https://img.freepik.com/vector-gratis/diseno-lapiz-escribiendo_1095-187.jpg?size=338&ext=jpg",
+//       stock: 27,
+//       timestamp: Date.now(),
+//     },
+//   },
+//   {
+//     id: 2,
+//     timestamp: Date.now(),
+//     producto: {
+//       id: 2,
+//       nombre: "goma",
+//       precio: 200,
+//       descripcion: "goma de borrar",
+//       codigo: 789123,
+//       foto: "https://www.libreriaservicom.cl/wp-content/uploads/2019/03/goma-de-borrar-factis-s20.jpg",
+//       stock: 30,
+//       timestamp: Date.now(),
+//     },
+//   },
+// ];
 
-const tableName = "carrito";
+// const tableName = "carrito";
 
 class Carrito {
   async validacion(req, res, next) {
@@ -51,7 +48,7 @@ class Carrito {
     next();
   }
 
-  async checkCarritoExists(req, res, next) {
+  async checkCarritoExists(req, res) {
     try {
       const { id } = req.params;
       const carrito = await carritoAPI.getCarrito(id);
@@ -121,8 +118,8 @@ class Carrito {
       );
       let totalstock = product[0].stock - productAmount;
       // console.log(cart._id)
-      let stock = product[0].stock;
-      let updatedProduct = await productsAPI.updateProduct(productId, {
+      // let stock = product[0].stock;
+      await productsAPI.updateProduct(productId, {
         stock: totalstock,
       });
       res.json({ msg: "Producto agregado con exito", cart: updatedCart });
@@ -165,8 +162,8 @@ class Carrito {
       parseInt(productAmount)
     );
     let totalstock = product[0].stock + productAmount;
-    let stock = product[0].stock;
-    let updatedProduct = await productsAPI.updateProduct(productId, {
+    // let stock = product[0].stock;
+    await productsAPI.updateProduct(productId, {
       stock: totalstock,
     });
     res.json({ msg: "Product deleted", cart: updatedCart });
@@ -218,7 +215,7 @@ class Carrito {
         numOrder
       );
 
-      const updatedCart = await carritoAPI.deleteAll(cart._id);
+      await carritoAPI.deleteAll(cart._id);
       res.json({
         msg: "Orden creada con exito",
         data: GenerateOrder,

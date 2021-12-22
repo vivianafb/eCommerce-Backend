@@ -47,8 +47,6 @@ class carAPI {
   }
 
   async deleteProudct(cartId, productId, amount) {
-    const product = (await productsAPI.getProducts(productId))[0];
-
     const deleteProduct = {
       _id: productId,
       amount,

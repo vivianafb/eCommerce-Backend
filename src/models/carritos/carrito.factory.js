@@ -5,8 +5,8 @@ import { CarritoSQLDAO } from './DAO/mysql';
 import { CarritoSQLITEDAO } from './DAO/sqlite';
 import { CarritoFBDAO } from './DAO/firebase';
 import { logger } from '../../utils/logs';
-
 import path from 'path';
+
 export const TipoPersistencia = {
   Memoria : "MEM",
   FileSystem : "FS",
@@ -16,13 +16,14 @@ export const TipoPersistencia = {
   MongoAtlas : "MONGO-ATLAS",
   Firebase : "FIREBASE",
 }
-const tipo = TipoPersistencia;
+// const tipo = TipoPersistencia;
 export class FactoryDAO {
-  static get(tipo) {
-    switch (tipo) {
+  static get(TipoPersistencia) {
+    const filePath = path.resolve(__dirname, './DAO/carrito.json');
+    switch (TipoPersistencia) {
       case TipoPersistencia.FileSystem:
         logger.info('RETORNANDO INSTANCIA CLASE FS');
-        const filePath = path.resolve(__dirname, './DAO/carrito.json');
+        
         return new CarritoFSDAO(filePath);
 
       case TipoPersistencia.MongoAtlas:

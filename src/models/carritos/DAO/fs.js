@@ -88,7 +88,7 @@ export class CarritoFSDAO{
       query.push((aCarrito) => aCarrito.nombre == options.nombre);
 
     if (options.precio)
-      query.push((aProduct) => aCarrito.precio == options.precio);
+      query.push((aCarrito) => aCarrito.precio == options.precio);
 
     return this.carrito.filter((aCarrito) => query.every((x) => x(aCarrito)));
   }

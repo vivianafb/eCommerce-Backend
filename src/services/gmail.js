@@ -1,6 +1,5 @@
 import Config from "../config";
 import nodemailer from "nodemailer";
-import path from "path";
 
 export class Gmail {
   owner;
@@ -25,7 +24,7 @@ export class Gmail {
     this.transporter.verify();
   }
 
-  async sendEmail(dest, subject, content, attachment) {
+  async sendEmail(dest, subject, content) {
     const mailOptions = {
       from: this.owner,
       to: dest,

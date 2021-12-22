@@ -1,6 +1,5 @@
 import { carritoAPI } from "../apis/carrito";
 import { UserAPI } from "../apis/user";
-import { logger } from "../utils/logs";
 
 class User {
   async validateUserInput(req, res, next) {

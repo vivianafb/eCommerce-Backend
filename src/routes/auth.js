@@ -1,9 +1,7 @@
 import { Router } from "express";
 import passport from "passport";
 import jwt from "jsonwebtoken";
-import { GmailService } from "../services/gmail";
 import config from "../config/index";
-import { ensureToken } from "../middleware/auth";
 const router = Router();
 
 router.post("/login", passport.authenticate("login"), function (req, res) {
@@ -13,7 +11,7 @@ router.post("/login", passport.authenticate("login"), function (req, res) {
 });
 
 router.post("/signup", (req, res, next) => {
-  passport.authenticate("signup", function (err, data, info) {
+  passport.authenticate("signup", function (err, data) {
     if (err) {
       return next(err);
     }
