@@ -7,7 +7,8 @@ import MongoStore from "connect-mongo";
 import Config from "../config";
 import passport from "../middleware/auth";
 import { logger } from "../utils/logs";
-
+import swaggerUi from "swagger-ui-express";
+import swaggerJsDoc from "swagger-jsdoc";
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 const StoreOptions = {
   store: MongoStore.create({
@@ -33,12 +34,30 @@ app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(function (err, req, res) {
+app.use(function (err, req, res, next) {
   logger.error(`HUBO UN ERROR ${err.message}`);
   return res.status("500").json({
     error: err.message,
   });
 });
+const swaggerSpec = {
+  definition: {
+    openapi: "3.0.0", // present supported openapi version
+    info: {
+      title: "Simple Todos API", // short title.
+      description: "A simple todos API", //  desc.
+      version: "1.0.0", // version number
+      contact: {
+        name: "John doe", // your name
+        email: "john@web.com", // your email
+        url: "web.com", // your website
+      },
+    },
+    
+  },
+  apis: [`${path.join(__dirname, "../routes/*.js")}`],
+};
+app.use("/doc", swaggerUi.serve, swaggerUi.setup(swaggerJsDoc(swaggerSpec)));
 
 app.use("/api", apiRouter);
 

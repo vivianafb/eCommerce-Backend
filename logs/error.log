@@ -34,3 +34,19 @@
 [31merror[39m |  Dec-14-2021 14:51:30 | HUBO UN ERROR Unexpected end of JSON input
 [31merror[39m |  Dec-18-2021 14:42:32 | HUBO UN ERROR Unexpected field
 [31merror[39m |  Dec-22-2021 12:26:54 | carritos validation failed: direccion: Path `direccion` is required.
+[31merror[39m |  Dec-22-2021 17:10:29 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:23:29 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:23:31 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:23:33 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:24:38 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:25:26 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:25:52 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:26:01 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:27:01 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:27:46 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:28:32 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:28:36 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:29:17 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 21:30:02 | this.carrito.createCart is not a function
+[31merror[39m |  Dec-22-2021 21:31:21 | this.carrito.createCart is not a function
+[31merror[39m |  Dec-22-2021 21:34:51 | this.carrito.createCart is not a function

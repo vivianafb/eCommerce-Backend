@@ -16,11 +16,11 @@ export const TipoPersistencia = {
   MongoAtlas : "MONGO-ATLAS",
   Firebase : "FIREBASE",
 }
-// const tipo = TipoPersistencia;
+ const tipo = TipoPersistencia;
 export class FactoryDAO {
-  static get(TipoPersistencia) {
+  static get(tipo) {
     const filePath = path.resolve(__dirname, './DAO/carrito.json');
-    switch (TipoPersistencia) {
+    switch (tipo) {
       case TipoPersistencia.FileSystem:
         logger.info('RETORNANDO INSTANCIA CLASE FS');
         

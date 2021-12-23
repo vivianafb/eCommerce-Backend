@@ -14,10 +14,11 @@ export const TipoPersistencia = {
   LocalMongo: "LOCAL-MONGO",
   MongoAtlas: "MONGO-ATLAS",
 };
+const tipo = TipoPersistencia;
 export class NoticiasFactoryDAO {
-  static get(TipoPersistencia) {
+  static get(tipo) {
     const filePath = path.resolve(__dirname, "./DAOs/products.json");
-    switch (TipoPersistencia) {
+    switch (tipo) {
       case TipoPersistencia.FileSystem:
         logger.info("RETORNANDO INSTANCIA CLASE FS");
         return new ProductosFSDAO(filePath);

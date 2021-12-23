@@ -9,10 +9,10 @@ export const TipoPersistencia = {
   LocalMongo: "LOCAL-MONGO",
   MongoAtlas: "MONGO-ATLAS",
 };
-
+const tipo = TipoPersistencia;
 export class userFactoryDAO {
-  static get(TipoPersistencia) {
-    switch (TipoPersistencia) {
+  static get(tipo) {
+    switch (tipo) {
       case TipoPersistencia.MongoAtlas:
         logger.info("RETORNANDO INSTANCIA CLASE MONGO ATLAS");
         return new UsuarioAtlasDAO();

@@ -518,3 +518,101 @@
 [33mwarn[39m |  Dec-22-2021 14:33:20 | Worker 37500 died at Wed Dec 22 2021 14:33:20 GMT-0300 (hora de verano de Chile)
 [33mwarn[39m |  Dec-22-2021 14:33:20 | Worker 19964 died at Wed Dec 22 2021 14:33:20 GMT-0300 (hora de verano de Chile)
 [33mwarn[39m |  Dec-22-2021 14:33:20 | Worker 30312 died at Wed Dec 22 2021 14:33:20 GMT-0300 (hora de verano de Chile)
+[31merror[39m |  Dec-22-2021 17:10:29 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:23:29 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:23:31 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:23:33 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:24:38 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:25:26 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:25:52 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:26:01 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:27:01 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:27:46 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:28:32 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:28:36 | HUBO UN ERROR undefined
+[31merror[39m |  Dec-22-2021 18:29:17 | HUBO UN ERROR undefined
+[33mwarn[39m |  Dec-22-2021 18:44:24 | Worker 29172 died at Wed Dec 22 2021 18:44:24 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 18:44:24 | Worker 16200 died at Wed Dec 22 2021 18:44:24 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 18:44:24 | Worker 34048 died at Wed Dec 22 2021 18:44:24 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 18:44:24 | Worker 36516 died at Wed Dec 22 2021 18:44:24 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 18:44:24 | Worker 40488 died at Wed Dec 22 2021 18:44:24 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 18:44:24 | Worker 41352 died at Wed Dec 22 2021 18:44:24 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 18:44:24 | Worker 41840 died at Wed Dec 22 2021 18:44:24 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:03:42 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:03:42 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:03:42 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:03:42 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:03:42 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:03:42 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:03:42 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:03:42 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:05:36 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:05:36 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:05:37 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:05:37 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:05:37 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:05:37 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:05:37 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:05:37 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:06:39 | Worker 45016 died at Wed Dec 22 2021 20:06:39 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:39 | Worker 41888 died at Wed Dec 22 2021 20:06:39 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:40 | Worker 29252 died at Wed Dec 22 2021 20:06:40 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:40 | Worker 16536 died at Wed Dec 22 2021 20:06:40 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:40 | Worker 42712 died at Wed Dec 22 2021 20:06:40 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:40 | Worker 41492 died at Wed Dec 22 2021 20:06:40 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:40 | Worker 13272 died at Wed Dec 22 2021 20:06:40 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:41 | Worker 38724 died at Wed Dec 22 2021 20:06:41 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:41 | Worker 41192 died at Wed Dec 22 2021 20:06:41 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:06:41 | Worker 41152 died at Wed Dec 22 2021 20:06:41 GMT-0300 (hora de verano de Chile)
+[33mwarn[39m |  Dec-22-2021 20:08:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:08:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:08:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:08:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:08:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:08:54 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:08:54 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:08:54 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:09:17 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:09:17 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:09:18 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:09:18 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:09:19 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:10:17 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:10:17 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:10:17 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:10:18 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:10:18 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:10:18 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:10:18 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:10:18 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:18:15 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:18:15 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:18:15 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:18:15 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:18:15 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:18:15 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:18:15 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:18:15 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:27 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:28 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:28 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:28 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:28 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:28 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:28 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:28 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:52 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:52 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:52 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:53 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:19:54 | Error en el servidor: Error: bind EADDRINUSE null:8080
+[33mwarn[39m |  Dec-22-2021 20:22:16 | Login Fail for username vivivi: Password is not valid
+[31merror[39m |  Dec-22-2021 21:30:02 | this.carrito.createCart is not a function
+[31merror[39m |  Dec-22-2021 21:31:21 | this.carrito.createCart is not a function
+[33mwarn[39m |  Dec-22-2021 21:34:23 | User already exists
+[31merror[39m |  Dec-22-2021 21:34:51 | this.carrito.createCart is not a function
+[33mwarn[39m |  Dec-22-2021 22:02:53 | Login Fail for username vivivi: User does not exist
+[33mwarn[39m |  Dec-22-2021 22:12:05 | Login Fail for username edu: User does not exist

@@ -10,7 +10,7 @@ const router = Router();
 
 router.use("/auth", AuthRouter);
 router.use("/productos", productoRouter);
-router.use("/carrito", ensureToken, carritoRouter);
+router.use("/carrito", carritoRouter);
 router.use("/orders", ensureToken, ordenesRouter);
 router.use("/users", userRouter);
 
