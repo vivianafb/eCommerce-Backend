@@ -132,36 +132,35 @@ class Carrito {
 
   async deleteProduct(req, res) {
     const user = req.user;
-    const { id } = req.params;
+    const { productId } = req.params;
     const cart = await carritoAPI.getCarrito(user[0]._id);
 
-    const { productId, productAmount } = req.body;
-    const userId = user[0]._id;
-    if (id != userId) return res.status(400).json({ msg: "User id not found" });
+    // const userId = user[0]._id;
+    // if (id != userId) return res.status(400).json({ msg: "User id not found" });
 
-    if (!productId || !productAmount)
-      return res.status(400).json({ msg: "Invalid body parameters" });
+    // if (!productId || !productAmount)
+    //   return res.status(400).json({ msg: "Invalid body parameters" });
 
     const product = await productsAPI.getProducts(productId);
 
     if (!product.length)
       return res.status(400).json({ msg: "Product not found" });
 
-    if (parseInt(productAmount) < 0)
-      return res.status(400).json({ msg: "Invalid amount" });
+    // if (parseInt(productAmount) < 0)
+    //   return res.status(400).json({ msg: "Invalid amount" });
 
-    const proAmount = cart.productos[0].amount;
-    if (parseInt(productAmount) > proAmount)
-      return res.status(400).json({
-        msg: `La cantidad que ingresa supera la cantidad actual(${proAmount}) del producto en el carrito`,
-      });
-
+     const proAmount = cart.productos[0].amount;
+    // if (parseInt(productAmount) > proAmount)
+    //   return res.status(400).json({
+    //     msg: `La cantidad que ingresa supera la cantidad actual(${proAmount}) del producto en el carrito`,
+    //   });
+    
     const updatedCart = await carritoAPI.deleteProudct(
       cart._id,
       productId,
-      parseInt(productAmount)
+      parseInt(proAmount)
     );
-    let totalstock = product[0].stock + productAmount;
+    let totalstock = product[0].stock + proAmount;
     // let stock = product[0].stock;
     await productsAPI.updateProduct(productId, {
       stock: totalstock,

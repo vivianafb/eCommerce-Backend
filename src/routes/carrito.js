@@ -134,10 +134,36 @@ router.post(
   expressAsyncHandler(carritoController.comprarProduct)
 );
 
-// router.delete(
-//   "/borrar/:id",
-//   checkAdmin,
-//   expressAsyncHandler(carritoController.deleteProduct)
-// );
+
+/**
+ *
+ * @swagger
+ * /api/carrito/borrar/{productId}:
+ *  delete:
+ *    summary: Delete a product from the cart
+ *    tags: [Carrito]
+ *    parameters:
+ *      - in: path
+ *        name: productId
+ *        required: true
+ *        schema:
+ *          type: string
+ *          minimun: 1
+ *    responses:
+ *      200:
+ *        description: Product deleted succesfully
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              $ref: '#/components/schemas/Carrito'
+ *      400:
+ *        description: There was an error
+ */
+router.delete(
+  "/borrar/:productId",
+  checkAdmin,
+  expressAsyncHandler(carritoController.deleteProduct)
+);
 
 export default router;
