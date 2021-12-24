@@ -50,8 +50,6 @@ Body Postman: {
 
 - http://localhost:8080/api/carrito/agregar
 
-- http://localhost:8080/api/carrito/borrar/:id
-
 - http://localhost:8080/api/carrito/comprar
 
 

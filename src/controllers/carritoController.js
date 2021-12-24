@@ -227,15 +227,15 @@ class Carrito {
     }
   }
 
-  async deleteCarrito(req, res) {
-    const user = req.user;
-    const cart = await carritoAPI.getCarrito(user._id);
-    const updatedCart = await carritoAPI.deleteCarrito(cart._id);
+  // async deleteCarrito(req, res) {
+  //   const user = req.user;
+  //   const cart = await carritoAPI.getCarrito(user._id);
+  //   const updatedCart = await carritoAPI.deleteCarrito(cart._id);
 
-    res.json({
-      msg: "Carrito eliminado ya que el user se elimino",
-      data: updatedCart,
-    });
-  }
+  //   res.json({
+  //     msg: "Carrito eliminado ya que el user se elimino",
+  //     data: updatedCart,
+  //   });
+  // }
 }
 export const carritoController = new Carrito();

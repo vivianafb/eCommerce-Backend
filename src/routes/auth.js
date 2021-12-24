@@ -118,6 +118,19 @@ router.post("/signup", (req, res, next) => {
   })(req, res, next);
 });
 
+
+/**
+ * 
+ * @swagger
+ * /api/auth/logout:
+ *  get:
+ *    summary: Log out 
+ *    tags: [User]
+ *    responses:
+ *      200:
+ *        description: User sign up correctly
+ *            
+ */
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) res.status(500).json({ message: "Ocurrió un error" });
