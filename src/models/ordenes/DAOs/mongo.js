@@ -57,6 +57,22 @@ export class ordersAtlasDAO {
       logger.warn("Order not found");
     }
   }
+
+  async getById(id) {
+    try {
+      if (id) {
+        const result = await this.orders.find({ _id: id });
+        if (result) return result;
+      } else {
+        const result = await this.orders.find();
+        if (result) return result;
+      }
+    } catch (err) {
+      logger.warn("Order not found");
+    }
+  }
+
+
   async add(userId, dato, total, numOrder) {
     const order = new this.orders({ userId, items: [], total, numOrder });
     for (let i = 0; i < dato.length; i++) {

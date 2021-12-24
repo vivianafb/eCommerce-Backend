@@ -7,7 +7,7 @@ const router = Router();
 
 router.get("/", checkAdmin, expressAsyncHandler(ordersController.getOrders));
 
-router.get("/:orderId", expressAsyncHandler(ordersController.getOrdersById));
+router.get("/:id", expressAsyncHandler(ordersController.getOrdersById));
 
 router.post(
   "/complete",

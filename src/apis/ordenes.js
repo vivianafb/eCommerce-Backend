@@ -17,6 +17,14 @@ class orderAPI {
     }
   }
 
+  async getOrderById(id) {
+    if (id) {
+      return this.order.getById(id);
+    } else {
+      return this.order.getById();
+    }
+  }
+
   async createOrder(userId, items, total, numOrder) {
     // console.log(items)
     let dato = [];

@@ -4,21 +4,29 @@ import Config from "../config/index";
 class Orders {
   async getOrders(req, res) {
     const user = req.user;
-    const order = await orderApi.getOrder(user[0]._id, null);
-    if (order) {
-      return res.json({
-        order: order,
-      });
-    } else {
-      return res.status(400).json({
-        order: "error",
-      });
+    if(user){
+      const order = await orderApi.getOrder(user[0]._id, null);
+      if (order) {
+        return res.json({
+          order: order,
+        });
+      } else {
+        return res.status(400).json({
+          order: "error",
+        });
+      }
+    }
+    else{
+      res.status(400).json({
+        msg: "El usuario no esta logeado"
+      })
     }
   }
 
   async getOrdersById(req, res) {
     const { id } = req.params;
-    const order = await orderApi.getOrder(null, id);
+    const order = await orderApi.getOrderById(id);
+    console.log(order)
     if (order) {
       return res.json({
         orderById: order,
