@@ -3,5 +3,5 @@
 
 Proyecto Final del curso "Programacion Backend" en Coderhouse
 
-# LINK HEROKU SWAGGER DOCUMENTATION : 
+# SWAGGER DOCUMENTATION IN HEROKU : 
 https://ecommercevivi.herokuapp.com/doc/
