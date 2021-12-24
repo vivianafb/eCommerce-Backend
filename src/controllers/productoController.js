@@ -154,31 +154,55 @@ class Producto {
           err: "ID de producto no encontrado",
         });
       } else {
-        const pro = await productsAPI.getProducts(req.params.id);
-        await cloudinary.uploader.destroy(pro[0].cloudinary_id);
-        const result = await cloudinary.uploader.upload(req.file.path);
-        let prod = {
-          nombre: req.body.nombre || pro.nombre,
-          precio: req.body.precio || pro.precio,
-          descripcion: req.body.descripcion || pro.descripcion,
-          codigo: req.body.codigo || pro.codigo,
-          foto: result.secure_url || pro.foto,
-          stock: req.body.stock || pro.stock,
-          categoria: req.body.categoria | pro.categoria,
-          cloudinary_id: result.public_id || pro.cloudinary_id,
-        };
+        if(req.file){
+          const pro = await productsAPI.getProducts(req.params.id);
+          await cloudinary.uploader.destroy(pro[0].cloudinary_id);
+          const result = await cloudinary.uploader.upload(req.file.path);
+          let prod = {
+            nombre: req.body.nombre || pro.nombre,
+            precio: req.body.precio || pro.precio,
+            descripcion: req.body.descripcion || pro.descripcion,
+            codigo: req.body.codigo || pro.codigo,
+            foto: pro.foto || result.secure_url ,
+            stock: req.body.stock || pro.stock,
+            categoria: req.body.categoria | pro.categoria,
+            cloudinary_id: result.public_id || pro.cloudinary_id,
+          };
+  
+          const newUpdate = await productsAPI.updateProduct(id, prod);
+  
+          console.log(result);
+          res.json({
+            msg: "Actualizando los productos",
+            data: newUpdate,
+          });
+        }else{
+          const pro = await productsAPI.getProducts(req.params.id);
+          let prod = {
+            nombre: req.body.nombre || pro.nombre,
+            precio: req.body.precio || pro.precio,
+            descripcion: req.body.descripcion || pro.descripcion,
+            codigo: req.body.codigo || pro.codigo,
+            foto: pro.foto,
+            stock: req.body.stock || pro.stock,
+            categoria: req.body.categoria | pro.categoria,
+            cloudinary_id: pro.cloudinary_id,
+          };
+  
+          await productsAPI.updateProduct(id, prod);
+          const updatedProduct = await productsAPI.getProducts(req.params.id);
+          console.log(result);
+          res.json({
+            msg: "Actualizando los productos",
+            data: updatedProduct,
+          });
 
-        const newUpdate = await productsAPI.updateProduct(id, prod);
-
-        console.log(result);
-        res.json({
-          msg: "Actualizando los productos",
-          data: newUpdate,
-        });
+        }
+        
       }
     } catch (err) {
       return res.status(404).json({
-        err: err.message,
+        error: err.message,
       });
     }
   }
