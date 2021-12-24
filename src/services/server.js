@@ -44,13 +44,13 @@ const swaggerSpec = {
   definition: {
     openapi: "3.0.0", // present supported openapi version
     info: {
-      title: "Simple Todos API", // short title.
-      description: "A simple todos API", //  desc.
+      title: "Ecommerce API REST", // short title.
+      description: "Desafio de Coderhouse el cual consiste en un BackEnd de ecommerce ", //  desc.
       version: "1.0.0", // version number
       contact: {
-        name: "John doe", // your name
-        email: "john@web.com", // your email
-        url: "web.com", // your website
+        name: "Viviana Fajardo", // your name
+        email: "vivianafb15@gmail.com", // your email
+        url: "https://github.com/vivianafb/eCommerce-Backend/", // your website
       },
     },
     
