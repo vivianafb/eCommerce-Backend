@@ -4,14 +4,14 @@ import carritoRouter from "./carrito";
 import userRouter from "./user";
 import AuthRouter from "./auth";
 import ordenesRouter from "./ordenes";
-import { ensureToken } from "../middleware/auth";
+// import { ensureToken } from "../middleware/auth";
 
 const router = Router();
 
 router.use("/auth", AuthRouter);
 router.use("/productos", productoRouter);
 router.use("/carrito", carritoRouter);
-router.use("/orders", ensureToken, ordenesRouter);
+router.use("/orders", ordenesRouter);
 router.use("/users", userRouter);
 
 export default router;

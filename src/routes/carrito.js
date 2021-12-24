@@ -5,7 +5,6 @@ import expressAsyncHandler from "express-async-handler";
 import { validateCarrito } from "../validators/carrito";
 const router = Router();
 
-
 /**
  * @swagger
  * components:
@@ -29,9 +28,8 @@ const router = Router();
  *        direccion: ''
  */
 
-
 /**
- * 
+ *
  * @swagger
  * /api/carrito:
  *  get:
@@ -39,14 +37,14 @@ const router = Router();
  *    tags: [Carrito]
  *    responses:
  *      200:
- *        description: Carrito load correctly
+ *        description: Carrito loaded correctly
  *        content:
  *          application/json:
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/Carrito'
- *      400:     
- *        description: Not found
+ *      400:
+ *        description: Carrito not found
  */
 router.get(
   "/",
@@ -54,12 +52,12 @@ router.get(
   expressAsyncHandler(carritoController.getCartByUser)
 );
 
-router.get(
-  "/:id",
-  checkAdmin,
-  carritoController.checkCarritoExists,
-  expressAsyncHandler(carritoController.getCartByUser)
-);
+// router.get(
+//   "/:id",
+//   checkAdmin,
+//   carritoController.checkCarritoExists,
+//   expressAsyncHandler(carritoController.getCartByUser)
+// );
 
 /**
  * @swagger
@@ -81,7 +79,7 @@ router.get(
  */
 
 /**
- * 
+ *
  * @swagger
  * /api/carrito/agregar:
  *  post:
@@ -102,8 +100,8 @@ router.get(
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/Carrito'
- *      400:     
- *        description: Error
+ *      400:
+ *        description: There was an error , product wasn't added to the cart
  */
 router.post(
   "/agregar",
@@ -112,44 +110,12 @@ router.post(
   expressAsyncHandler(carritoController.addProduct)
 );
 
-
 /**
- * @swagger
- * components:
- *  schemas:
- *    Orden:
- *      type: object
- *      properties:
- *        userId:
- *          type: string
- *        items:
- *          type: array
- *        estado:
- *          type: string
- *        total:
- *          type: string
- *        numOrder: 
- *          type: string
- *      required:
- *        - userId
- *        - items
- *        - estado
- *        - total
- *        - numOrder
- *      example:
- *        userId: 61c3c50e642badd8ee4ee9cd
- *        items: [ {producto: PRODUCTO3, cantidad: 50, precio: 15000, _id: 61c50de36ade12968795c231}]
- *        estado: Generado
- *        total: 750000
- *        numOrder: 1
- */
-
-/**
- * 
+ *
  * @swagger
  * /api/carrito/comprar:
  *  post:
- *    summary: Buy productos from the cart
+ *    summary: Buy the products that are in the cart
  *    tags: [Carrito]
  *    responses:
  *      200:
@@ -158,9 +124,9 @@ router.post(
  *          application/json:
  *            schema:
  *              type: object
- *              $ref: '#/components/schemas/Orden'
- *      400:     
- *        description: Error
+ *              $ref: '#/components/schemas/Order'
+ *      400:
+ *        description: There was an error in the purchase
  */
 router.post(
   "/comprar",

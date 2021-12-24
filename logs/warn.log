@@ -616,3 +616,4 @@
 [31merror[39m |  Dec-22-2021 21:34:51 | this.carrito.createCart is not a function
 [33mwarn[39m |  Dec-22-2021 22:02:53 | Login Fail for username vivivi: User does not exist
 [33mwarn[39m |  Dec-22-2021 22:12:05 | Login Fail for username edu: User does not exist
+[33mwarn[39m |  Dec-24-2021 12:42:53 | Order not found

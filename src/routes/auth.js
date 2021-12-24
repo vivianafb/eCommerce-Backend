@@ -24,11 +24,11 @@ const router = Router();
  */
 
 /**
- * 
+ *
  * @swagger
  * /api/auth/login:
  *  post:
- *    summary: Login a user into the app
+ *    summary: Login to the app
  *    tags: [User]
  *    requestBody:
  *      required: true
@@ -39,8 +39,8 @@ const router = Router();
  *            $ref: '#/components/schemas/User'
  *    responses:
  *      200:
- *        description: User loggin correctly
- *            
+ *        description: Successful login
+ *
  */
 router.post("/login", passport.authenticate("login"), function (req, res) {
   const user = req.user;
@@ -78,22 +78,21 @@ router.post("/login", passport.authenticate("login"), function (req, res) {
  *        - password
  *        - confirmPassword
  *      example:
- *        username: edu
- *        firstName: Eduardo
- *        lastName: Soledad
+ *        username: viviviv
+ *        firstName: Viviana
+ *        lastName: Fajardo
  *        phone: '+569123456'
- *        email: edu@gmail.com
+ *        email: vivi21@gmail.com
  *        password: '123456'
  *        confirmPassword: '123456'
  */
 
-
 /**
- * 
+ *
  * @swagger
  * /api/auth/signup:
  *  post:
- *    summary: Sign up into the app
+ *    summary: The user registers in the app
  *    tags: [User]
  *    requestBody:
  *      required: true
@@ -105,7 +104,7 @@ router.post("/login", passport.authenticate("login"), function (req, res) {
  *    responses:
  *      200:
  *        description: User sign up correctly
- *            
+ *
  */
 router.post("/signup", (req, res, next) => {
   passport.authenticate("signup", function (err, data) {
@@ -118,18 +117,17 @@ router.post("/signup", (req, res, next) => {
   })(req, res, next);
 });
 
-
 /**
- * 
+ *
  * @swagger
  * /api/auth/logout:
  *  get:
- *    summary: Log out 
+ *    summary: Log out
  *    tags: [User]
  *    responses:
  *      200:
- *        description: User sign up correctly
- *            
+ *        description: You have successfully logged out
+ *
  */
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {

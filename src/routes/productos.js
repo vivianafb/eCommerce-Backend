@@ -46,7 +46,7 @@ const router = Router();
  */
 
 /**
- * 
+ *
  * @swagger
  * /api/productos:
  *  get:
@@ -60,14 +60,13 @@ const router = Router();
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/Producto'
- *      400:     
- *        description: Not found
+ *      400:
+ *        description: Product not found
  */
 router.get("/", expressAsyncHandler(productoController.getProducto));
 
-
 /**
- * 
+ *
  * @swagger
  * /api/productos/{id}:
  *  get:
@@ -78,24 +77,23 @@ router.get("/", expressAsyncHandler(productoController.getProducto));
  *        schema:
  *          type: string
  *          minimun: 1
- *    summary: Get all the products
+ *    summary: Get the product with the id
  *    tags: [Producto]
  *    responses:
  *      200:
- *        description: List of products
+ *        description: Product found
  *        content:
  *          application/json:
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/Producto'
- *      400:     
- *        description: Not found
+ *      400:
+ *        description: Product not found
  */
 router.get("/:id", expressAsyncHandler(productoController.getProducto));
 
-
 /**
- * 
+ *
  * @swagger
  * /api/productos/categoria/{categoria}:
  *  get:
@@ -106,27 +104,26 @@ router.get("/:id", expressAsyncHandler(productoController.getProducto));
  *        schema:
  *          type: string
  *          minimun: 1
- *    summary: Get the product by the categorie
+ *    summary: Get the product by the category
  *    tags: [Producto]
  *    responses:
  *      200:
- *        description: List of products based on the categorie
+ *        description: List of products with the required category
  *        content:
  *          application/json:
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/Producto'
- *      400:     
- *        description: Not found
+ *      400:
+ *        description: Product not found
  */
 router.get(
   "/categoria/:categoria",
   expressAsyncHandler(productoController.getCategoria)
 );
 
-
 /**
- * 
+ *
  * @swagger
  * /api/productos/agregar:
  *  post:
@@ -141,21 +138,20 @@ router.get(
  *            $ref: '#/components/schemas/Producto'
  *    responses:
  *      200:
- *        description: Add a product to the app
+ *        description: Product added succesfuly
  *        content:
  *          application/json:
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/Producto'
- *      400:     
- *        description: Error
+ *      400:
+ *        description: There was an error
  */
 router.post(
   "/agregar",
   upload.single("foto"),
   expressAsyncHandler(productoController.addProducto)
 );
-
 
 /**
  * @swagger
@@ -190,7 +186,7 @@ router.post(
  */
 
 /**
- * 
+ *
  * @swagger
  * /api/productos/actualizar/{id}:
  *  put:
@@ -212,14 +208,14 @@ router.post(
  *            $ref: '#/components/schemas/Productos'
  *    responses:
  *      200:
- *        description: Updated product
+ *        description: Product updated successfully
  *        content:
  *          application/json:
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/Productos'
- *      400:     
- *        description: Error
+ *      400:
+ *        description: There was an error
  */
 router.put(
   "/actualizar/:id",
@@ -228,9 +224,8 @@ router.put(
   expressAsyncHandler(productoController.updateProducto)
 );
 
-
 /**
- * 
+ *
  * @swagger
  * /api/productos/borrar/{id}:
  *  delete:
@@ -241,18 +236,18 @@ router.put(
  *        schema:
  *          type: string
  *          minimun: 1
- *    summary: Delete the product
+ *    summary: Delete the product with the id
  *    tags: [Producto]
  *    responses:
  *      200:
- *        description: The product that was deleted
+ *        description: The product was deleted
  *        content:
  *          application/json:
  *            schema:
  *              type: object
  *              $ref: '#/components/schemas/Producto'
- *      400:     
- *        description: Not found
+ *      400:
+ *        description: Product not found
  */
 router.delete(
   "/borrar/:id",

@@ -41,18 +41,18 @@ class Orders {
     const { id } = req.params;
     const user = req.user;
     // const userId = user[0]._id;
-    const order = await orderApi.getOrder(null, id);
-    if (!order || order.estado != "Generado") {
+    const order = await orderApi.getOrderById(id);
+    if (!order || order[0].estado != "Generado") {
       return res.status(400).json({
         msg: "La orden no existe o no esta en estado 'Generado'",
       });
     } else {
-      const OrderId = order._id;
+      // const OrderId = order[0]._id;
       let data = {
         estado: "Completado",
       };
-      await orderApi.updateOrder(OrderId, data);
-      const orderUpdate2 = await orderApi.getOrder(null, id);
+      await orderApi.updateOrder(order[0]._id, data);
+      const orderUpdate2 = await orderApi.getOrderById(id);
 
       let content = "La orden fue completada";
       const gmailService = new Gmail("gmail");
