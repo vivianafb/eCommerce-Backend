@@ -9,6 +9,11 @@ import passport from "../middleware/auth";
 import { logger } from "../utils/logs";
 import swaggerUi from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
+import handlebars from 'express-handlebars'
+import { initWsServer } from '../services/socket'
+import cookieParser from 'cookie-parser';
+
+
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 const StoreOptions = {
   store: MongoStore.create({
@@ -27,12 +32,26 @@ const StoreOptions = {
 const app = express();
 app.use(session(StoreOptions));
 const server = new http.Server(app);
+initWsServer(server);
 const publicPath = path.resolve(__dirname, "../../public");
+const layoutFolderPath = path.resolve(__dirname, '../../views/layouts');
+const defaultLayerPth = path.resolve(__dirname, '../../views/layouts/index.hbs');
+app.set('view engine', 'hbs');
+app.engine(
+  'hbs',
+  handlebars({
+    layoutsDir: layoutFolderPath,
+    defaultLayout: defaultLayerPth,
+    extname: 'hbs',
+  })
+);
 app.use(express.static(publicPath));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
+
 
 app.use(function (err, req, res, next) {
   logger.error(`HUBO UN ERROR ${err.message}`);

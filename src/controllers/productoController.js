@@ -117,21 +117,28 @@ class Producto {
   }
 
   async addProducto(req, res) {
-    console.log(req.body);
     try {
-      console.log(req.body);
-      const result = await cloudinary.uploader.upload(req.file.path);
-      console.log(result);
+      let result = [];
+      let resultado = { url: [] };
+      let clodinaryId = { public_id: [] };
+      for (let i = 0; i < req.files.length; i++) {
+        result = await cloudinary.uploader.upload(req.files[i].path);
+        resultado.url.push(result.secure_url);
+        clodinaryId.public_id.push(result.public_id);
+        console.log(result);
+      }
+
       let prod = {
         nombre: req.body.nombre,
         precio: req.body.precio,
         descripcion: req.body.descripcion,
         codigo: req.body.codigo,
-        foto: result.secure_url,
+        fotos: resultado,
         stock: req.body.stock,
         categoria: req.body.categoria,
-        cloudinary_id: result.public_id,
+        cloudinary_id: clodinaryId,
       };
+      // console.log(prod)
       const newItem = await productsAPI.addProduct(prod);
       res.json({
         msg: "Productos agregado con exito",
@@ -154,51 +161,67 @@ class Producto {
           err: "ID de producto no encontrado",
         });
       } else {
-        if(req.file){
+        if (req.files) {
           const pro = await productsAPI.getProducts(req.params.id);
-          await cloudinary.uploader.destroy(pro[0].cloudinary_id);
-          const result = await cloudinary.uploader.upload(req.file.path);
+          // const lengthProducts = pro[0].cloudinary_id.public_id.length
+          if (pro[0].cloudinary_id.public_id) {
+            for (let i = 0; i < pro[0].cloudinary_id.public_id.length; i++) {
+              await cloudinary.uploader.destroy(
+                pro[0].cloudinary_id.public_id[i]
+              );
+            }
+          } else {
+            await cloudinary.uploader.destroy(pro[0].cloudinary_id);
+          }
+
+          let result = [];
+          let resultado = { url: [] };
+          let clodinaryId = { public_id: [] };
+          for (let i = 0; i < req.files.length; i++) {
+            result = await cloudinary.uploader.upload(req.files[i].path);
+            resultado.url.push(result.secure_url);
+            clodinaryId.public_id.push(result.public_id);
+            // console.log(result);
+          }
+
           let prod = {
             nombre: req.body.nombre || pro.nombre,
             precio: req.body.precio || pro.precio,
             descripcion: req.body.descripcion || pro.descripcion,
             codigo: req.body.codigo || pro.codigo,
-            foto: pro.foto || result.secure_url ,
+            fotos: resultado || pro.fotos,
             stock: req.body.stock || pro.stock,
             categoria: req.body.categoria | pro.categoria,
-            cloudinary_id: result.public_id || pro.cloudinary_id,
+            cloudinary_id: clodinaryId || pro.cloudinary_id,
           };
-  
-          const newUpdate = await productsAPI.updateProduct(id, prod);
-  
-          console.log(result);
-          res.json({
-            msg: "Actualizando los productos",
-            data: newUpdate,
-          });
-        }else{
-          const pro = await productsAPI.getProducts(req.params.id);
-          let prod = {
-            nombre: req.body.nombre || pro.nombre,
-            precio: req.body.precio || pro.precio,
-            descripcion: req.body.descripcion || pro.descripcion,
-            codigo: req.body.codigo || pro.codigo,
-            foto: pro.foto,
-            stock: req.body.stock || pro.stock,
-            categoria: req.body.categoria | pro.categoria,
-            cloudinary_id: pro.cloudinary_id,
-          };
-  
+
           await productsAPI.updateProduct(id, prod);
           const updatedProduct = await productsAPI.getProducts(req.params.id);
-          console.log(result);
           res.json({
             msg: "Actualizando los productos",
             data: updatedProduct,
           });
+        } else {
+          const pro = await productsAPI.getProducts(req.params.id);
+          let prod = {
+            nombre: req.body.nombre || pro.nombre,
+            precio: req.body.precio || pro.precio,
+            descripcion: req.body.descripcion || pro.descripcion,
+            codigo: req.body.codigo || pro.codigo,
+            fotos: pro.foto,
+            stock: req.body.stock || pro.stock,
+            categoria: req.body.categoria | pro.categoria,
+            cloudinary_id: pro.cloudinary_id,
+          };
 
+          await productsAPI.updateProduct(id, prod);
+          const updatedProduct = await productsAPI.getProducts(req.params.id);
+
+          res.json({
+            msg: "Actualizando los productos",
+            data: updatedProduct,
+          });
         }
-        
       }
     } catch (err) {
       return res.status(404).json({
@@ -218,9 +241,17 @@ class Producto {
         });
       } else {
         const id = req.params.id;
-        const result = await productsAPI.getProducts(id);
+        const pro = await productsAPI.getProducts(id);
         await productsAPI.deleteProduct(id);
-        await cloudinary.uploader.destroy(result[0].cloudinary_id);
+        if (pro[0].cloudinary_id.public_id) {
+          for (let i = 0; i < pro[0].cloudinary_id.public_id.length; i++) {
+            await cloudinary.uploader.destroy(
+              pro[0].cloudinary_id.public_id[i]
+            );
+          }
+        } else {
+          await cloudinary.uploader.destroy(pro[0].cloudinary_id);
+        }
         res.json({
           msg: "Producto eliminado",
         });

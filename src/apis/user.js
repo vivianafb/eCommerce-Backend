@@ -37,13 +37,12 @@ class User {
     //Borrar carrito tambien
   }
 
-  async query(username, email) {
+  async query(username) {
     const query = {
       $or: [],
     };
 
     if (username) query.$or.push({ username });
-    if (email) query.$or.push({ email });
 
     const user = await this.users.query(query);
     // console.log(user);

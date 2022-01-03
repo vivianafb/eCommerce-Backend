@@ -1,4 +1,3 @@
-import { string } from 'joi';
 import mongoose, {Schema} from 'mongoose';
 import Config from '../../../config/index'
 import { logger } from '../../../utils/logs';
@@ -14,7 +13,6 @@ const carritoSchema = new mongoose.Schema({
       amount: Number,
     },
   ],
-  direccion: [{type:String,required:false,default:''}],
   time : { type : Date, default: Date.now }
 });
 
@@ -33,7 +31,7 @@ export class CarritoAtlasDAO{
    async get(id) {
      try{
       const result = await this.carrito.findOne({id});
-      console.log(result)
+      // console.log(result)
       if (result) return result;
      }catch(err){
       logger.warn('id not found');

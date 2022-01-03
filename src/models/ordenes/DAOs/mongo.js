@@ -17,6 +17,17 @@ const ordenesSchema = new mongoose.Schema({
   estado: { type: String, required: false, default: "Generado" },
   total: { type: String, required: true },
   numOrder: { type: String, required: true },
+  direccion: [
+    {
+      _id: false,
+      Comuna: { type: String, default: "" },
+      Pasaje: { type: String, default: "" },
+      NumeroCasa: { type: Number, default: "" },
+      CodigoPostal: { type: Number, default: "" },
+      Piso: { type: Number, default: "" },
+      Departamento: { type: Number, default: "" },
+    },
+  ],
   time: { type: Date, default: Date.now },
 });
 
@@ -72,17 +83,23 @@ export class ordersAtlasDAO {
     }
   }
 
-
-  async add(userId, dato, total, numOrder) {
-    const order = new this.orders({ userId, items: [], total, numOrder });
+  async add(userId, dato, total, numOrder,direccion) {
+    const order = new this.orders({ userId, items: [], total, numOrder,direccion });
     for (let i = 0; i < dato.length; i++) {
       order.items.push(dato[i]);
     }
-    //  console.log(`Order id: ${order._id}`)
     await order.save();
 
     return order;
   }
+
+  // async addDireccion(orderId, data) {
+  //   const order = await this.orders.findById(orderId);
+  //   if (!order) throw new Error("Order not found");
+  //   order.direccion.push(data);
+  //   console.log(order.direccion);
+  //   await order.save();
+  // }
 
   async update(id, data) {
     return this.orders.findByIdAndUpdate(id, data);

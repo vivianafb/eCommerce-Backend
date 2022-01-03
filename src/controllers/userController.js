@@ -23,6 +23,7 @@ class User {
         });
       }
     }
+
     res.json({
       data: await UserAPI.getUsers(),
     });

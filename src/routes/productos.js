@@ -20,9 +20,11 @@ const router = Router();
  *          type: string
  *        codigo:
  *          type: number
- *        foto:
- *          type: string
- *          format: binary
+ *        fotos:
+ *           type: array
+ *           items:
+ *            type: string
+ *            format: binary
  *        stock:
  *          type: number
  *        categoria:
@@ -32,7 +34,7 @@ const router = Router();
  *        - precio
  *        - descripcion
  *        - codigo
- *        - foto
+ *        - fotos
  *        - stock
  *        - categoria
  *      example:
@@ -40,9 +42,10 @@ const router = Router();
  *        precio: 1000
  *        descripcion: 'blanco'
  *        codigo: 123
- *        foto:
+ *        fotos: {url:["https://res.cloudinary.com/dfunjm3sr/image/upload/v1641156428/q9cuch1wcxdkf01sukri.jpg"]}
  *        stock: 100
  *        categoria: ropa
+ *        cloudinary_id: {public_id:["q9cuch1wcxdkf01sukri"]}
  */
 
 /**
@@ -149,7 +152,7 @@ router.get(
  */
 router.post(
   "/agregar",
-  upload.single("foto"),
+  upload.any('fotos'),
   expressAsyncHandler(productoController.addProducto)
 );
 
@@ -219,7 +222,7 @@ router.post(
  */
 router.put(
   "/actualizar/:id",
-  upload.single("foto"),
+  upload.any('fotos'),
   checkAdmin,
   expressAsyncHandler(productoController.updateProducto)
 );

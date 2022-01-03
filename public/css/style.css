@@ -37,6 +37,19 @@ a {
 	font-size: 17px;
 }
 
+.titulo{
+	color: blue;
+	font-weight: bold;
+}
+
+.boton {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: #57b10d;
+	color: #fff;
+	border: 0;
+	font-size: 17px;
+}
 /* Chat Page */
 
 .chat-container {
@@ -98,6 +111,13 @@ a {
 	border-radius: 5px;
 }
 
+.chat-messages .bot {
+	padding: 10px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+}
+
+
 .chat-messages .message .meta {
 	font-size: 15px;
 	font-weight: bold;
@@ -107,7 +127,20 @@ a {
 	font-weight: bold;
 }
 
+.chat-messages .bot .meta {
+	font-size: 15px;
+	font-weight: bold;
+	color: rgb(6, 35, 252);
+	opacity: 0.7;
+	margin-bottom: 7px;
+	font-weight: bold;
+}
 .chat-messages .message .meta span {
+	color: #381d06;
+	font-weight: bold;
+}
+
+.chat-messages .bot .meta span {
 	color: #381d06;
 	font-weight: bold;
 }
@@ -117,7 +150,16 @@ a {
 	font-weight: bold;
 }
 
+.chat-messages .bot p {
+	color: #18a249;
+	font-weight: bold;
+}
+
 .chat-messages .message p .meta{
+	width: 40%;
+}
+
+.chat-messages .bot p .meta{
 	width: 40%;
 }
 

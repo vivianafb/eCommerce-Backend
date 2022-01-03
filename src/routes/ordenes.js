@@ -22,18 +22,33 @@ const router = Router();
  *          type: number
  *        numOrder:
  *          type: string
+ *        direccion:
+ *          Comuna:
+ *            type:string
+ *          Pasaje:
+ *            type:string 
+ *          NumeroCasa:
+ *            type: number
+ *          CodigoPostal: 
+ *            type: number
+ *          Piso:
+ *            type: number
+ *          Departamento:
+ *            type: Number
  *      required:
  *        - userId
  *        - items
  *        - estado
  *        - total
  *        - numOrder
+ *        - direccion
  *      example:
  *        userId: 61c3c50e642badd8ee4ee9cd
  *        items: [ {producto: PRODUCTO3, cantidad: 50, precio: 15000, _id: 61c50de36ade12968795c231}]
  *        estado: Generado
  *        total: 750000
  *        numOrder: 1
+ *        direccion:[{Comuna:Santiago Centro, Pasaje: Av Apoquindo, NumeroCasa:2022,CodigoPostal:12132,Piso:11,Departamento:122}]
  */
 
 /**

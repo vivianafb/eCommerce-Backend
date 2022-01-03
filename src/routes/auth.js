@@ -43,7 +43,7 @@ const router = Router();
  *
  */
 router.post("/login", passport.authenticate("login"), function (req, res) {
-  const user = req.user;
+  const user = req.user
   const token = jwt.sign({ user }, config.JWT_SECRET_KEY);
   res.json(token);
 });
@@ -78,13 +78,13 @@ router.post("/login", passport.authenticate("login"), function (req, res) {
  *        - password
  *        - confirmPassword
  *      example:
- *        username: viviviv
- *        firstName: Viviana
+ *        username: sole
+ *        firstName: Soledad
  *        lastName: Fajardo
- *        phone: '+569123456'
- *        email: vivi21@gmail.com
- *        password: '123456'
- *        confirmPassword: '123456'
+ *        phone: '122424244'
+ *        email: v@gmail.com
+ *        password: '12345678'
+ *        confirmPassword: '12345678'
  */
 
 /**

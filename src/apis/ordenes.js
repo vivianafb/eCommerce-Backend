@@ -25,7 +25,7 @@ class orderAPI {
     }
   }
 
-  async createOrder(userId, items, total, numOrder) {
+  async createOrder(userId, items, total, numOrder,data) {
     // console.log(items)
     let dato = [];
     for (let i = 0; i < items.length; i++) {
@@ -35,12 +35,32 @@ class orderAPI {
         precio: items[i].productPrice,
       });
     }
+    const direccion = {
+      Comuna: data.Comuna,
+      Pasaje: data.Pasaje,
+      NumeroCasa: data.NumeroCasa,
+      CodigoPostal: data.CodigoPostal,
+      Piso: data.Piso,
+      Departamento: data.Departamento,
+    };
 
     // console.log(dato)
-    const newOrder = await this.order.add(userId, dato, total, numOrder);
+    const newOrder = await this.order.add(userId, dato, total, numOrder,direccion);
     return newOrder;
   }
 
+  // async addDireccion(orderId, data) {
+  //   const addDireccion = {
+  //     Comuna: data.Comuna,
+  //     Pasaje: data.Pasaje,
+  //     NumeroCasa: data.NumeroCasa,
+  //     CodigoPostal: data.CodigoPostal,
+  //     Piso: data.Piso,
+  //     Departamento: data.Departamento,
+  //   };
+  //   const updatedCart = await this.order.addDireccion(orderId, addDireccion);
+  //   return updatedCart;
+  // }
   async updateOrder(id, data) {
     const updateOrder = await this.order.update(id, data);
     return updateOrder;

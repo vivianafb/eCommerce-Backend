@@ -50,3 +50,6 @@
 [31merror[39m |  Dec-22-2021 21:30:02 | this.carrito.createCart is not a function
 [31merror[39m |  Dec-22-2021 21:31:21 | this.carrito.createCart is not a function
 [31merror[39m |  Dec-22-2021 21:34:51 | this.carrito.createCart is not a function
+[31merror[39m |  Dec-30-2021 21:34:53 | Cannot access 'token' before initialization
+[31merror[39m |  Dec-30-2021 22:19:56 | HUBO UN ERROR Cannot read property 'session' of undefined
+[31merror[39m |  Dec-30-2021 22:20:39 | HUBO UN ERROR Cannot read property 'session' of undefined

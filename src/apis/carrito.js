@@ -45,6 +45,7 @@ class carAPI {
     const updatedCart = await this.carrito.addProduct(cartId, addProduct);
     return updatedCart;
   }
+  
 
   async deleteProudct(cartId, productId, amount) {
     const deleteProduct = {

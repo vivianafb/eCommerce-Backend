@@ -9,8 +9,14 @@ const productsSchema = new mongoose.Schema({
   codigo: { type: Number, required: true },
   stock: { type: Number, required: true },
   categoria: { type: String, required: true },
-  foto: { type: String, required: true },
-  cloudinary_id: { type: String, required: true },
+  fotos: {
+    url: [String],
+    _id: false,
+  },
+  cloudinary_id: {
+    public_id: [String],
+    _id: false,
+  },
 });
 
 productsSchema.pre("save", function (next) {
@@ -72,6 +78,7 @@ export class ProductosAtlasDAO {
 
   async add(data) {
     const newProduct = new this.productos(data);
+
     await newProduct.save();
 
     return newProduct;
