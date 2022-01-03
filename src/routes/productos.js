@@ -3,6 +3,7 @@ import { productoController } from "../controllers/productoController";
 import { checkAdmin } from "../middleware/auth";
 import expressAsyncHandler from "express-async-handler";
 import upload from "../utils/multer";
+
 const router = Router();
 
 /**
@@ -152,7 +153,7 @@ router.get(
  */
 router.post(
   "/agregar",
-  upload.any('fotos'),
+  upload.any("fotos"),
   expressAsyncHandler(productoController.addProducto)
 );
 
@@ -222,7 +223,7 @@ router.post(
  */
 router.put(
   "/actualizar/:id",
-  upload.any('fotos'),
+  upload.any("fotos"),
   checkAdmin,
   expressAsyncHandler(productoController.updateProducto)
 );

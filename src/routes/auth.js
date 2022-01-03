@@ -43,9 +43,9 @@ const router = Router();
  *
  */
 router.post("/login", passport.authenticate("login"), function (req, res) {
-  const user = req.user
-  const token = jwt.sign({ user }, config.JWT_SECRET_KEY);
-  res.json(token);
+  const user = req.user;
+  // const token = jwt.sign({ user }, config.JWT_SECRET_KEY);
+  res.json(user);
 });
 
 /**
@@ -82,7 +82,7 @@ router.post("/login", passport.authenticate("login"), function (req, res) {
  *        firstName: Soledad
  *        lastName: Fajardo
  *        phone: '122424244'
- *        email: v@gmail.com
+ *        email: sole@gmail.com
  *        password: '12345678'
  *        confirmPassword: '12345678'
  */

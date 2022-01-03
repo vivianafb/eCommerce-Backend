@@ -81,8 +81,6 @@ export class UsuarioAtlasDAO {
 
   async query(query) {
     const result = await this.user.find(query);
-    //  console.log(result);
-
     return result[0];
   }
 

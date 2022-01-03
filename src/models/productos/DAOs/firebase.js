@@ -2,7 +2,6 @@
 
 // export class ProductosFBDAO {
 
-
 //    async get(id) {
 //     if(!id){
 //         let resultado = await ProductoDB.get();
@@ -12,11 +11,11 @@
 //         const output = docs.map(aDoc => ({
 //             id: aDoc.id,
 //             data: aDoc.data()
-//         })) 
+//         }))
 //         return output;
 //     }else{
 //         let result = await ProductoDB.doc(id).get();
-       
+
 //         //si no existe devolver error o algo asi
 //         if(id){
 //             return ({
@@ -32,8 +31,8 @@
 //     async add(data) {
 //         try{
 //             const ProductoDocument = ProductoDB.doc();
-//             await ProductoDocument.create(data); 
-//             console.log("Producto agregado!");        
+//             await ProductoDocument.create(data);
+//             console.log("Producto agregado!");
 //         }
 //         catch(err){
 //             console.log("ERROR");
@@ -42,8 +41,8 @@
 //     }
 
 //     async update(id,data) {
-//         const miDoc = ProductoDB.doc(id);  
-    
+//         const miDoc = ProductoDB.doc(id);
+
 //         //Chequear si existe sino no seguir.
 //         await ProductoDB.doc(id).update(data);
 //         console.log('Producto actualizado');

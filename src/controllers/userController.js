@@ -78,7 +78,6 @@ class User {
     }
 
     await UserAPI.deleteUser(id);
-    //  console.log(cart)
     res.json({
       msg: cart,
     });

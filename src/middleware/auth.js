@@ -27,7 +27,6 @@ const strategyOptions = {
 
 const loginFunc = async (req, username, password, done) => {
   const user = await UserAPI.query(username);
-  // console.log(`Username Login:${username}`)
   if (!user) {
     logger.warn(`Login Fail for username ${username}: User does not exist`);
     return done(null, false, { message: "User does not exist" });

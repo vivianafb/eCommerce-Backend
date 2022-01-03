@@ -9,23 +9,54 @@ const router = Router();
  * @swagger
  * components:
  *  schemas:
- *    Carrito:
+ *    Carritos:
  *      type: object
  *      properties:
  *        userId:
  *          type: string
  *        productos:
  *          type: array
- *        direccion:
- *          type: array
  *      required:
  *        - userId
  *        - productos
- *        - direccion
  *      example:
  *        userId: 61c3c50e642badd8ee4ee9cd
  *        productos: [ {_id:61c362b40112611202e0797d, amount: 30}]
- *        direccion: ''
+ */
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    DireccionCompra:
+ *      type: object
+ *      properties:
+ *        Comuna:
+ *          type: string
+ *        Pasaje:
+ *          type: string
+ *        NumeroCasa:
+ *          type: string
+ *        CodigoPostal:
+ *          type: string
+ *        Piso:
+ *          type: string
+ *        Departamento:
+ *          type: string
+ *      required:
+ *        - Comuna
+ *        - Pasaje
+ *        - NumeroCasa
+ *        - CodigoPostal
+ *        - Piso
+ *        - Departamento
+ *      example:
+ *        Comuna: Santiago Centro
+ *        Pasaje: Avenida Apoquindo
+ *        NumeroCasa: 1202
+ *        CodigoPostal: 30004
+ *        Piso: 11
+ *        Departamento: 1110
  */
 
 /**
@@ -42,7 +73,7 @@ const router = Router();
  *          application/json:
  *            schema:
  *              type: object
- *              $ref: '#/components/schemas/Carrito'
+ *              $ref: '#/components/schemas/Carritos'
  *      400:
  *        description: Carrito not found
  */
@@ -52,18 +83,11 @@ router.get(
   expressAsyncHandler(carritoController.getCartByUser)
 );
 
-// router.get(
-//   "/:id",
-//   checkAdmin,
-//   carritoController.checkCarritoExists,
-//   expressAsyncHandler(carritoController.getCartByUser)
-// );
-
 /**
  * @swagger
  * components:
  *  schemas:
- *    Carrito:
+ *    ProductoCarrito:
  *      type: object
  *      properties:
  *        productId:
@@ -91,7 +115,7 @@ router.get(
  *        application/json:
  *          schema:
  *            type: object
- *            $ref: '#/components/schemas/Carrito'
+ *            $ref: '#/components/schemas/ProductoCarrito'
  *    responses:
  *      200:
  *        description: Product added to the cart correctly
@@ -99,7 +123,7 @@ router.get(
  *          application/json:
  *            schema:
  *              type: object
- *              $ref: '#/components/schemas/Carrito'
+ *              $ref: '#/components/schemas/Carritos'
  *      400:
  *        description: There was an error , product wasn't added to the cart
  */
@@ -117,6 +141,13 @@ router.post(
  *  post:
  *    summary: Buy the products that are in the cart
  *    tags: [Carrito]
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            type: object
+ *            $ref: '#/components/schemas/DireccionCompra'
  *    responses:
  *      200:
  *        description: Successful purchase
@@ -133,7 +164,6 @@ router.post(
   checkAdmin,
   expressAsyncHandler(carritoController.comprarProduct)
 );
-
 
 /**
  *
@@ -156,7 +186,7 @@ router.post(
  *          application/json:
  *            schema:
  *              type: object
- *              $ref: '#/components/schemas/Carrito'
+ *              $ref: '#/components/schemas/Carritos'
  *      400:
  *        description: There was an error
  */

@@ -4,7 +4,7 @@ import Config from "../config/index";
 class Orders {
   async getOrders(req, res) {
     const user = req.user;
-    if(user){
+    if (user) {
       const order = await orderApi.getOrder(user[0]._id, null);
       if (order) {
         return res.json({
@@ -15,18 +15,17 @@ class Orders {
           order: "error",
         });
       }
-    }
-    else{
+    } else {
       res.status(400).json({
-        msg: "El usuario no esta logeado"
-      })
+        msg: "El usuario no esta logeado",
+      });
     }
   }
 
   async getOrdersById(req, res) {
     const { id } = req.params;
     const order = await orderApi.getOrderById(id);
-    console.log(order)
+    console.log(order);
     if (order) {
       return res.json({
         orderById: order,
@@ -40,14 +39,12 @@ class Orders {
   async submit(req, res) {
     const { id } = req.params;
     const user = req.user;
-    // const userId = user[0]._id;
     const order = await orderApi.getOrderById(id);
     if (!order || order[0].estado != "Generado") {
       return res.status(400).json({
         msg: "La orden no existe o no esta en estado 'Generado'",
       });
     } else {
-      // const OrderId = order[0]._id;
       let data = {
         estado: "Completado",
       };

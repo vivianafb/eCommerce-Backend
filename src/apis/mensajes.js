@@ -1,4 +1,4 @@
-import {MensajeFactoryDAO} from '../models/mensajes/mensajes.factory'
+import { MensajeFactoryDAO } from "../models/mensajes/mensajes.factory";
 import { TipoPersistencia } from "../models/mensajes/mensajes.factory";
 const tipo = TipoPersistencia.MongoAtlas;
 
@@ -20,6 +20,6 @@ class mensajesAPI {
   async addMensajes(data) {
     const newMensaje = await this.mensaje.add(data);
     return newMensaje;
-    }
+  }
 }
 export const mensajesApi = new mensajesAPI();

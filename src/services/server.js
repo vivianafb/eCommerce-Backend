@@ -9,10 +9,9 @@ import passport from "../middleware/auth";
 import { logger } from "../utils/logs";
 import swaggerUi from "swagger-ui-express";
 import swaggerJsDoc from "swagger-jsdoc";
-import handlebars from 'express-handlebars'
-import { initWsServer } from '../services/socket'
-import cookieParser from 'cookie-parser';
-
+import handlebars from "express-handlebars";
+import { initWsServer } from "../services/socket";
+import cookieParser from "cookie-parser";
 
 const advancedOptions = { useNewUrlParser: true, useUnifiedTopology: true };
 const StoreOptions = {
@@ -34,15 +33,18 @@ app.use(session(StoreOptions));
 const server = new http.Server(app);
 initWsServer(server);
 const publicPath = path.resolve(__dirname, "../../public");
-const layoutFolderPath = path.resolve(__dirname, '../../views/layouts');
-const defaultLayerPth = path.resolve(__dirname, '../../views/layouts/index.hbs');
-app.set('view engine', 'hbs');
+const layoutFolderPath = path.resolve(__dirname, "../../views/layouts");
+const defaultLayerPth = path.resolve(
+  __dirname,
+  "../../views/layouts/index.hbs"
+);
+app.set("view engine", "hbs");
 app.engine(
-  'hbs',
+  "hbs",
   handlebars({
     layoutsDir: layoutFolderPath,
     defaultLayout: defaultLayerPth,
-    extname: 'hbs',
+    extname: "hbs",
   })
 );
 app.use(express.static(publicPath));
@@ -52,7 +54,6 @@ app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 app.use(function (err, req, res, next) {
   logger.error(`HUBO UN ERROR ${err.message}`);
   return res.status("500").json({
@@ -61,18 +62,18 @@ app.use(function (err, req, res, next) {
 });
 const swaggerSpec = {
   definition: {
-    openapi: "3.0.0", // present supported openapi version
+    openapi: "3.0.0",
     info: {
-      title: "Ecommerce API REST", // short title.
-      description: "Desafio de Coderhouse el cual consiste en un BackEnd de ecommerce ", //  desc.
-      version: "1.0.0", // version number
+      title: "Ecommerce API REST",
+      description:
+        "Desafio de Coderhouse el cual consiste en un BackEnd de ecommerce ",
+      version: "1.0.0",
       contact: {
-        name: "Viviana Fajardo", // your name
-        email: "vivianafb15@gmail.com", // your email
-        url: "https://github.com/vivianafb/eCommerce-Backend/", // your website
+        name: "Viviana Fajardo",
+        email: "vivianafb15@gmail.com",
+        url: "https://github.com/vivianafb/eCommerce-Backend/",
       },
     },
-    
   },
   apis: [`${path.join(__dirname, "../routes/*.js")}`],
 };

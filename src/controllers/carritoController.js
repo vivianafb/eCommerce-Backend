@@ -96,11 +96,9 @@ class Carrito {
         const product = await productsAPI.getProducts(productId);
 
         if (!product.length)
-          return res
-            .status(400)
-            .json({
-              msg: `Producto no encontrado, id: ${productId} no existe`,
-            });
+          return res.status(400).json({
+            msg: `Producto no encontrado, id: ${productId} no existe`,
+          });
 
         if (parseInt(productAmount) < 0)
           return res
@@ -225,7 +223,7 @@ class Carrito {
           numOrder,
           data
         );
-      
+
         await carritoAPI.deleteAll(cart._id);
         res.json({
           msg: "Orden creada con exito",
@@ -238,16 +236,5 @@ class Carrito {
       });
     }
   }
-
-  // async deleteCarrito(req, res) {
-  //   const user = req.user;
-  //   const cart = await carritoAPI.getCarrito(user._id);
-  //   const updatedCart = await carritoAPI.deleteCarrito(cart._id);
-
-  //   res.json({
-  //     msg: "Carrito eliminado ya que el user se elimino",
-  //     data: updatedCart,
-  //   });
-  // }
 }
 export const carritoController = new Carrito();

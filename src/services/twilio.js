@@ -15,8 +15,6 @@ class Twilio {
       to: `whatsapp:${cellphoneNumber}`,
     };
 
-    // if (picture) params.mediaUrl = [picture];
-
     const response = await this.twilio.messages.create(params);
     return response;
   }

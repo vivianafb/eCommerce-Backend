@@ -2,7 +2,6 @@ import { Router } from "express";
 import { ordersController } from "../controllers/ordenesController";
 import { checkAdmin } from "../middleware/auth";
 import expressAsyncHandler from "express-async-handler";
-// import { validateOrder } from "../validators/ordenes";
 const router = Router();
 
 /**
@@ -26,10 +25,10 @@ const router = Router();
  *          Comuna:
  *            type:string
  *          Pasaje:
- *            type:string 
+ *            type:string
  *          NumeroCasa:
  *            type: number
- *          CodigoPostal: 
+ *          CodigoPostal:
  *            type: number
  *          Piso:
  *            type: number

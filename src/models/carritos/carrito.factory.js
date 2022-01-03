@@ -1,53 +1,53 @@
-import { CarritoMemDAO } from './DAO/memory';
-import { CarritoFSDAO } from './DAO/fs';
-import { CarritoAtlasDAO } from './DAO/mongo';
-import { CarritoSQLDAO } from './DAO/mysql';
-import { CarritoSQLITEDAO } from './DAO/sqlite';
-import { CarritoFBDAO } from './DAO/firebase';
-import { logger } from '../../utils/logs';
-import path from 'path';
+import { CarritoMemDAO } from "./DAO/memory";
+import { CarritoFSDAO } from "./DAO/fs";
+import { CarritoAtlasDAO } from "./DAO/mongo";
+import { CarritoSQLDAO } from "./DAO/mysql";
+import { CarritoSQLITEDAO } from "./DAO/sqlite";
+import { CarritoFBDAO } from "./DAO/firebase";
+import { logger } from "../../utils/logs";
+import path from "path";
 
 export const TipoPersistencia = {
-  Memoria : "MEM",
-  FileSystem : "FS",
-  MYSQL : "MYSQL",
-  SQLITE3 : "SQLITE3",
-  LocalMongo : "LOCAL-MONGO",
-  MongoAtlas : "MONGO-ATLAS",
-  Firebase : "FIREBASE",
-}
- const tipo = TipoPersistencia;
+  Memoria: "MEM",
+  FileSystem: "FS",
+  MYSQL: "MYSQL",
+  SQLITE3: "SQLITE3",
+  LocalMongo: "LOCAL-MONGO",
+  MongoAtlas: "MONGO-ATLAS",
+  Firebase: "FIREBASE",
+};
+const tipo = TipoPersistencia;
 export class FactoryDAO {
   static get(tipo) {
-    const filePath = path.resolve(__dirname, './DAO/carrito.json');
+    const filePath = path.resolve(__dirname, "./DAO/carrito.json");
     switch (tipo) {
       case TipoPersistencia.FileSystem:
-        logger.info('RETORNANDO INSTANCIA CLASE FS');
-        
+        logger.info("RETORNANDO INSTANCIA CLASE FS");
+
         return new CarritoFSDAO(filePath);
 
       case TipoPersistencia.MongoAtlas:
-        logger.info('RETORNANDO INSTANCIA CLASE MONGO ATLAS');
+        logger.info("RETORNANDO INSTANCIA CLASE MONGO ATLAS");
         return new CarritoAtlasDAO();
 
       case TipoPersistencia.LocalMongo:
-        logger.info('RETORNANDO INSTANCIA CLASE MONGO LOCAL');
+        logger.info("RETORNANDO INSTANCIA CLASE MONGO LOCAL");
         return new CarritoAtlasDAO(true);
 
       case TipoPersistencia.MYSQL:
-        logger.info('RETORNANDO INSTANCIA CLASE MYSQL/MariDB LOCAL');
+        logger.info("RETORNANDO INSTANCIA CLASE MYSQL/MariDB LOCAL");
         return new CarritoSQLDAO();
 
       case TipoPersistencia.SQLITE3:
-        logger.info('RETORNANDO INSTANCIA CLASE SQLITE');
+        logger.info("RETORNANDO INSTANCIA CLASE SQLITE");
         return new CarritoSQLITEDAO();
 
       case TipoPersistencia.Firebase:
-        logger.info('RETORNANDO INSTANCIA CLASE FIREBASE');
+        logger.info("RETORNANDO INSTANCIA CLASE FIREBASE");
         return new CarritoFBDAO();
-    
+
       default:
-        logger.info('RETORNANDO INSTANCIA CLASE MEMORIA');
+        logger.info("RETORNANDO INSTANCIA CLASE MEMORIA");
         return new CarritoMemDAO();
     }
   }

@@ -66,8 +66,6 @@ class Producto {
     const { nombre, precio } = req.query;
     if (id) {
       const result = await productsAPI.getProducts(id);
-      //  console.log(result)
-      // Buscar si el id del el parametro existe o no
       let findId = result.find((elemento) => elemento._id == id);
       if (findId === undefined) {
         return res.status(404).json({

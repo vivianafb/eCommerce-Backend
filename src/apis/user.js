@@ -34,7 +34,6 @@ class User {
   async deleteUser(id) {
     await this.users.delete(id);
     await carritoAPI.carrito.deleteCarrito();
-    //Borrar carrito tambien
   }
 
   async query(username) {
@@ -45,7 +44,6 @@ class User {
     if (username) query.$or.push({ username });
 
     const user = await this.users.query(query);
-    // console.log(user);
     return user;
   }
 

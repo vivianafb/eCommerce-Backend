@@ -22,27 +22,15 @@ const ordenesSchema = new mongoose.Schema({
       _id: false,
       Comuna: { type: String, default: "" },
       Pasaje: { type: String, default: "" },
-      NumeroCasa: { type: Number, default: "" },
-      CodigoPostal: { type: Number, default: "" },
-      Piso: { type: Number, default: "" },
-      Departamento: { type: Number, default: "" },
+      NumeroCasa: { type: Number, default: null },
+      CodigoPostal: { type: Number, default: null },
+      Piso: { type: Number, default: null },
+      Departamento: { type: Number, default: null },
     },
   ],
   time: { type: Date, default: Date.now },
 });
 
-// ordenesSchema.pre('save', function (next) {
-//   var data = this;
-//   var order = mongoose.model('orders')
-//   order.find({id: data._id}, function (err, docs) {
-//       if (!docs.length){
-//           next();
-//       }else{
-//           logger.warn(`La orden ya existe ${data}`);
-//           next(new Error(`La orden ya existe! Orden: ${data._id}`));
-//       }
-//   });
-// }) ;
 export class ordersAtlasDAO {
   srv;
   orders;
@@ -83,8 +71,14 @@ export class ordersAtlasDAO {
     }
   }
 
-  async add(userId, dato, total, numOrder,direccion) {
-    const order = new this.orders({ userId, items: [], total, numOrder,direccion });
+  async add(userId, dato, total, numOrder, direccion) {
+    const order = new this.orders({
+      userId,
+      items: [],
+      total,
+      numOrder,
+      direccion,
+    });
     for (let i = 0; i < dato.length; i++) {
       order.items.push(dato[i]);
     }
@@ -93,42 +87,7 @@ export class ordersAtlasDAO {
     return order;
   }
 
-  // async addDireccion(orderId, data) {
-  //   const order = await this.orders.findById(orderId);
-  //   if (!order) throw new Error("Order not found");
-  //   order.direccion.push(data);
-  //   console.log(order.direccion);
-  //   await order.save();
-  // }
-
   async update(id, data) {
     return this.orders.findByIdAndUpdate(id, data);
   }
-
-  //   async delete(id) {
-  //     await this.user.findByIdAndDelete(id);
-  //   }
-
-  //   async query(query) {
-  //     const result = await this.user.find(query);
-  //     // console.log(result);
-
-  //     return result[0];
-  //   }
-
-  //   async validateUserPassword(username,password) {
-  //     const users = await this.user.findOne({ username });
-  //     if (!users) return false;
-  //     const compare = await bcrypt.compare(password, users.password);
-  //     if (!compare) return false;
-  //     return true;
-  //   }
-
-  //   async validateConfirmPassword(password,confirmPassword) {
-  //     if(!(password === confirmPassword)){
-  //        return false
-  //     }
-  //     return true;
-
-  //   }
 }

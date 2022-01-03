@@ -2760,3 +2760,307 @@
 [33mwarn[39m |  Jan-02-2022 20:48:41 | El Producto existe 
 [33mwarn[39m |  Jan-02-2022 22:07:56 | Login Fail for username viviviv: User does not exist
 [33mwarn[39m |  Jan-02-2022 22:07:58 | Login Fail for username viviviv: User does not exist
+[33mwarn[39m |  Jan-02-2022 22:45:43 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:45:44 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:45:45 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:45:46 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:10 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:14 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:15 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:17 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:21 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:22 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:23 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:24 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:28 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:46:34 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11083 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333333 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-02-2022 22:46:47 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  '  {\n' +
+  `    items: '[{"producto":"SWAGGER","cantidad":"1","precio":"333","_id":"61d24eb7d196793206479f00"}]',\n` +
+  "    total: '333'\n" +
+  '  }\n' +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-02-2022 22:48:41 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:48:55 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:49:06 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:50:46 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:52:30 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:52:32 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:53:22 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:53:24 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:53:25 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:53:52 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:54:40 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:55:14 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:55:37 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:55:39 | WEBSOCKET
+[33mwarn[39m |  Jan-02-2022 22:55:46 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 15:52:06 | id not found
+[33mwarn[39m |  Jan-03-2022 15:52:34 | id not found
+[31merror[39m |  Jan-03-2022 15:52:53 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-03-2022 15:52:53 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-03-2022 15:52:53 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-03-2022 15:52:55 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-03-2022 15:52:56 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[33mwarn[39m |  Jan-03-2022 16:04:13 | id not found
+[33mwarn[39m |  Jan-03-2022 16:04:21 | id not found
+[31merror[39m |  Jan-03-2022 16:10:39 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-03-2022 16:10:39 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-03-2022 16:10:39 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-03-2022 16:10:39 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-03-2022 16:10:39 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[33mwarn[39m |  Jan-03-2022 18:15:24 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:21:40 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:21:41 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:21:43 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:27:07 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:27:08 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:28:20 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:28:22 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:28:23 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:28:50 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:29:13 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:29:15 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:29:16 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:29:18 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:30:29 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:30:31 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:30:33 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:32:17 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:32:44 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:32:46 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:33:12 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:34:27 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:34:29 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:34:56 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:39:36 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:39:52 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:39:54 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:39:55 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:41:24 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:41:51 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:41:52 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:42:51 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:44:01 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:44:21 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:44:22 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:44:23 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:44:24 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:44:25 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:44:28 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 18:46:16 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:46:17 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:46:18 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:46:19 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:47:10 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:47:14 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 18:48:00 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:48:01 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:48:02 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:48:44 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:48:45 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:48:46 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:49:35 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:49:36 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:49:44 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:50:12 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:50:41 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:50:42 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:50:43 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:50:44 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:51:23 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:51:25 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:51:25 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:51:26 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:51:28 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:51:29 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:51:59 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:52:00 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:52:01 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:52:06 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:52:08 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:54:24 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:54:25 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:54:58 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:55:00 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:55:01 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:55:05 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:55:25 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:55:27 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:55:54 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:55:55 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:55:59 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:58:22 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:58:23 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:58:24 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:58:28 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:58:29 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:58:56 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:59:04 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:59:06 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:59:09 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 18:59:59 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:00:00 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:00:01 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:00:01 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:00:07 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 19:03:48 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:03:50 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:03:51 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:04:19 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:04:20 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:04:22 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:04:24 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:05:06 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:05:08 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:05:09 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:05:35 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:05:37 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:06:13 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:07:28 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:07:30 | WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:15:38 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:15:39 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:15:40 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:15:41 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:15:43 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:15:48 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:15:50 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:15:53 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:08 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:09 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:14 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:15 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:30 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:34 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:45 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:47 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:48 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:16:59 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:17:09 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:17:50 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:17:52 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:17:54 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:18:22 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:18:24 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:18:26 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:18:53 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:18:54 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:18:55 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:18:58 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:19:03 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:20:53 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:20:54 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:20:55 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:02 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:04 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:04 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:05 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:11 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:18 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:19 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:36 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:42 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:54 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:21:56 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:22:50 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:22:51 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:22:53 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:23:11 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:23:13 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:23:15 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:23:27 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:25:22 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:25:40 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:25:41 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:25:42 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:28:58 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:28:59 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:29:00 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:29:52 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:32:57 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:32:58 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:32:59 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:33:00 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:33:01 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:33:37 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:33:39 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:33:40 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:34:00 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:34:02 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:34:02 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:34:03 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:34:04 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:34:05 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:34:09 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 19:34:35 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:34:48 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:35:14 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:35:15 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:35:16 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:35:51 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:35:52 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:04 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:07 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:10 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:11 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:12 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 19:36:40 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:42 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:43 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:43 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:44 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:45 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:47 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:47 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 19:36:48 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:48 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 19:36:49 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:36:52 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:37:10 | CONECCION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:37:12 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 19:42:07 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:42:09 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:44:05 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:44:07 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:44:08 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:44:09 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:44:11 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:44:12 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:44:30 | mensajes validation failed: mensajeBot.0: Cast to [string] failed for value "[\n' +
+  "  { nombre: 'SWAGGER', stock: 11075 },\n" +
+  "  { nombre: 'vvvvvvvvvvvv', stock: 3333333328 }\n" +
+  ']" (type string) at path "mensajeBot.0"
+[33mwarn[39m |  Jan-03-2022 19:44:51 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:44:53 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 19:45:19 | CONEXION ESTABLECIDA WEBSOCKET
+[33mwarn[39m |  Jan-03-2022 20:02:00 | Login Fail for username sole: Confirm Password is not valid
+[33mwarn[39m |  Jan-03-2022 20:03:45 | User already exists
+[33mwarn[39m |  Jan-03-2022 20:04:22 | Login Fail for username sole: Confirm Password is not valid
