@@ -4,11 +4,12 @@ import { UserAPI } from "../apis/user";
 import { logger } from "../utils/logs";
 import { Gmail } from "../services/gmail";
 
-const admin = true;
+
 //Validar que el usuario es admin
 export const checkAdmin = (req, res, next) => {
   logger.info("EJECUTANDO MIDDLEWARE");
-  if (admin) next();
+  const admin = req.user[0].admin 
+  if (admin == true) next();
   else {
     res.status(401).json({
       error: -1,

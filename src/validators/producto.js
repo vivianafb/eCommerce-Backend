@@ -1,8 +1,9 @@
-import { check } from "express-validator";
+import { check,checkSchema,body  } from "express-validator";
 import { validationResult } from "express-validator";
 
 const validateResult = (req, res, next) => {
   try {
+    console.log(req.body)
     validationResult(req).throw();
     return next();
   } catch (err) {
@@ -12,14 +13,14 @@ const validateResult = (req, res, next) => {
   }
 };
 export const validateProducto = [
+
   check("nombre").exists().not().isEmpty(),
-  check("precio").exists().not().isEmpty(),
   check("descripcion").exists().not().isEmpty(),
-  check("codigo").exists().not().isEmpty(),
+  check("codigo").exists().not().isEmpty().isNumeric(),
   check("foto").exists().not().isEmpty(),
   check("stock").exists().not().isEmpty(),
   check("categoria").exists().not().isEmpty(),
-  (req, res, next) => {
-    validateResult(req, res, next);
-  },
+  // (req, res, next) => {
+  //   validateResult(req, res, next);
+  // },
 ];

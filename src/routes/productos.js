@@ -1,11 +1,11 @@
 import { Router } from "express";
 import { productoController } from "../controllers/productoController";
-import { checkAdmin } from "../middleware/auth";
+import {checkAdmin, isLoggedIn} from "../middleware/auth";
 import expressAsyncHandler from "express-async-handler";
 import upload from "../utils/multer";
-
+import { validateProducto } from "../validators/producto";
 const router = Router();
-
+import { validationResult } from "express-validator";
 /**
  * @swagger
  * components:
@@ -54,6 +54,13 @@ const router = Router();
  * @swagger
  * /api/productos:
  *  get:
+ *    parameters:
+ *      - in: query
+ *        name: categoria
+ *        required: false
+ *        schema:
+ *          type: string
+ *          minimun: 1
  *    summary: Get all the products
  *    tags: [Producto]
  *    responses:
@@ -96,40 +103,11 @@ router.get("/", expressAsyncHandler(productoController.getProducto));
  */
 router.get("/:id", expressAsyncHandler(productoController.getProducto));
 
-/**
- *
- * @swagger
- * /api/productos/categoria/{categoria}:
- *  get:
- *    parameters:
- *      - in: path
- *        name: categoria
- *        required: true
- *        schema:
- *          type: string
- *          minimun: 1
- *    summary: Get the product by the category
- *    tags: [Producto]
- *    responses:
- *      200:
- *        description: List of products with the required category
- *        content:
- *          application/json:
- *            schema:
- *              type: object
- *              $ref: '#/components/schemas/Producto'
- *      400:
- *        description: Product not found
- */
-router.get(
-  "/categoria/:categoria",
-  expressAsyncHandler(productoController.getCategoria)
-);
 
 /**
  *
  * @swagger
- * /api/productos/agregar:
+ * /api/productos/:
  *  post:
  *    summary: Add product
  *    tags: [Producto]
@@ -151,8 +129,11 @@ router.get(
  *      400:
  *        description: There was an error
  */
+
 router.post(
-  "/agregar",
+  "/",
+  isLoggedIn,
+  checkAdmin,
   upload.any("fotos"),
   expressAsyncHandler(productoController.addProducto)
 );

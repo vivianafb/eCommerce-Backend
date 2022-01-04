@@ -1,14 +1,13 @@
 import { Router } from "express";
 import passport from "passport";
-import jwt from "jsonwebtoken";
-import config from "../config/index";
+import { validateUser } from "../validators/user";
 const router = Router();
 
 /**
  * @swagger
  * components:
  *  schemas:
- *    User:
+ *    UserLogin:
  *      type: object
  *      properties:
  *        username:
@@ -19,9 +18,10 @@ const router = Router();
  *        - username
  *        - password
  *      example:
- *        username: vivivi
- *        password: '123456'
+ *        username: sole
+ *        password: '12345678'
  */
+
 
 /**
  *
@@ -36,7 +36,7 @@ const router = Router();
  *        application/json:
  *          schema:
  *            type: object
- *            $ref: '#/components/schemas/User'
+ *            $ref: '#/components/schemas/UserLogin'
  *    responses:
  *      200:
  *        description: Successful login
@@ -106,7 +106,7 @@ router.post("/login", passport.authenticate("login"), function (req, res) {
  *        description: User sign up correctly
  *
  */
-router.post("/signup", (req, res, next) => {
+router.post("/signup", validateUser,(req, res, next) => {
   passport.authenticate("signup", function (err, data) {
     if (err) {
       return next(err);
@@ -121,7 +121,7 @@ router.post("/signup", (req, res, next) => {
  *
  * @swagger
  * /api/auth/logout:
- *  get:
+ *  post:
  *    summary: Log out
  *    tags: [User]
  *    responses:
@@ -129,7 +129,7 @@ router.post("/signup", (req, res, next) => {
  *        description: You have successfully logged out
  *
  */
-router.get("/logout", (req, res) => {
+router.post("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) res.status(500).json({ message: "Ocurrió un error" });
     else {

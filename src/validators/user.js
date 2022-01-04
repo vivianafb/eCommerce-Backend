@@ -12,11 +12,13 @@ const validateResultUser = (req, res, next) => {
   }
 };
 export const validateUser = [
+  check("username").exists().not().isEmpty(),
   check("firstName").exists().not().isEmpty(),
   check("lastName").exists().not().isEmpty(),
   check("phone").exists().not().isEmpty(),
   check("email").exists().not().isEmpty(),
   check("password").exists().not().isEmpty(),
+  check("confirmPassword").exists().not().isEmpty(),
   (req, res, next) => {
     validateResultUser(req, res, next);
   },

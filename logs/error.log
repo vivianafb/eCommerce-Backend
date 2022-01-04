@@ -63,3 +63,4 @@
 [31merror[39m |  Jan-03-2022 16:10:39 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
 [31merror[39m |  Jan-03-2022 16:10:39 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
 [31merror[39m |  Jan-03-2022 16:10:39 | HUBO UN ERROR queryTxt ETIMEOUT cluster0.ixair.mongodb.net
+[31merror[39m |  Jan-04-2022 18:03:41 | HUBO UN ERROR Unexpected token } in JSON at position 143
