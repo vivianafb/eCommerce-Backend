@@ -20,10 +20,10 @@ const ordenesSchema = new mongoose.Schema({
   direccion: [
     {
       _id: false,
-      Comuna: { type: String, default: "" },
-      Pasaje: { type: String, default: "" },
+      Comuna: { type: String,required: true },
+      Pasaje: { type: String,required: true },
       NumeroCasa: { type: Number, default: null },
-      CodigoPostal: { type: Number, default: null },
+      CodigoPostal: { type: Number, required: true },
       Piso: { type: Number, default: null },
       Departamento: { type: Number, default: null },
     },

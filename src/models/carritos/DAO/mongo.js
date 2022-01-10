@@ -47,8 +47,9 @@ export class CarritoAtlasDAO {
     return newCarrito;
   }
 
-  productExist(cart, productId) {
-    const index = cart.productos.findIndex(
+  async productExist(cartId, productId) {
+    const cart = await this.carrito.findOne({ cartId });
+     const index = cart.productos.findIndex(
       (aProduct) => aProduct._id == productId
     );
 

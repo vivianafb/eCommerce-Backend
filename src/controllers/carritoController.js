@@ -5,39 +5,6 @@ import { orderApi } from "../apis/ordenes";
 import { Gmail } from "../services/gmail";
 import { logger } from "../utils/logs";
 
-// let carrito = [
-//   {
-//     id: 1,
-//     timestamp: Date.now(),
-//     producto: {
-//       id: 1,
-//       nombre: "lapiz",
-//       precio: 100,
-//       descripcion: "color rojo",
-//       codigo: 123456,
-//       foto: "https://img.freepik.com/vector-gratis/diseno-lapiz-escribiendo_1095-187.jpg?size=338&ext=jpg",
-//       stock: 27,
-//       timestamp: Date.now(),
-//     },
-//   },
-//   {
-//     id: 2,
-//     timestamp: Date.now(),
-//     producto: {
-//       id: 2,
-//       nombre: "goma",
-//       precio: 200,
-//       descripcion: "goma de borrar",
-//       codigo: 789123,
-//       foto: "https://www.libreriaservicom.cl/wp-content/uploads/2019/03/goma-de-borrar-factis-s20.jpg",
-//       stock: 30,
-//       timestamp: Date.now(),
-//     },
-//   },
-// ];
-
-// const tableName = "carrito";
-
 class Carrito {
   async validacion(req, res, next) {
     const { createdAt, producto_id } = req.body;
@@ -140,25 +107,15 @@ class Carrito {
     const { productId } = req.params;
     const cart = await carritoAPI.getCarrito(user[0]._id);
 
-    // const userId = user[0]._id;
-    // if (id != userId) return res.status(400).json({ msg: "User id not found" });
-
-    // if (!productId || !productAmount)
-    //   return res.status(400).json({ msg: "Invalid body parameters" });
-
     const product = await productsAPI.getProducts(productId);
+    const exist = await carritoAPI.checkProduct(cart._id,productId)
+    if(exist === false) return res.status(400).json({ msg: "Product is not in the cart" });
 
     if (!product.length)
       return res.status(400).json({ msg: "Product not found" });
 
-    // if (parseInt(productAmount) < 0)
-    //   return res.status(400).json({ msg: "Invalid amount" });
 
     const proAmount = cart.productos[0].amount;
-    // if (parseInt(productAmount) > proAmount)
-    //   return res.status(400).json({
-    //     msg: `La cantidad que ingresa supera la cantidad actual(${proAmount}) del producto en el carrito`,
-    //   });
 
     const updatedCart = await carritoAPI.deleteProudct(
       cart._id,
@@ -166,7 +123,6 @@ class Carrito {
       parseInt(proAmount)
     );
     let totalstock = product[0].stock + proAmount;
-    // let stock = product[0].stock;
     await productsAPI.updateProduct(productId, {
       stock: totalstock,
     });

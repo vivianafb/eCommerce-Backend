@@ -20,6 +20,10 @@ class carAPI {
     return this.carrito.get(id);
   }
 
+  async checkProduct(cartId, productId){
+    return this.carrito.productExist(cartId, productId);
+  }
+
   async createCarrito(userId) {
     const user = await UserAPI.getUsers(userId);
     if (!user.length) logger.warn("User does not exist. Error creating cart");

@@ -1,6 +1,5 @@
 import { productsAPI } from "../apis/productos";
 const cloudinary = require("../config/cloudinary");
-
 // let productos = [
 //   {
 //     id: 1,
@@ -98,8 +97,9 @@ class Producto {
   }
 
   async addProducto(req, res) {
+    
     try {
-     
+      
         let result = [];
         let resultado = { url: [] };
         let clodinaryId = { public_id: [] };
