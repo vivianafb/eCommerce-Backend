@@ -26,39 +26,6 @@ const cloudinary = require("../config/cloudinary");
 // ];
 
 class Producto {
-  validacion(req, res, next) {
-    const { nombre, precio, descripcion, codigo, foto, stock } = req.body;
-    if (
-      !nombre ||
-      !precio ||
-      !descripcion ||
-      !codigo ||
-      !foto ||
-      !stock ||
-      typeof nombre !== "string" ||
-      typeof descripcion !== "string" ||
-      typeof foto !== "string" ||
-      isNaN(precio) ||
-      isNaN(codigo) ||
-      isNaN(stock)
-    )
-      return res.status(400).json({
-        msg: "Campos del body invalidos",
-      });
-    next();
-  }
-
-  async checkProductExists(req, res, next) {
-    const id = req.params.id;
-    const producto = await productsAPI.getProducts(id);
-    let findId = producto.find((el) => el._id == id);
-    if (findId) {
-      return res.status(404).json({
-        msg: "Producto no encontrado",
-      });
-    }
-    next();
-  }
 
   async getProducto(req, res) {
     const { id } = req.params;
@@ -97,9 +64,19 @@ class Producto {
   }
 
   async addProducto(req, res) {
-    
-    try {
+        const { nombre, precio, descripcion, codigo, foto, stock, categoria } = req.body;
+        if (
+          !nombre ||
+          !precio ||
+          !descripcion ||
+          !codigo ||
+          !foto ||
+          !stock ||
+          !categoria
+        )return res.status(400).json({ msg: "Campos invalidos" });
       
+    try {
+        
         let result = [];
         let resultado = { url: [] };
         let clodinaryId = { public_id: [] };

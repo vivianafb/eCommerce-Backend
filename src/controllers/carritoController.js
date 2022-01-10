@@ -6,36 +6,6 @@ import { Gmail } from "../services/gmail";
 import { logger } from "../utils/logs";
 
 class Carrito {
-  async validacion(req, res, next) {
-    const { createdAt, producto_id } = req.body;
-    if (!createdAt || !producto_id)
-      return res.status(400).json({
-        msg: "Campos del body invalidos",
-      });
-    next();
-  }
-
-  async checkCarritoExists(req, res) {
-    try {
-      const { id } = req.params;
-      const carrito = await carritoAPI.getCarrito(id);
-      if (!carrito) {
-        return res.status(404).json({
-          msg: `Carrito no encontrado, el id: ${id} no existe`,
-        });
-      } else {
-        return res.json({
-          data: carrito,
-        });
-      }
-    } catch (err) {
-      logger.warn(err.message);
-      return res.status(404).json({
-        msg: err,
-      });
-    }
-  }
-
   async getCartByUser(req, res) {
     try {
       const user = req.user;

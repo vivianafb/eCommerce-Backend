@@ -3,6 +3,7 @@ import { productoController } from "../controllers/productoController";
 import {checkAdmin, isLoggedIn} from "../middleware/auth";
 import expressAsyncHandler from "express-async-handler";
 import upload from "../utils/multer";
+import { validateProduct } from "../validators/producto";
 import { validateProducto } from "../validators/producto";
 const router = Router();
 import { validationResult } from "express-validator";
